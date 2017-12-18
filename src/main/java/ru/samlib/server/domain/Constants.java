@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
  */
 
 @ConfigurationProperties("settings.server")
-@Configuration
 public class Constants {
 
     public static class Net {
@@ -50,8 +49,4 @@ public class Constants {
         this.firstLogDay = firstLogDay;
     }
 
-    @Bean
-    public Constants constants() {
-        return new Constants();
-    }
 }

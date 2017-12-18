@@ -1,9 +1,7 @@
 package ru.samlib.server.parser;
 
-import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -52,7 +50,11 @@ public class CommandExecutorService {
                 .build();
     }
 
-    @Scheduled(cron = "0 3 * * *")
+    public RestTemplate getLogTemplate() {
+        return logTemplate;
+    }
+
+    @Scheduled(cron = "0 3 * * * *")
     public void scheduledExecution() {
         Calendar calendar = Calendar.getInstance();
         Date lastParsedDay;

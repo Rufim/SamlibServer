@@ -1,14 +1,23 @@
 package ru.samlib.server;
 
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.client.MockRestServiceServer;
 import ru.samlib.server.domain.Constants;
@@ -22,6 +31,7 @@ import ru.samlib.server.parser.DataCommand;
 import ru.samlib.server.parser.Parser;
 import ru.samlib.server.util.Log;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -36,9 +46,10 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 import static ru.samlib.server.util.SystemUtils.readFile;
 
 @RunWith(SpringRunner.class)
+@RestClientTest(value =  CommandExecutorService.class)
 @SpringBootTest
 @ActiveProfiles("test")
-@RestClientTest(CommandExecutorService.class)
+@AutoConfigureDataJpa
 public class ParserTests {
 
     public static final String TAG = ParserTests.class.getSimpleName();
@@ -54,7 +65,6 @@ public class ParserTests {
     private CategoryDao categoryDao;
     @Autowired
     private WorkDao workDao;
-
 
     @Autowired
     private MockRestServiceServer server;
