@@ -1,6 +1,7 @@
 package ru.samlib.server.domain.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.SortComparator;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.util.SortedSet;
 @Data
 @Entity
 @Table(name = "parsing_info")
+@EqualsAndHashCode(exclude = "logEvents")
 public class ParsingInfo {
 
     @Id
@@ -19,7 +21,7 @@ public class ParsingInfo {
     private Date logDate;
     private boolean parsed = false;
     private boolean withoutExceptions = true;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @OrderBy("time DESC")
     private SortedSet<LogEvent> logEvents;
 }

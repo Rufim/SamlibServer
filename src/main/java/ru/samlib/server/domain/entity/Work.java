@@ -57,6 +57,7 @@ public class Work implements Serializable, Linkable, Validatable {
     List<Genre> genres = new ArrayList<>();
     @Enumerated(EnumType.STRING)
     Type type = Type.OTHER;
+    @Column(columnDefinition = "TEXT")
     String annotation;
     Date createDate;
     Date updateDate;

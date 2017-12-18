@@ -1,5 +1,11 @@
 package ru.samlib.server.util;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import ru.samlib.server.domain.dao.LogEventDao;
+import ru.samlib.server.domain.entity.LogEvent;
+import ru.samlib.server.domain.entity.ParsingInfo;
+
 import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
@@ -57,14 +63,16 @@ public final class Log {
     }
 
     private static boolean printToConsole = true;
+    private static boolean printToBase = true;
     private static boolean printToFile = false;
     private static boolean printToDocument = false;
 
+    private static boolean printToBaseBeforeStop = true;
     private static boolean printToConsoleBeforeStop = true;
     private static boolean printToFileBeforeStop = false;
     private static boolean printToDocumentBeforeStop = false;
 
-    private static LOG_LEVEL current_level = LOG_LEVEL.ERROR;
+    private static LOG_LEVEL current_level = LOG_LEVEL.WARN;
     private static File logFile;
     static {
         if(printToFile) {
@@ -311,9 +319,9 @@ public final class Log {
             Calendar cal = Calendar.getInstance();
             String record;
             if(tag instanceof Class)  {
-                record = dateFormat.format(cal.getTime()) + " " + tag + "\n" + level.name() + "/" + ((Class)tag).getSimpleName() + ": " + msg;
+                record = dateFormat.format(cal.getTime()) + " " + tag + "  " + level.name() + "/" + ((Class)tag).getSimpleName() + ": " + msg;
             } else {
-                record = dateFormat.format(cal.getTime()) + "\n" + level.name() + "/" + tag + ": " + msg;
+                record = dateFormat.format(cal.getTime()) + "  " + level.name() + "/" + tag + ": " + msg;
             }
             println(record, level.color);
         }
@@ -344,11 +352,36 @@ public final class Log {
         return Log.current_level;
     }
 
+    public static LogEvent generateLogEvent(Log.LOG_LEVEL logLevel, Exception ex, String corruptedData) {
+        return generateLogEvent(logLevel, ex, corruptedData, null);
+    }
+
+    public static LogEvent generateLogEvent(Log.LOG_LEVEL logLevel, Exception ex, String corruptedData, ParsingInfo info) {
+        String tag = "UNK";
+        if(ex != null && ex.getStackTrace().length > 0) {
+            try {
+                StackTraceElement traceElement = ex.getStackTrace()[0];
+                tag = Class.forName(traceElement.getClassName()).getSimpleName() + "." + traceElement.getMethodName() +"[" + traceElement.getLineNumber() + "]";
+            } catch (ClassNotFoundException ignored) {
+            }
+        }
+        Log.println(logLevel, tag, ex != null ? (ex.getMessage() + " corruptedData: " + corruptedData) : "");
+        LogEvent logEvent = new LogEvent();
+        logEvent.setMessage(ex != null ? ex.getMessage(): "");
+        logEvent.setCorruptedData(corruptedData);
+        logEvent.setLogLevel(logLevel);
+        if(ex != null) logEvent.setTrace(Log.getStackTraceString(ex));
+        logEvent.setParsingInfo(info);
+        return  logEvent;
+    }
+
     public static void stopLogging() {
         printToConsoleBeforeStop = printToConsole;
         printToFileBeforeStop = printToFile;
         printToDocumentBeforeStop = printToDocument;
+        printToBaseBeforeStop = printToBase;
 
+        printToBase = false;
         printToConsole = false;
         printToDocument = false;
         printToFile = false;
@@ -358,5 +391,6 @@ public final class Log {
         printToConsole = printToConsoleBeforeStop;
         printToDocument = printToFileBeforeStop;
         printToFile = printToDocumentBeforeStop;
+        printToBase = printToBaseBeforeStop;
     }
 }

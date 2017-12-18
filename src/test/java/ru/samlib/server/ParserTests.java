@@ -58,8 +58,6 @@ public class ParserTests {
     @Autowired
     private CommandExecutorService executorService;
     @Autowired
-    private ParsingInfoDao parsingInfoDao;
-    @Autowired
     private AuthorDao authorDao;
     @Autowired
     private CategoryDao categoryDao;
@@ -105,6 +103,7 @@ public class ParserTests {
 
     @Test
     public void testScheduler() {
+        executorService.MAX_LOGS_PER_DAY = 1;
         executorService.scheduledExecution();
     }
 }

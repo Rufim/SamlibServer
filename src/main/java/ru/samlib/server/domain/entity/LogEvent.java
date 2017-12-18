@@ -14,7 +14,7 @@ public class LogEvent implements Comparable<LogEvent> {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id = 0L;
-    private Date time;
+    private Date time = new Date();
     @Column(columnDefinition = "TEXT")
     private String trace;
     @Column(columnDefinition = "TEXT")

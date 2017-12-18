@@ -34,6 +34,7 @@ public class Author implements Serializable, Linkable, Validatable {
     String fullName;
     String shortName;
     String email;
+    @Column(columnDefinition = "TEXT")
     String annotation;
     @Enumerated(EnumType.STRING)
     Gender gender;

@@ -73,7 +73,7 @@ public class Parser {
             if (fullLine.startsWith("/") && fullLine.endsWith("k")) {
                 dataCommands.add(parseLine(fullLine));
             } else {
-                addLog(Log.LOG_LEVEL.ERROR, new Exception("Invalid line"), fullLine);
+                addLog(Log.LOG_LEVEL.WARN, new Exception("Invalid line"), fullLine);
             }
         }
     }
@@ -82,29 +82,38 @@ public class Parser {
     // имя файла|тег oперации|таймштамп-MySQL|title|author|type|janr|annot|date|img_cnt|update-unixtime|size kb
     // /m/maksimowa_alina/dymchatyjsiluettebja|EDT|2015-06-30 20:16:07|Дымчатый силуэт тебя|Максимова Алина|Роман|Фантастика|       Новенький баскетболист в университете произвёл на Софию особое впечатление. Да и Дашке он приглянулся. Что делать, |02/06/2015|1|1433273100|695k
     private DataCommand parseLine(String line) {
-        if(TextUtils.notEmpty(line)) {
+        if (TextUtils.notEmpty(line)) {
             try {
                 String[] fields = line.split("\\|");
                 DataCommand dataCommand = new DataCommand();
                 dataCommand.setLink(fields[0]);
                 String command = fields[1];
                 String workName = fields[3];
-                if (command.length() > 3) {
-                    dataCommand.setCommand(Command.valueOf(fields[1].substring(0, 3)));
-                    workName = fields[1].substring(4, fields[1].length());
+                if (TextUtils.notEmpty(fields[1])) {
+                    try {
+                        if (command.length() > 3) {
+                            dataCommand.setCommand(Command.valueOf(fields[1].substring(0, 3)));
+                            workName = fields[1].substring(4, fields[1].length());
+                        } else {
+                            dataCommand.setCommand(Command.valueOf(fields[1]));
+                        }
+                    } catch (IllegalArgumentException ex) {
+                        addLog(Log.LOG_LEVEL.WARN, new Exception("Invalid command - " + fields[1]), line);
+                    }
                 } else {
-                    dataCommand.setCommand(Command.valueOf(fields[1]));
+                    addLog(Log.LOG_LEVEL.WARN, new Exception("Empty command"), line);
                 }
                 dataCommand.setWorkName(workName);
-                dataCommand.setCommandDate(dateTimeFormat.parse(fields[2]));
+                if (TextUtils.notEmpty(fields[2])) dataCommand.setCommandDate(dateTimeFormat.parse(fields[2]));
                 dataCommand.setAuthorName(fields[4]);
                 dataCommand.setType(Type.parseType(fields[5]));
                 dataCommand.setGenre(Genre.parseGenre(fields[6]));
                 dataCommand.setAnnotation(fields[7]);
-                dataCommand.setCreateDate(dateFormat.parse(fields[8]));
+                if (TextUtils.notEmpty(fields[8])) dataCommand.setCreateDate(dateFormat.parse(fields[8]));
                 dataCommand.setImageCount(fields[9].isEmpty() ? 0 : Integer.parseInt(fields[9]));
                 dataCommand.setUnixtime(Long.parseLong(fields[10]));
-                dataCommand.setSize(Integer.parseInt(fields[11].substring(0, fields[11].length() - 1)));
+                if (TextUtils.notEmpty(fields[11]))
+                    dataCommand.setSize(Integer.parseInt(fields[11].substring(0, fields[11].length() - 1)));
                 return dataCommand;
             } catch (Exception ex) {
                 addLog(Log.LOG_LEVEL.ERROR, ex, line);
@@ -115,15 +124,8 @@ public class Parser {
 
 
     private void addLog(Log.LOG_LEVEL logLevel, Exception ex, String corruptedData) {
-        if(logEvents) {
-            Log.println(logLevel, TAG, ex.getMessage() + " corruptedData: " + corruptedData);
-            LogEvent logEvent = new LogEvent();
-            logEvent.setMessage(ex.getMessage());
-            logEvent.setTime(new Date());
-            logEvent.setCorruptedData(corruptedData);
-            logEvent.setLogLevel(logLevel);
-            logEvent.setTrace(Log.getStackTraceString(ex));
-            events.add(logEvent);
+        if (logEvents) {
+            events.add(Log.generateLogEvent(logLevel, ex, corruptedData, info));
         }
     }
 
