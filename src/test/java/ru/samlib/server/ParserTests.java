@@ -74,7 +74,7 @@ public class ParserTests {
     public void setUp() throws FileNotFoundException {
         ClassLoader classLoader = getClass().getClassLoader();
         logTestFile = new File(classLoader.getResource("test-log.txt").getFile());
-        this.server.expect(requestTo("/2015/05-06.log"))
+        this.server.expect(requestTo("/2015/06-30.log"))
                 .andExpect(method(HttpMethod.GET))
                 .andRespond(withSuccess(readFile(logTestFile, "CP1251"), MediaType.TEXT_PLAIN));
     }

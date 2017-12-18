@@ -44,14 +44,10 @@ public class CommandExecutorService {
 
 
     public CommandExecutorService(RestTemplateBuilder restTemplateBuilder) {
-        this.logTemplate = restTemplateBuilder.rootUri(Constants.Net.BASE_DOMAIN + "/" + Constants.Net.LOG_PATH)
+        this.logTemplate = restTemplateBuilder.rootUri(Constants.Net.LOG_PATH)
                 .setConnectTimeout(15000)
                 .setReadTimeout(15000)
                 .build();
-    }
-
-    public RestTemplate getLogTemplate() {
-        return logTemplate;
     }
 
     @Scheduled(cron = "0 3 * * * *")
@@ -86,7 +82,7 @@ public class CommandExecutorService {
     }
 
     public void parseLogDay(final Date logDay) {
-        List<DataCommand> result = logTemplate.execute(urlLogDate.format(logDay), HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
+        List<DataCommand> result = logTemplate.execute(Constants.Net.LOG_PATH + urlLogDate.format(logDay), HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
             @Override
             public List<DataCommand> extractData(ClientHttpResponse response) throws IOException {
                 Parser parser = new Parser(logDay);

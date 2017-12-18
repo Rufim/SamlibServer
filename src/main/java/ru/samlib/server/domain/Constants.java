@@ -20,7 +20,7 @@ public class Constants {
         public static final String BASE_HOST = "samlib.ru";
         public static final String BASE_DOMAIN = BASE_SCHEME + "://" + BASE_HOST;
         public static final String USER_AGENT = "Mozilla";
-        public static final String LOG_PATH = "logs";
+        public static final String LOG_PATH = BASE_DOMAIN + "/logs";
     }
 
     public static class Pattern {
