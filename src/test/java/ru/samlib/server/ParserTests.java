@@ -1,13 +1,16 @@
 package ru.samlib.server;
 
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.client.MockRestServiceServer;
 import ru.samlib.server.domain.Constants;
 import ru.samlib.server.domain.dao.AuthorDao;
 import ru.samlib.server.domain.dao.CategoryDao;
@@ -21,15 +24,21 @@ import ru.samlib.server.util.Log;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Calendar;
 import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
+import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
+import static ru.samlib.server.util.SystemUtils.readFile;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
+@RestClientTest(CommandExecutorService.class)
 public class ParserTests {
 
     public static final String TAG = ParserTests.class.getSimpleName();
@@ -47,10 +56,17 @@ public class ParserTests {
     private WorkDao workDao;
 
 
+    @Autowired
+    private MockRestServiceServer server;
+
+
     @Before
-    public void loadTestFile() {
+    public void setUp() throws FileNotFoundException {
         ClassLoader classLoader = getClass().getClassLoader();
         logTestFile = new File(classLoader.getResource("test-log.txt").getFile());
+        this.server.expect(requestTo("/2015/05-06.log"))
+                .andExpect(method(HttpMethod.GET))
+                .andRespond(withSuccess(readFile(logTestFile, "CP1251"), MediaType.TEXT_PLAIN));
     }
 
     @Test
@@ -77,8 +93,8 @@ public class ParserTests {
         assertEquals(2, works.size());
     }
 
-
-
-
-
+    @Test
+    public void testScheduler() {
+        executorService.scheduledExecution();
+    }
 }
