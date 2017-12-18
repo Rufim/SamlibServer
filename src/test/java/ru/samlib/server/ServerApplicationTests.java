@@ -30,9 +30,8 @@ public class ServerApplicationTests {
 	}
 
 
-	/*@Test
+	@Test
 	public void liveTestScheduler() {
-		executorService.MAX_LOGS_PER_DAY = 3;
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.DAY_OF_YEAR, -4);
 		ParsingInfo info = new ParsingInfo();
@@ -43,6 +42,6 @@ public class ServerApplicationTests {
 	    info.setWithoutExceptions(false);
 		parsingInfoDao.save(info);
 		executorService.scheduledExecution();
-	} */
+	}
 
 }

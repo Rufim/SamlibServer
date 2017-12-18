@@ -11,5 +11,5 @@ import javax.transaction.Transactional;
 public interface ParsingInfoDao extends CrudRepository<ParsingInfo, Long> {
 
 
-    ParsingInfo findFirstByOrderByLogDateDesc();
+    ParsingInfo findFirstByParsedTrueOrderByLogDateDesc();
 }

@@ -14,7 +14,6 @@ import ru.samlib.server.domain.entity.*;
 import ru.samlib.server.util.Log;
 import ru.samlib.server.util.TextUtils;
 
-import javax.persistence.Transient;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -24,7 +23,6 @@ import java.util.List;
 @Service
 public class CommandExecutorService {
 
-    public static int MAX_LOGS_PER_DAY = 30;
     private static final String TAG = CommandExecutorService.class.getSimpleName();
 
     @Autowired
@@ -52,11 +50,11 @@ public class CommandExecutorService {
                 .build();
     }
 
-    @Scheduled(cron = "0 3 * * * *")
+    @Scheduled(cron = "5 * * * * *")
     public void scheduledExecution() {
         Calendar calendar = Calendar.getInstance();
         Date lastParsedDay;
-        ParsingInfo info = infoDao.findFirstByOrderByLogDateDesc();
+        ParsingInfo info = infoDao.findFirstByParsedTrueOrderByLogDateDesc();
         if (info != null) {
             lastParsedDay = info.getLogDate();
         } else {
@@ -75,7 +73,7 @@ public class CommandExecutorService {
         dayToParse.add(Calendar.DAY_OF_YEAR, 1);
         int daysParsed = 0;
         while ((calendar.get(Calendar.YEAR) > dayToParse.get(Calendar.YEAR)
-                || calendar.get(Calendar.DAY_OF_YEAR) > dayToParse.get(Calendar.DAY_OF_YEAR)) && daysParsed < MAX_LOGS_PER_DAY) {
+                || calendar.get(Calendar.DAY_OF_YEAR) > dayToParse.get(Calendar.DAY_OF_YEAR)) && daysParsed < constants.getLogsPerDay()) {
             parseLogDay(dayToParse.getTime());
             daysParsed++;
             dayToParse.add(Calendar.DAY_OF_YEAR, 1);

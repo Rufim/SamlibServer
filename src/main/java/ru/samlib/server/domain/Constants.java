@@ -40,6 +40,7 @@ public class Constants {
     }
 
     private String firstLogDay;
+    private Integer logsPerDay;
 
     public String getFirstLogDay() {
         return firstLogDay;
@@ -49,4 +50,11 @@ public class Constants {
         this.firstLogDay = firstLogDay;
     }
 
+    public Integer getLogsPerDay() {
+        return logsPerDay;
+    }
+
+    public void setLogsPerDay(Integer logsPerDay) {
+        this.logsPerDay = logsPerDay;
+    }
 }

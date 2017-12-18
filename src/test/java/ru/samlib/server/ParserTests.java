@@ -103,7 +103,6 @@ public class ParserTests {
 
     @Test
     public void testScheduler() {
-        executorService.MAX_LOGS_PER_DAY = 1;
         executorService.scheduledExecution();
     }
 }

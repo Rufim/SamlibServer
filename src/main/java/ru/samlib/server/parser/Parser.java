@@ -110,10 +110,9 @@ public class Parser {
                 dataCommand.setGenre(Genre.parseGenre(fields[6]));
                 dataCommand.setAnnotation(fields[7]);
                 if (TextUtils.notEmpty(fields[8])) dataCommand.setCreateDate(dateFormat.parse(fields[8]));
-                dataCommand.setImageCount(fields[9].isEmpty() ? 0 : Integer.parseInt(fields[9]));
-                dataCommand.setUnixtime(Long.parseLong(fields[10]));
-                if (TextUtils.notEmpty(fields[11]))
-                    dataCommand.setSize(Integer.parseInt(fields[11].substring(0, fields[11].length() - 1)));
+                if (TextUtils.notEmpty(fields[9])) dataCommand.setImageCount(Integer.parseInt(fields[9]));
+                if (TextUtils.notEmpty(fields[10])) dataCommand.setUnixtime(Long.parseLong(fields[10]));
+                if (TextUtils.notEmpty(fields[11])) dataCommand.setSize(Integer.parseInt(fields[11].substring(0, fields[11].length() - 1)));
                 return dataCommand;
             } catch (Exception ex) {
                 addLog(Log.LOG_LEVEL.ERROR, ex, line);
