@@ -102,6 +102,8 @@ public class CommandExecutorService {
                 TimeUnit.MILLISECONDS.toMinutes(processTime),
                 TimeUnit.MILLISECONDS.toSeconds(processTime) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(processTime))
         ), info);
+        info.setParsed(true);
+        info.setWithoutExceptions(info.getLogEvents().size() == 0);
         infoDao.save(info);
     }
 

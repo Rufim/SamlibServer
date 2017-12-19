@@ -57,8 +57,6 @@ public class Parser {
         } catch (Exception e) {
             addLog(Log.LOG_LEVEL.ERROR, e, "Error while read log input");
         }
-        info.setParsed(true);
-        info.setWithoutExceptions(info.getLogEvents().size() == 0);
         return dataCommands;
     }
 
