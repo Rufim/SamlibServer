@@ -32,8 +32,11 @@ public class ServerApplicationTests {
 	@Autowired
 	private WorkDao workDao;
 
+
+
 	@Test
 	public void contextLoads() {
+		while (true) { }
 	}
 
 

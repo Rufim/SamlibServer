@@ -3,7 +3,9 @@ package ru.samlib.server;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.core.env.Environment;
@@ -13,7 +15,6 @@ import ru.samlib.server.util.Log;
 import ru.samlib.server.util.TextUtils;
 
 @SpringBootApplication
-@EnableScheduling
 public class ServerApplication {
 
 	@Autowired
@@ -39,6 +40,14 @@ public class ServerApplication {
 	@Bean
 	public Constants newConstants() {
 		return new Constants();
+	}
+
+
+	@ConditionalOnProperty(value = "settings.server.scheduling", havingValue = "true", matchIfMissing = true)
+	@Configuration
+	@EnableScheduling
+	public static class SchedulingConfiguration {
+
 	}
 }
 

@@ -25,13 +25,9 @@ public class Parser {
 
     final LogEventDao logEventDao;
 
-    public Parser(Date logDay, String link, LogEventDao logEventDao) {
+    public Parser(ParsingInfo info, LogEventDao logEventDao) {
         this.logEventDao = logEventDao;
-        info = new ParsingInfo();
-        info.setLogDate(logDay);
-        info.setParseDate(new Date());
-        info.setLogEvents(new TreeSet<>());
-        info.setLink(link);
+        this.info = info;
     }
 
     public ParsingInfo getInfo() {

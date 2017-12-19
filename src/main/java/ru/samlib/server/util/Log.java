@@ -374,7 +374,6 @@ public final class Log {
             if (ex != null) logEvent.setTrace(Log.getStackTraceString(ex));
             if (info != null) {
                 logEvent.setParsingInfo(info);
-                info.addLogEvent(logEvent);
             }
             dao.saveAndFlush(logEvent);
         }

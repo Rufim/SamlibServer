@@ -76,18 +76,18 @@ public class ParserTests {
     public void parseTestFile() throws Exception {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, 2015);
-        ParsingInfo info;
+        ParsingInfo info = new ParsingInfo(calendar.getTime(), Constants.Net.LOG_PATH + "/2015/06-30.log");
         List<DataCommand> result;
         try (FileInputStream inputStream = new FileInputStream(logTestFile)) {
-            Parser parser = new Parser(calendar.getTime(), Constants.Net.LOG_PATH + "/2015/06-30.log", logEventDao);
+            Parser parser = new Parser(info, logEventDao);
             result = parser.parseInput(inputStream);
             info = parser.getInfo();
         }
-        assertTrue(info != null && info.isWithoutExceptions());
         assertEquals(10, result.size());
         for (DataCommand dataCommand : result) {
-            executorService.executeCommand(dataCommand);
+            executorService.executeCommand(dataCommand, info);
         }
+        assertTrue(info.getLogEvents().isEmpty());
         List<Author> authors = (List<Author>) authorDao.findAll();
         List<Category> categories = (List<Category>) categoryDao.findAll();
         List<Work> works = (List<Work>) workDao.findAll();

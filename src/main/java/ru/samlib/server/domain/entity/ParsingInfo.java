@@ -32,4 +32,14 @@ public class ParsingInfo {
             logEvents.add(logEvent);
         }
     }
+
+    public ParsingInfo() {
+    }
+
+    public ParsingInfo(Date logDate, String link) {
+        this.logDate = logDate;
+        this.link = link;
+        this.parseDate = new Date();
+        this.logEvents = new TreeSet<>();
+    }
 }

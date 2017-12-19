@@ -51,60 +51,65 @@ public class CommandExecutorService {
                 .build();
     }
 
-    @Scheduled(cron = "*/20 * * * * *")  //3 реквестов в минуту
+    @Scheduled(cron = "*/20 * * * * *")  //3 реквеста в минуту
     public void scheduledExecution() {
-        Calendar calendar = Calendar.getInstance();
-        Date lastParsedDay;
-        ParsingInfo info = infoDao.findFirstByParsedTrueOrderByLogDateDesc();
-        if (info != null) {
-            lastParsedDay = info.getLogDate();
-        } else {
-            try {
-                lastParsedDay = new SimpleDateFormat("yyyy-MM-dd").parse(constants.getFirstLogDay());
-            } catch (Exception e) {
-                LogEvent event = new LogEvent();
-                event.setCorruptedData("Cannot found last parse log day");
-                logEventDao.save(event);
-                Log.e(TAG, e.getMessage(), e);
-                return;
+        synchronized (CommandExecutorService.class) {
+            Calendar calendar = Calendar.getInstance();
+            Date lastParsedDay;
+            ParsingInfo info = infoDao.findFirstByParsedTrueOrderByLogDateDesc();
+            if (info != null) {
+                lastParsedDay = info.getLogDate();
+            } else {
+                try {
+                    lastParsedDay = new SimpleDateFormat("yyyy-MM-dd").parse(constants.getFirstLogDay());
+                } catch (Exception e) {
+                    LogEvent event = new LogEvent();
+                    event.setCorruptedData("Cannot found last parse log day");
+                    logEventDao.save(event);
+                    Log.e(TAG, e.getMessage(), e);
+                    return;
+                }
             }
-        }
-        Calendar dayToParse = Calendar.getInstance();
-        dayToParse.setTime(lastParsedDay);
-        dayToParse.add(Calendar.DAY_OF_YEAR, 1);
-        int daysParsed = 0;
-        while ((calendar.get(Calendar.YEAR) > dayToParse.get(Calendar.YEAR)
-                || calendar.get(Calendar.DAY_OF_YEAR) > dayToParse.get(Calendar.DAY_OF_YEAR)) && daysParsed < constants.getLogsPerDay()) {
-            parseLogDay(dayToParse.getTime());
-            daysParsed++;
+            Calendar dayToParse = Calendar.getInstance();
+            dayToParse.setTime(lastParsedDay);
             dayToParse.add(Calendar.DAY_OF_YEAR, 1);
+            int daysParsed = 0;
+            while ((calendar.get(Calendar.YEAR) > dayToParse.get(Calendar.YEAR)
+                    || calendar.get(Calendar.DAY_OF_YEAR) > dayToParse.get(Calendar.DAY_OF_YEAR)) && daysParsed < constants.getLogsPerDay()) {
+                parseLogDay(dayToParse.getTime());
+                daysParsed++;
+                dayToParse.add(Calendar.DAY_OF_YEAR, 1);
+            }
         }
     }
 
 
     public void parseLogDay(final Date logDay) {
         String url = Constants.Net.LOG_PATH + urlLogDate.format(logDay);
-        long time = System.currentTimeMillis();
-        final Parser parser = new Parser(logDay, url, logEventDao);
-        ParsingInfo info = parser.getInfo();
-        addLog(Log.LOG_LEVEL.INFO, null, "Start parse. Url=" + url, info);
-        List<DataCommand> result = logTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
-            @Override
-            public List<DataCommand> extractData(ClientHttpResponse response) throws IOException {
-                return parser.parseInput(response.getBody());
+        synchronized (url.intern()) {
+            long time = System.currentTimeMillis();
+            ParsingInfo info = new ParsingInfo(logDay, url);
+            info = infoDao.saveAndFlush(info);
+            final Parser parser = new Parser(info, logEventDao);
+            addLog(Log.LOG_LEVEL.INFO, null, "Start parse. Url=" + url, info);
+            List<DataCommand> result = logTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
+                @Override
+                public List<DataCommand> extractData(ClientHttpResponse response) throws IOException {
+                    return parser.parseInput(response.getBody());
+                }
+            });
+            for (DataCommand dataCommand : result) {
+                executeCommand(dataCommand, info);
             }
-        });
-        for (DataCommand dataCommand : result) {
-            executeCommand(dataCommand, info);
+            long processTime = System.currentTimeMillis() - time;
+            addLog(Log.LOG_LEVEL.INFO, null, "End parse. Url=" + url + " commands=" + result.size() + " time=" + String.format("%d min, %d sec",
+                    TimeUnit.MILLISECONDS.toMinutes(processTime),
+                    TimeUnit.MILLISECONDS.toSeconds(processTime) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(processTime))
+            ), info);
+            info.setParsed(true);
+            info.setWithoutExceptions(info.getLogEvents().size() == 0);
+            infoDao.saveAndFlush(info);
         }
-        long processTime = System.currentTimeMillis() - time;
-        addLog(Log.LOG_LEVEL.INFO, null, "End parse. Url=" + url + " commands=" + result.size() + " time=" + String.format("%d min, %d sec",
-                TimeUnit.MILLISECONDS.toMinutes(processTime),
-                TimeUnit.MILLISECONDS.toSeconds(processTime) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(processTime))
-        ), info);
-        info.setParsed(true);
-        info.setWithoutExceptions(info.getLogEvents().size() == 0);
-        infoDao.save(info);
     }
 
 
