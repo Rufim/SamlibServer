@@ -50,6 +50,7 @@ public class Work implements Serializable, Linkable, Validatable {
     Integer kudoed;
     BigDecimal expertRate;
     Integer expertKudoed;
+    Integer views;
     @ElementCollection(targetClass = Genre.class)
     @CollectionTable(name = "genres")
     @Column(name = "genre", nullable = false)
