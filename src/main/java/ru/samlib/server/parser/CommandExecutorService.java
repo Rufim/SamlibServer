@@ -51,7 +51,7 @@ public class CommandExecutorService {
                 .build();
     }
 
-    @Scheduled(cron = "* */5 * * * *")
+    @Scheduled(cron = "*/20 * * * * *")  //3 реквестов в минуту
     public void scheduledExecution() {
         Calendar calendar = Calendar.getInstance();
         Date lastParsedDay;
@@ -84,29 +84,29 @@ public class CommandExecutorService {
 
     public void parseLogDay(final Date logDay) {
         String url = Constants.Net.LOG_PATH + urlLogDate.format(logDay);
-        addLog(Log.LOG_LEVEL.INFO, null, "Start parse. Url=" + url);
         long time = System.currentTimeMillis();
+        final Parser parser = new Parser(logDay, url, logEventDao);
+        ParsingInfo info = parser.getInfo();
+        addLog(Log.LOG_LEVEL.INFO, null, "Start parse. Url=" + url, info);
         List<DataCommand> result = logTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
             @Override
             public List<DataCommand> extractData(ClientHttpResponse response) throws IOException {
-                Parser parser = new Parser(logDay, url, logEventDao);
-                List<DataCommand> result = parser.parseInput(response.getBody());
-                infoDao.save(parser.getInfo());
-                return result;
+                return parser.parseInput(response.getBody());
             }
         });
         for (DataCommand dataCommand : result) {
-            executeCommand(dataCommand);
+            executeCommand(dataCommand, info);
         }
         long processTime = System.currentTimeMillis() - time;
         addLog(Log.LOG_LEVEL.INFO, null, "End parse. Url=" + url + " commands=" + result.size() + " time=" + String.format("%d min, %d sec",
                 TimeUnit.MILLISECONDS.toMinutes(processTime),
                 TimeUnit.MILLISECONDS.toSeconds(processTime) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(processTime))
-        ));
+        ), info);
+        infoDao.save(info);
     }
 
 
-    public void executeCommand(DataCommand dataCommand) {
+    public void executeCommand(DataCommand dataCommand, ParsingInfo info) {
         try {
             if (dataCommand != null && TextUtils.notEmpty(dataCommand.link)) {
                 String link = dataCommand.link;
@@ -174,11 +174,11 @@ public class CommandExecutorService {
                 }
             }
         } catch (Exception ex) {
-            addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error by command - " + dataCommand);
+            addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error by command - " + dataCommand, info);
         }
     }
 
-    private void addLog(Log.LOG_LEVEL logLevel, Exception ex, String corruptedData) {
-        Log.saveLogEvent(logLevel, ex, corruptedData, logEventDao);
+    private void addLog(Log.LOG_LEVEL logLevel, Exception ex, String corruptedData, ParsingInfo info) {
+        Log.saveLogEvent(logLevel, ex, corruptedData, logEventDao, info);
     }
 }
