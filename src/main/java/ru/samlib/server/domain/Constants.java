@@ -26,6 +26,7 @@ public class Constants {
     public static class Pattern {
         public static final String TIME_PATTERN = "HH:mm:ss";
         public static final String DATA_PATTERN = "dd/MM/yyyy";
+        public static final String DATA_PATTERN_DIFF = "dd.MM.yyyy";
         public static final String DATA_TIME_PATTERN = "dd-MM-yyyy HH:mm:ss";
         public static final String DATA_ISO_8601_24H_FULL_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
         public static final String DATA_ISO_8601_24H_FULL_FORMAT_WITHOUT_MC = "yyyy-MM-dd'T'HH:mm:ss'Z'";

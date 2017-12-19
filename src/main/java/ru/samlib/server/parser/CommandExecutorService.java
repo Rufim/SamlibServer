@@ -100,11 +100,15 @@ public class CommandExecutorService {
         try {
             if (dataCommand != null && TextUtils.notEmpty(dataCommand.link)) {
                 String link = dataCommand.link;
-                if (link.endsWith("about")) {
-                    Work newWork = new Work(dataCommand.link);
-                    Author newAuthor = newWork.getAuthor();
+                if (link.endsWith("/about") || link.endsWith("/")) {
+                    Author newAuthor = new Author(link.substring(0, link.lastIndexOf("/") + 1));
                     newAuthor.setFullName(dataCommand.authorName);
-                    newAuthor.setAnnotation(dataCommand.annotation);
+                    if(link.endsWith("/")) {
+                        newAuthor.setAbout(dataCommand.title);
+                    }
+                    if(link.endsWith("/about")) {
+                        newAuthor.setAnnotation(dataCommand.annotation);
+                    }
                     authorDao.save(newAuthor);
                 } else {
                     Work oldWork = workDao.findOne(link);
@@ -117,6 +121,7 @@ public class CommandExecutorService {
                     newWork.setCategory(category);
                     newWork.addGenre(dataCommand.genre);
                     newWork.setType(dataCommand.type);
+                    newWork.setTitle(dataCommand.title);
                     newWork.setChangedDate(dataCommand.commandDate);
                     newWork.setAnnotation(dataCommand.annotation);
                     newWork.setCreateDate(dataCommand.createDate);

@@ -12,7 +12,7 @@ public class DataCommand {
     String link;
     Command command;
     Date commandDate;
-    String workName;
+    String title;
     String authorName;
     Type type;
     Genre genre;
