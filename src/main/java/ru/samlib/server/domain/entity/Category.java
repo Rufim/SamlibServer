@@ -31,6 +31,7 @@ public class Category implements Linkable, Serializable {
     @MapsId("authorLink")
     @ManyToOne
     Author author;
+    @Enumerated(EnumType.STRING)
     Type type = Type.OTHER;
     @OneToMany(orphanRemoval = true)
     List<Work> works = new LinkedList<>();
