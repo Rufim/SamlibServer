@@ -17,11 +17,11 @@ public interface Linkable {
         return Constants.Net.BASE_DOMAIN + TextUtils.cleanupSlashes(getLink());
     }
 
-    public default boolean isWork() {
+    public default boolean isWorkLink() {
         return isWorkLink(getLink());
     }
 
-    public default boolean isAuthor() {
+    public default boolean isAuthorLink() {
         return isAuthorLink(getLink());
     }
 

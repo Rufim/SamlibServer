@@ -5,33 +5,26 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScans;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.client.MockRestServiceServer;
 import ru.samlib.server.domain.Constants;
 import ru.samlib.server.domain.dao.AuthorDao;
 import ru.samlib.server.domain.dao.CategoryDao;
-import ru.samlib.server.domain.dao.ParsingInfoDao;
+import ru.samlib.server.domain.dao.LogEventDao;
 import ru.samlib.server.domain.dao.WorkDao;
 import ru.samlib.server.domain.entity.*;
 import ru.samlib.server.parser.CommandExecutorService;
 import ru.samlib.server.parser.DataCommand;
 import ru.samlib.server.parser.Parser;
-import ru.samlib.server.util.Log;
 
-import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -66,6 +59,8 @@ public class ParserTests {
 
     @Autowired
     private MockRestServiceServer server;
+    @Autowired
+    private LogEventDao logEventDao;
 
 
     @Before
@@ -84,7 +79,7 @@ public class ParserTests {
         ParsingInfo info;
         List<DataCommand> result;
         try (FileInputStream inputStream = new FileInputStream(logTestFile)) {
-            Parser parser = new Parser(calendar.getTime());
+            Parser parser = new Parser(calendar.getTime(), Constants.Net.LOG_PATH + "/2015/06-30.log", logEventDao);
             result = parser.parseInput(inputStream);
             info = parser.getInfo();
         }

@@ -2,11 +2,11 @@ package ru.samlib.server.domain.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.hibernate.annotations.SortComparator;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.SortedSet;
+import java.util.TreeSet;
 
 @Data
 @Entity
@@ -20,8 +20,16 @@ public class ParsingInfo {
     private Date parseDate;
     private Date logDate;
     private boolean parsed = false;
-    private boolean withoutExceptions = true;
+    private String link;
+    private boolean withoutExceptions = false;
     @OneToMany(cascade = CascadeType.ALL)
     @OrderBy("time DESC")
     private SortedSet<LogEvent> logEvents;
+
+    public void addLogEvent(LogEvent logEvent) {
+        if(logEvent != null) {
+            if(logEvents == null) logEvents = new TreeSet<>();
+            logEvents.add(logEvent);
+        }
+    }
 }

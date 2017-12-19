@@ -1,7 +1,5 @@
 package ru.samlib.server.parser;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 public enum Command {
     EDT,  //редактирование атрибутов
     TXT,  //textedit DEL

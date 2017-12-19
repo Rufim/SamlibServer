@@ -1,14 +1,12 @@
 package ru.samlib.server.domain.entity;
 
 
-
 import lombok.Data;
 import ru.samlib.server.domain.Linkable;
 import ru.samlib.server.domain.Validatable;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  * Created by Rufim on 01.07.2015.

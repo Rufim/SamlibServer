@@ -23,7 +23,7 @@ public class LogEvent implements Comparable<LogEvent> {
     private String corruptedData;
     @Enumerated(EnumType.STRING)
     private Log.LOG_LEVEL logLevel;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private ParsingInfo parsingInfo;
 
     @Override

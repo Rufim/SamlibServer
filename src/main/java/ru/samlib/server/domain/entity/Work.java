@@ -3,19 +3,17 @@ package ru.samlib.server.domain.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 import ru.samlib.server.domain.Linkable;
 import ru.samlib.server.domain.Validatable;
 import ru.samlib.server.util.TextUtils;
 
 import javax.persistence.*;
-import java.awt.*;
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 
@@ -51,6 +49,7 @@ public class Work implements Serializable, Linkable, Validatable {
     BigDecimal expertRate;
     Integer expertKudoed;
     Integer views;
+    Integer activityCounter = 0;
     @ElementCollection(targetClass = Genre.class)
     @CollectionTable(name = "genres")
     @Column(name = "genre", nullable = false)

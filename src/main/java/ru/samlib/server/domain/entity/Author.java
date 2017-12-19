@@ -2,10 +2,8 @@ package ru.samlib.server.domain.entity;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
 import ru.samlib.server.domain.Linkable;
 import ru.samlib.server.domain.Validatable;
 import ru.samlib.server.util.TextUtils;

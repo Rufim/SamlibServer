@@ -1,8 +1,8 @@
 package ru.samlib.server.parser;
 
 import ru.samlib.server.domain.Constants;
+import ru.samlib.server.domain.dao.LogEventDao;
 import ru.samlib.server.domain.entity.Genre;
-import ru.samlib.server.domain.entity.LogEvent;
 import ru.samlib.server.domain.entity.ParsingInfo;
 import ru.samlib.server.domain.entity.Type;
 import ru.samlib.server.util.Log;
@@ -18,24 +18,20 @@ import java.util.*;
 public class Parser {
     private static final String TAG = "Parser";
 
-    private boolean logEvents;
     private ParsingInfo info;
-    private SortedSet<LogEvent> events;
-    private SimpleDateFormat dateTimeFormat = new SimpleDateFormat(Constants.Pattern.DATA_TIME_PATTERN);
+    private SimpleDateFormat dateTimeFormat = new SimpleDateFormat(Constants.Pattern.DATA_ISO_8601);
     private SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.Pattern.DATA_PATTERN);
     private SimpleDateFormat dateFormatDiff = new SimpleDateFormat(Constants.Pattern.DATA_PATTERN_DIFF);
 
-    public Parser(Date logDay) {
-        this(logDay, true);
-    }
+    final LogEventDao logEventDao;
 
-    public Parser(Date logDay, boolean logEvents) {
-        this.logEvents = logEvents;
+    public Parser(Date logDay, String link, LogEventDao logEventDao) {
+        this.logEventDao = logEventDao;
         info = new ParsingInfo();
         info.setLogDate(logDay);
         info.setParseDate(new Date());
         info.setLogEvents(new TreeSet<>());
-        events = info.getLogEvents();
+        info.setLink(link);
     }
 
     public ParsingInfo getInfo() {
@@ -84,8 +80,8 @@ public class Parser {
     private DataCommand parseLine(String line) {
         if (TextUtils.notEmpty(line)) {
             try {
-                String[] fields = line.split("\\|");
-                if(fields.length != 11) {
+                String[] fields = line.split("\\|", -1);
+                if(fields.length != 12) {
                     addLog(Log.LOG_LEVEL.ERROR, new Exception("Invalid line"), line);
                     return null;
                 }
@@ -127,8 +123,8 @@ public class Parser {
 
 
     private void addLog(Log.LOG_LEVEL logLevel, Exception ex, String corruptedData) {
-        if (logEvents) {
-            events.add(Log.generateLogEvent(logLevel, ex, corruptedData, info));
+        if (logEventDao != null) {
+            Log.saveLogEvent(logLevel, ex, corruptedData, logEventDao, info);
         }
     }
 

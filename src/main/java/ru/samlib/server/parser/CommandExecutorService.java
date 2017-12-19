@@ -19,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class CommandExecutorService {
@@ -50,7 +51,7 @@ public class CommandExecutorService {
                 .build();
     }
 
-    @Scheduled(cron = "5 * * * * *")
+    @Scheduled(cron = "* */5 * * * *")
     public void scheduledExecution() {
         Calendar calendar = Calendar.getInstance();
         Date lastParsedDay;
@@ -82,10 +83,13 @@ public class CommandExecutorService {
 
 
     public void parseLogDay(final Date logDay) {
-        List<DataCommand> result = logTemplate.execute(Constants.Net.LOG_PATH + urlLogDate.format(logDay), HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
+        String url = Constants.Net.LOG_PATH + urlLogDate.format(logDay);
+        addLog(Log.LOG_LEVEL.INFO, null, "Start parse. Url=" + url);
+        long time = System.currentTimeMillis();
+        List<DataCommand> result = logTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
             @Override
             public List<DataCommand> extractData(ClientHttpResponse response) throws IOException {
-                Parser parser = new Parser(logDay);
+                Parser parser = new Parser(logDay, url, logEventDao);
                 List<DataCommand> result = parser.parseInput(response.getBody());
                 infoDao.save(parser.getInfo());
                 return result;
@@ -94,7 +98,13 @@ public class CommandExecutorService {
         for (DataCommand dataCommand : result) {
             executeCommand(dataCommand);
         }
+        long processTime = System.currentTimeMillis() - time;
+        addLog(Log.LOG_LEVEL.INFO, null, "End parse. Url=" + url + " commands=" + result.size() + " time=" + String.format("%d min, %d sec",
+                TimeUnit.MILLISECONDS.toMinutes(processTime),
+                TimeUnit.MILLISECONDS.toSeconds(processTime) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(processTime))
+        ));
     }
+
 
     public void executeCommand(DataCommand dataCommand) {
         try {
@@ -103,10 +113,10 @@ public class CommandExecutorService {
                 if (link.endsWith("/about") || link.endsWith("/")) {
                     Author newAuthor = new Author(link.substring(0, link.lastIndexOf("/") + 1));
                     newAuthor.setFullName(dataCommand.authorName);
-                    if(link.endsWith("/")) {
+                    if (link.endsWith("/")) {
                         newAuthor.setAbout(dataCommand.title);
                     }
-                    if(link.endsWith("/about")) {
+                    if (link.endsWith("/about")) {
                         newAuthor.setAnnotation(dataCommand.annotation);
                     }
                     authorDao.save(newAuthor);
@@ -126,9 +136,11 @@ public class CommandExecutorService {
                     newWork.setAnnotation(dataCommand.annotation);
                     newWork.setCreateDate(dataCommand.createDate);
                     newWork.setSize(dataCommand.size);
-                    newWork.setUpdateDate(dataCommand.createDate);
-                    if (newWork.getChangedDate() == null) {
-                        newWork.setChangedDate(new Date());
+                    if (oldWork != null) {
+                        newWork.setActivityCounter(newWork.getActivityCounter() + 1);
+                        newWork.setUpdateDate(oldWork.getUpdateDate());
+                    } else {
+                        newWork.setUpdateDate(dataCommand.createDate);
                     }
                     if (newWork.getSize() == null && oldWork != null) {
                         newWork.setSize(oldWork.getSize());
@@ -141,17 +153,13 @@ public class CommandExecutorService {
                         case RPL:
                         case REN:
                         case UNK:
-                            if (oldWork != null) {
-                                newWork.setChangedDate(oldWork.getChangedDate());
-                            } else {
-                                newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
-                            }
                             authorDao.save(newWork.getAuthor());
                             categoryDao.save(newWork.getCategory());
                             workDao.save(newWork);
                             break;
                         case NEW:
                         case TXT:
+                            newWork.setUpdateDate(dataCommand.commandDate);
                             newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
                             authorDao.save(newWork.getAuthor());
                             categoryDao.save(newWork.getCategory());
@@ -171,6 +179,6 @@ public class CommandExecutorService {
     }
 
     private void addLog(Log.LOG_LEVEL logLevel, Exception ex, String corruptedData) {
-        logEventDao.save(Log.generateLogEvent(logLevel, ex, corruptedData));
+        Log.saveLogEvent(logLevel, ex, corruptedData, logEventDao);
     }
 }

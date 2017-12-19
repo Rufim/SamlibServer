@@ -1,12 +1,7 @@
 package ru.samlib.server.domain;
 
 import org.intellij.lang.annotations.RegExp;
-import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 /**
  * Created by Rufim on 07.01.2015.
@@ -27,7 +22,7 @@ public class Constants {
         public static final String TIME_PATTERN = "HH:mm:ss";
         public static final String DATA_PATTERN = "dd/MM/yyyy";
         public static final String DATA_PATTERN_DIFF = "dd.MM.yyyy";
-        public static final String DATA_TIME_PATTERN = "dd-MM-yyyy HH:mm:ss";
+        public static final String DATA_ISO_8601 = "yyyy-MM-dd HH:mm:ss";
         public static final String DATA_ISO_8601_24H_FULL_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
         public static final String DATA_ISO_8601_24H_FULL_FORMAT_WITHOUT_MC = "yyyy-MM-dd'T'HH:mm:ss'Z'";
         @RegExp
