@@ -51,7 +51,7 @@ public class CommandExecutorService {
                 .build();
     }
 
-    @Scheduled(cron = "*/20 * * * * *")  //3 реквеста в минуту
+    @Scheduled(cron = "*/30 * * * * *")  //2 реквеста в минуту
     public void scheduledExecution() {
         synchronized (CommandExecutorService.class) {
             Calendar calendar = Calendar.getInstance();
