@@ -35,6 +35,7 @@ public class Author implements Serializable, Linkable, Validatable {
     @Column(columnDefinition = "TEXT")
     String annotation;
     @Enumerated(EnumType.STRING)
+    @Access(AccessType.PROPERTY)
     Gender gender;
     Date dateBirth;
     String address;
@@ -150,7 +151,7 @@ public class Author implements Serializable, Linkable, Validatable {
             String names[] = fullName.split(" ");
             lastName = names[0];
         }
-        if (shortName != null) {
+        if (shortName != null && lastName == null) {
             String names[] = shortName.split(" ");
             lastName = names[0];
         }

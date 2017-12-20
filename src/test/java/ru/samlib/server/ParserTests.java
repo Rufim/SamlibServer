@@ -83,17 +83,22 @@ public class ParserTests {
             result = parser.parseInput(inputStream);
             info = parser.getInfo();
         }
-        assertEquals(10, result.size());
+        assertEquals(13, result.size());
         for (DataCommand dataCommand : result) {
             executorService.executeCommand(dataCommand, info);
         }
         assertTrue(info.getLogEvents().isEmpty());
-        List<Author> authors = (List<Author>) authorDao.findAll();
-        List<Category> categories = (List<Category>) categoryDao.findAll();
-        List<Work> works = (List<Work>) workDao.findAll();
+        List<Author> authors = authorDao.findAll();
+        List<Category> categories =  categoryDao.findAll();
+        List<Work> works =  workDao.findAll();
         assertEquals(5, authors.size());
         assertEquals(3, categories.size());
         assertEquals(2, works.size());
+        List<Work> workList = workDao.searchWorksByActivity("максимОва", Type.NOVEL, Genre.FICTION, null, null);
+        assertEquals(1, workList.size());
+        assertEquals(2, workList.get(0).getActivityCounter().intValue());
+        workList = workDao.searchWorksByActivity("дьявол-Хранитель", Type.ARTICLE, Genre.PROSE, null, null);
+        assertEquals(1, workList.size());
     }
 
     @Test

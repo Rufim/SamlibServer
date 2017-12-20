@@ -88,7 +88,7 @@ public class Parser {
                     try {
                         if (command.length() > 3) {
                             dataCommand.setCommand(Command.valueOf(fields[1].substring(0, 3)));
-                            title = fields[1].substring(4, fields[1].length());
+                            title = fields[1].substring(4, fields[1].length() - 1);
                         } else {
                             dataCommand.setCommand(Command.valueOf(fields[1]));
                         }

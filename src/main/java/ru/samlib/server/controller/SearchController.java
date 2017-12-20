@@ -11,6 +11,8 @@ import ru.samlib.server.domain.dao.WorkDao;
 import ru.samlib.server.domain.entity.Genre;
 import ru.samlib.server.domain.entity.Type;
 import ru.samlib.server.domain.entity.Work;
+import ru.samlib.server.util.Log;
+import ru.samlib.server.util.TextUtils;
 
 import java.util.Collection;
 
@@ -22,25 +24,17 @@ public class SearchController {
     @Autowired
     WorkDao workDao;
 
+    //http://localhost:8080/search-works?page=1&query=%D0%AF%D1%81%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9
     @GetMapping("/search-works")
     public Collection<Work> searchWorks(@RequestParam("query") String query, @RequestParam("genre") String genre, @RequestParam("type") String type, @RequestParam("page") Integer page) {
+        Log.i(SearchController.class, "q=" + query + " g=" + genre + " t=" + type + " p=" + page);
         String queryVal = query == null ? "" : query;
         Genre genreVal = Genre.parseGenre(genre);
-        Type typeVal = Type.parseType(type);
+        Type typeVal = TextUtils.isEmpty(type) ? null : Type.parseType(type);
         Integer pageVal = page == null ? 0 : page;
         if(pageVal < 0) pageVal = 0;
         pageVal *= pageSize;
-        PageRequest pageRequest = new PageRequest(pageVal , pageVal + pageSize, Sort.Direction.DESC, "views");
-        if(genreVal == null && typeVal == null) {
-            return workDao.searchWorksSimple(queryVal, pageRequest);
-        }
-        if(typeVal == null) {
-            return workDao.searchWorksSimple(queryVal, genreVal, pageRequest);
-        }
-        if(genreVal == null) {
-            return workDao.searchWorksSimple(queryVal, typeVal, pageRequest);
-        }
-        return workDao.searchWorksSimple(queryVal, typeVal, genreVal, pageRequest);
+        return workDao.searchWorksByActivity(queryVal, typeVal, genreVal, pageVal, pageVal + pageSize);
     }
 
 

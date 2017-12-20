@@ -149,7 +149,6 @@ public class CommandExecutorService {
                     newWork.setCreateDate(dataCommand.createDate);
                     newWork.setSize(dataCommand.size);
                     if (oldWork != null) {
-                        newWork.setActivityCounter(newWork.getActivityCounter() + 1);
                         newWork.setUpdateDate(oldWork.getUpdateDate());
                     } else {
                         newWork.setUpdateDate(dataCommand.createDate);
@@ -160,17 +159,24 @@ public class CommandExecutorService {
                     if (newWork.getCreateDate() == null && oldWork != null) {
                         newWork.setCreateDate(oldWork.getCreateDate());
                     }
+                    newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
                     switch (dataCommand.getCommand()) {
                         case EDT:
                         case RPL:
                         case REN:
                         case UNK:
+                            if (oldWork != null) {
+                                newWork.setActivityCounter(oldWork.getActivityCounter());
+                            }
                             authorDao.save(newWork.getAuthor());
                             categoryDao.save(newWork.getCategory());
                             workDao.save(newWork);
                             break;
                         case NEW:
                         case TXT:
+                            if (oldWork != null) {
+                                newWork.setActivityCounter(oldWork.getActivityCounter() + 1);
+                            }
                             newWork.setUpdateDate(dataCommand.commandDate);
                             newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
                             authorDao.save(newWork.getAuthor());

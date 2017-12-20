@@ -1,7 +1,10 @@
 package ru.samlib.server.domain;
 
 
+import org.springframework.data.annotation.Transient;
 import ru.samlib.server.util.TextUtils;
+
+
 
 /**
  * Created by Rufim on 02.07.2015.
@@ -14,15 +17,15 @@ public interface Linkable {
     public String getAnnotation();
 
     public default String getFullLink() {
-        return Constants.Net.BASE_DOMAIN + TextUtils.cleanupSlashes(getLink());
+        return Constants.Net.BASE_DOMAIN + TextUtils.cleanupSlashes(getLink() == null ? "" : getLink());
     }
 
     public default boolean isWorkLink() {
-        return isWorkLink(getLink());
+        return isWorkLink(getLink() == null ? "" : getLink());
     }
 
     public default boolean isAuthorLink() {
-        return isAuthorLink(getLink());
+        return isAuthorLink(getLink() == null ? "" : getLink());
     }
 
 

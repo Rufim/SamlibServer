@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface WorkDaoCustom {
     
-    List<Work> searchWorks(String query, Type type, Genre genre, Integer offset, Integer limit);
+    List<Work> searchWorksByActivity(String query, Type type, Genre genre, Integer offset, Integer limit);
 
 }
