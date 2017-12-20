@@ -11,6 +11,7 @@ import ru.samlib.server.util.TextUtils;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -103,7 +104,11 @@ public class Parser {
                 dataCommand.setType(Type.parseType(fields[5]));
                 dataCommand.setGenre(Genre.parseGenre(fields[6]));
                 dataCommand.setAnnotation(fields[7]);
-                if (TextUtils.notEmpty(fields[8])) dataCommand.setCreateDate(fields[8].contains("/") ? dateFormat.parse(fields[8]) : dateFormatDiff.parse(fields[8]));
+                try {
+                    if (TextUtils.notEmpty(fields[8])) dataCommand.setCreateDate(fields[8].contains("/") ? dateFormat.parse(fields[8]) : dateFormatDiff.parse(fields[8]));
+                } catch (ParseException ex) {
+                    dataCommand.setCreateDate(null);
+                }
                 if (TextUtils.notEmpty(fields[9])) dataCommand.setImageCount(Integer.parseInt(fields[9]));
                 if (TextUtils.notEmpty(fields[10])) dataCommand.setUnixtime(Long.parseLong(fields[10]));
                 if (TextUtils.notEmpty(fields[11])) dataCommand.setSize(Integer.parseInt(fields[11].substring(0, fields[11].length() - 1)));

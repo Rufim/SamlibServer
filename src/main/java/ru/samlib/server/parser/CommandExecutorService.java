@@ -25,7 +25,9 @@ import java.util.concurrent.TimeUnit;
 public class CommandExecutorService {
 
     private static final String TAG = CommandExecutorService.class.getSimpleName();
-
+            /*
+            http://samlib.ru/cgi-bin/areader?q=razdel&order=date&object=/s/saharow_w_i/
+             */
     @Autowired
     private Constants constants;
     @Autowired
@@ -117,6 +119,9 @@ public class CommandExecutorService {
         try {
             if (dataCommand != null && TextUtils.notEmpty(dataCommand.link)) {
                 String link = dataCommand.link;
+                if(dataCommand.getTitle() != null && dataCommand.getTitle().length() > 250) {
+                    dataCommand.setTitle(dataCommand.getTitle().substring(0,250) + "...");
+                }
                 if (link.endsWith("/about") || link.endsWith("/")) {
                     Author newAuthor = new Author(link.substring(0, link.lastIndexOf("/") + 1));
                     newAuthor.setFullName(dataCommand.authorName);
