@@ -36,7 +36,6 @@ public class ServerApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		while (true) { }
 	}
 
 

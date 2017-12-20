@@ -20,7 +20,7 @@ import ru.samlib.server.util.Log;
 import ru.samlib.server.util.TextUtils;
 
 @SpringBootApplication
-public class ServerApplication extends SpringBootServletInitializer  {
+public class ServerApplication  {
 
 	@Autowired
 	Environment environment;
@@ -28,12 +28,6 @@ public class ServerApplication extends SpringBootServletInitializer  {
 	public static void main(String[] args)  {
 		SpringApplication.run(ServerApplication.class, args);
 	}
-
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(ServerApplication.class);
-	}
-
 
 	// on app startup
 	@EventListener(ContextRefreshedEvent.class)
