@@ -72,6 +72,7 @@ public final class Log {
 
     private static LOG_LEVEL current_level = LOG_LEVEL.INFO;
     private static File logFile;
+    private static DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
     static {
         if (printToFile) {
@@ -315,7 +316,6 @@ public final class Log {
      */
     public static int log_writer(LOG_LEVEL level, Object tag, String msg) {
         if (current_level.level_int >= level.level_int) {
-            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             Calendar cal = Calendar.getInstance();
             String record;
             if (tag instanceof Class) {
