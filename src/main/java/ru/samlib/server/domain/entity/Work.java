@@ -50,9 +50,10 @@ public class Work implements Serializable, Linkable, Validatable {
     Integer expertKudoed;
     Integer views;
     Integer activityCounter = 0;
-    @ElementCollection(targetClass = Genre.class)
-    @CollectionTable(name = "genres")
-    @Column(name = "genre", nullable = false)
+    @ElementCollection(targetClass = Genre.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "genres", uniqueConstraints = @UniqueConstraint(columnNames =
+            {"work_link", "genre"}))
+    @Column(name = "genre")
     @Enumerated(EnumType.STRING)
     List<Genre> genres = new ArrayList<>();
     @Enumerated(EnumType.STRING)

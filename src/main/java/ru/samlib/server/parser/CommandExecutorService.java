@@ -16,9 +16,7 @@ import ru.samlib.server.util.TextUtils;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -135,30 +133,35 @@ public class CommandExecutorService {
                     authorDao.save(newAuthor);
                 } else {
                     Work oldWork = workDao.findOne(link);
-                    Work newWork = new Work(dataCommand.link);
+                    Work newWork;
+                    if(oldWork != null) {
+                        newWork = oldWork;
+                    }  else {
+                        newWork = new Work(dataCommand.link);
+                    }
                     newWork.getAuthor().setFullName(dataCommand.authorName);
-                    Category category = new Category();
-                    category.setType(dataCommand.type);
-                    category.setId(new CategoryId(newWork.getAuthor().getLink(), category.getTitle()));
-                    category.setAuthor(newWork.getAuthor());
-                    newWork.setCategory(category);
-                    newWork.addGenre(dataCommand.genre);
+                    Category newCategory = new Category();
+                    newCategory.setType(dataCommand.type);
+                    CategoryId id = new CategoryId(newWork.getAuthor().getLink(), newCategory.getTitle());
+                    if(oldWork == null || oldWork.getCategory() == null || !oldWork.getCategory().getId().equals(id)) {
+                        newCategory.setId(id);
+                        newCategory.setAuthor(newWork.getAuthor());
+                        newWork.setCategory(newCategory);
+                    }
+                    newWork.setGenres(Arrays.asList(dataCommand.genre));
                     newWork.setType(dataCommand.type);
                     newWork.setTitle(dataCommand.title);
                     newWork.setChangedDate(dataCommand.commandDate);
                     newWork.setAnnotation(dataCommand.annotation);
                     newWork.setCreateDate(dataCommand.createDate);
-                    newWork.setSize(dataCommand.size);
-                    if (oldWork != null) {
-                        newWork.setUpdateDate(oldWork.getUpdateDate());
-                    } else {
+                    if (oldWork == null) {
                         newWork.setUpdateDate(dataCommand.createDate);
                     }
-                    if (newWork.getSize() == null && oldWork != null) {
-                        newWork.setSize(oldWork.getSize());
+                    if (dataCommand.size != null) {
+                        newWork.setSize(dataCommand.size);
                     }
-                    if (newWork.getCreateDate() == null && oldWork != null) {
-                        newWork.setCreateDate(oldWork.getCreateDate());
+                    if (dataCommand.createDate != null) {
+                        newWork.setCreateDate(dataCommand.createDate);
                     }
                     newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
                     switch (dataCommand.getCommand()) {
