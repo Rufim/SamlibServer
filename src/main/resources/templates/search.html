@@ -41,21 +41,21 @@
                     Check me out
                 </label>
             </div> -->
-            <button class=" btn btn-dark" type="submit">Найти</button>
+            <button class="btn" style="background-color: #222222;color: whitesmoke;" type="submit">Найти</button>
         </form>
-        <div th:if="${works != null}" class="table" style="margin-top: 30px">
+        <div th:if="${works != null}" style="margin-top: 30px">
             <div th:if="${!works.isEmpty()}">
-                <table cellspacing="35" border="0" width="800px">
+                <table cellspacing="35" border="0" class="table" width="800px">
                     <tr th:each="work : ${works}">
                         <td>
                             <table border="0">
                                 <tr>
-                                    <td><a class="font-weight-bold" style="font-size: medium;"
+                                    <td><a target="_blank" class="font-weight-bold" style="font-size: medium;"
                                            th:href="@{'http://www.samlib.ru'+${work.link}+'.shtml'}"
                                            th:text="${work.title}"></a></td>
                                 </tr>
                                 <tr>
-                                    <td><a class="font-weight-bold" style="font-size: large; color: darkolivegreen"
+                                    <td><a target="_blank" class="font-weight-bold" style="font-size: large; color: darkolivegreen"
                                            th:href="@{'http://www.samlib.ru'+ ${work.author.link}}"
                                            th:text="${work.author.title}"></a></td>
                                 </tr>
