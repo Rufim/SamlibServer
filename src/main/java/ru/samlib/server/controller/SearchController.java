@@ -40,6 +40,7 @@ public class SearchController {
         Genre genreVal = Genre.parseGenre(genre);
         Type typeVal = TextUtils.isEmpty(type) ? null : Type.parseType(type);
         Integer pageVal = page == null ? 0 : page;
+        pageVal -= 1;
         if(pageVal < 0) pageVal = 0;
         pageVal *= pageSize;
         return workDao.searchWorksByActivity(queryVal, typeVal, genreVal, pageVal, pageVal + pageSize);
@@ -51,10 +52,11 @@ public class SearchController {
         modelMap.addAttribute("query", query);
         modelMap.addAttribute("genre", genre);
         modelMap.addAttribute("type", type);
-        modelMap.addAttribute("page", page);
+        modelMap.addAttribute("page", page == null ? 1 : page);
         modelMap.addAttribute("types", (List<Type>) Stream.of(Type.values()).filter(t -> !Type.OTHER.equals(t)).collect(Collectors.toList()));
         modelMap.addAttribute("genres", (List<Genre>) Arrays.asList(Genre.values()));
         return "search";
     }
+
 
 }

@@ -19,29 +19,31 @@
     <div th:replace="fragments/header :: header"/>
     <div class="center-block" style="margin-top: 35px">
         <form method="get" action="/search" class=" drop-shadow" style="padding: 15px; border-radius: 10px;">
-            <input type="hidden" name="page" th:value="${param.page}" value="0"/>
+            <input type="hidden" name="page" th:value="${param.page}" value="1"/>
             <input value="" th:value="${param.query}" width="800px" class="form-control" type="search" name="query"
                    placeholder="Введите имя автора или название книги"/>
             <div class="form-group" style="margin-top: 10px;">
                 <label for="type">Форма:</label>
                 <select class="form-control" id="type" name="type">
                     <option></option>
-                    <option th:each="t : ${types}" th:value="${t.name()}" th:text="${t.title}" th:selected="${t.name().equals(param.type)}"></option>
+                    <option th:each="t : ${types}" th:value="${t.name()}" th:text="${t.title}"
+                            th:selected="${t.name().equals(param.type)}"></option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="genre">Жанр:</label>
                 <select class="form-control" name="genre" id="genre">
                     <option></option>
-                    <option th:each="g : ${genres}" th:value="${g.name()}" th:text="${g.title}" th:selected="${g.name().equals(param.genre)}"></option>
+                    <option th:each="g : ${genres}" th:value="${g.name()}" th:text="${g.title}"
+                            th:selected="${g.name().equals(param.genre)}"></option>
                 </select>
             </div>
-           <!-- <div class="form-check">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
-                    Check me out
-                </label>
-            </div> -->
+            <!-- <div class="form-check">
+                 <label class="form-check-label">
+                     <input type="checkbox" class="form-check-input">
+                     Check me out
+                 </label>
+             </div> -->
             <button class="btn" style="background-color: #222222;color: whitesmoke;" type="submit">Найти</button>
         </form>
         <div th:if="${works != null}" style="margin-top: 30px">
@@ -56,7 +58,8 @@
                                            th:text="${work.title}"></a></td>
                                 </tr>
                                 <tr>
-                                    <td><a target="_blank" class="font-weight-bold" style="font-size: large; color: darkolivegreen"
+                                    <td><a target="_blank" class="font-weight-bold"
+                                           style="font-size: large; color: darkolivegreen"
                                            th:href="@{'http://www.samlib.ru'+ ${work.author.link}}"
                                            th:text="${work.author.title}"></a></td>
                                 </tr>
@@ -70,9 +73,26 @@
                         </td>
                     </tr>
                 </table>
+                <table border="0" class="center-block">
+                    <tr valign="top">
+                        <td th:if="${page == null}">
+                            <span>1</span>
+                        </td>
+                        <td th:if="${page != null}" th:each="i: ${#numbers.sequence(1, page)}">
+                            <span th:if="${page == i}" th:text="${i}"></span>
+                            <span th:if="${page != i}">
+                                <a class="fl" th:href="'/search?query='+ ${param.query}
+                                   + '&amp;type=' + ${param.type}
+                                   + '&amp;genre=' + ${param.genre}
+                                   + '&amp;page=' + ${param.page}
+                                  " th:text="${param.page}"></a>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div th:if="${works.isEmpty()}">
-                 Ничего не найдено!
+                Ничего не найдено!
             </div>
         </div>
 
