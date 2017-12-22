@@ -51,6 +51,10 @@ public class CommandExecutorService {
                 .build();
     }
 
+    public Constants getConstants() {
+        return constants;
+    }
+
     //@Scheduled(cron = "*/15 * * * * *")  //4 реквеста в минуту
     @Scheduled(fixedDelay = 15000)
     public void scheduledExecution() {

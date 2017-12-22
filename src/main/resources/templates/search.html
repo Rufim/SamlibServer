@@ -1,3 +1,4 @@
+<!--/*@thymesVar id="param" type="java.util.Map<java.lang.String, java.lang.String>"*/-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:lang="ru">
@@ -18,21 +19,21 @@
     <div th:replace="fragments/header :: header"/>
     <div class="center-block" style="margin-top: 35px">
         <form method="get" action="/search" class=" drop-shadow" style="padding: 15px; border-radius: 10px;">
-            <input type="hidden" name="page" value="0"/>
-            <input value="" th:value="${query}" width="800px" class="form-control" type="search" name="query"
+            <input type="hidden" name="page" th:value="${param.page}" value="0"/>
+            <input value="" th:value="${param.query}" width="800px" class="form-control" type="search" name="query"
                    placeholder="Введите имя автора или название книги"/>
             <div class="form-group" style="margin-top: 10px;">
                 <label for="type">Форма:</label>
                 <select class="form-control" id="type" name="type">
                     <option></option>
-                    <option th:each="t : ${types}" th:value="${t.name()}" th:text="${t.title}" th:selected="${t.name().equals(type)}"></option>
+                    <option th:each="t : ${types}" th:value="${t.name()}" th:text="${t.title}" th:selected="${t.name().equals(param.type)}"></option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="genre">Жанр:</label>
                 <select class="form-control" name="genre" id="genre">
                     <option></option>
-                    <option th:each="g : ${genres}" th:value="${g.name()}" th:text="${g.title}" th:selected="${g.name().equals(genre)}"></option>
+                    <option th:each="g : ${genres}" th:value="${g.name()}" th:text="${g.title}" th:selected="${g.name().equals(param.genre)}"></option>
                 </select>
             </div>
            <!-- <div class="form-check">

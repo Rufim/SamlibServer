@@ -375,7 +375,7 @@ public final class Log {
             if (info != null) {
                 logEvent.setParsingInfo(info);
             }
-            dao.saveAndFlush(logEvent);
+            dao.save(logEvent);
         }
     }
 

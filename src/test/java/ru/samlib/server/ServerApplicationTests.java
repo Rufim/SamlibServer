@@ -29,8 +29,6 @@ public class ServerApplicationTests {
 	private ParsingInfoDao parsingInfoDao;
 	@Autowired
 	private CommandExecutorService executorService;
-	@Autowired
-	private WorkDao workDao;
 
 
 

@@ -101,8 +101,4 @@ public class ParserTests {
         assertEquals(1, workList.size());
     }
 
-    @Test
-    public void testScheduler() {
-        executorService.scheduledExecution();
-    }
 }
