@@ -33,9 +33,9 @@ public class Category implements Linkable, Serializable {
     Author author;
     @Enumerated(EnumType.STRING)
     Type type = Type.OTHER;
-    @OneToMany(orphanRemoval = true)
+    @OneToMany(orphanRemoval = true, mappedBy = "category")
     List<Work> works = new LinkedList<>();
-    @OneToMany(orphanRemoval = true)
+    @OneToMany(orphanRemoval = true, mappedBy = "category")
     List<Link> links = new LinkedList<>();
     String link;
 

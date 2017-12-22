@@ -14,6 +14,13 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.core.env.Environment;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import ru.samlib.server.controller.SearchController;
 import ru.samlib.server.domain.Constants;
 import ru.samlib.server.util.Log;
@@ -51,6 +58,16 @@ public class ServerApplication  {
 	@Configuration
 	@EnableScheduling
 	public static class SchedulingConfiguration {
+
+	}
+
+	@Configuration
+	public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+		@Override
+		protected void configure(HttpSecurity httpSecurity) throws Exception {
+			httpSecurity.authorizeRequests().antMatchers("/").permitAll();
+		}
 
 	}
 }

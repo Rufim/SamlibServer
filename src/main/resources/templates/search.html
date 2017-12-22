@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:lang="ru">
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}"
+          href="../static/css/style.css"/>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Samlib search and statistic server</title>
+</head>
+<body>
+<div class="container">
+    <div th:replace="fragments/header :: header"/>
+    <div class="center-block" style="margin-top: 35px">
+        <form method="get" action="/search" class=" drop-shadow" style="padding: 15px; border-radius: 10px;">
+            <input type="hidden" name="page" value="0"/>
+            <input value="" th:value="${query}" width="800px" class="form-control" type="search" name="query"
+                   placeholder="Введите имя автора или название книги"/>
+            <div class="form-group" style="margin-top: 10px;">
+                <label for="type">Форма:</label>
+                <select class="form-control" id="type" name="type">
+                    <option></option>
+                    <option th:each="t : ${types}" th:value="${t.name()}" th:text="${t.title}" th:selected="${t.name().equals(type)}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="genre">Жанр:</label>
+                <select class="form-control" name="genre" id="genre">
+                    <option></option>
+                    <option th:each="g : ${genres}" th:value="${g.name()}" th:text="${g.title}" th:selected="${g.name().equals(genre)}"></option>
+                </select>
+            </div>
+           <!-- <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input">
+                    Check me out
+                </label>
+            </div> -->
+            <button class=" btn btn-dark" type="submit">Найти</button>
+        </form>
+        <div th:if="${works != null}" class="table" style="margin-top: 30px">
+            <div th:if="${!works.isEmpty()}">
+                <table cellspacing="35" border="0" width="800px">
+                    <tr th:each="work : ${works}">
+                        <td>
+                            <table border="0">
+                                <tr>
+                                    <td><a class="font-weight-bold" style="font-size: medium;"
+                                           th:href="@{'http://www.samlib.ru'+${work.link}+'.shtml'}"
+                                           th:text="${work.title}"></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="font-weight-bold" style="font-size: large; color: darkolivegreen"
+                                           th:href="@{'http://www.samlib.ru'+ ${work.author.link}}"
+                                           th:text="${work.author.title}"></a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="font-size: small; font-family: arial,sans-serif;"
+                                             th:text="${work.annotation}"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div th:if="${works.isEmpty()}">
+                 Ничего не найдено!
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

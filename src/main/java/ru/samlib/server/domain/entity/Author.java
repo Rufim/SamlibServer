@@ -54,11 +54,11 @@ public class Author implements Serializable, Linkable, Validatable {
     Integer views;
     String about;
     String sectionAnnotation;
-    @OneToMany(orphanRemoval = true)
+    @OneToMany(orphanRemoval = true, mappedBy = "author")
     List<Category> categories = new LinkedList<>();
-    @OneToMany(orphanRemoval = true)
+    @OneToMany(orphanRemoval = true, mappedBy = "author")
     List<Link> links = new LinkedList<>();
-    @OneToMany(orphanRemoval = true)
+    @OneToMany(orphanRemoval = true, mappedBy = "author")
     List<Work> works = new LinkedList<>();
 
     @Transient

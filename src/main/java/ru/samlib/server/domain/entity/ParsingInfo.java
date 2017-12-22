@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -22,9 +23,9 @@ public class ParsingInfo {
     private boolean parsed = false;
     private String link;
     private boolean withoutExceptions = false;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parsingInfo")
     @OrderBy("time DESC")
-    private SortedSet<LogEvent> logEvents;
+    private Set<LogEvent> logEvents;
 
     public void addLogEvent(LogEvent logEvent) {
         if(logEvent != null) {
