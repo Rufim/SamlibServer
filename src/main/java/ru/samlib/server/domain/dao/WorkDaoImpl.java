@@ -1,14 +1,9 @@
 package ru.samlib.server.domain.dao;
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.support.JpaEntityInformation;
-import org.springframework.data.jpa.repository.support.JpaEntityInformationSupport;
-import ru.samlib.server.domain.entity.Genre;
-import ru.samlib.server.domain.entity.Type;
-import ru.samlib.server.domain.entity.Work;
+import org.springframework.transaction.annotation.Transactional;
+import ru.samlib.server.domain.entity.*;
 import ru.samlib.server.util.TextUtils;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -52,5 +47,56 @@ public class WorkDaoImpl implements WorkDaoCustom {
         if(offset != null && offset >= 0) typedQuery.setFirstResult(offset);
         if(limit != null && limit >= 0) typedQuery.setMaxResults(limit);
         return typedQuery.getResultList();
+    }
+
+    @Override
+    @Transactional
+    public Work saveWork(Work newWork, boolean update) {
+        if(!em.isJoinedToTransaction()) {
+            em.joinTransaction();
+        }
+        if(!update) {
+            Category category = em.find(Category.class, new CategoryId(newWork.getAuthor().getLink(), newWork.getType().getTitle()));
+            Author author = null;
+            if(category != null) {
+                // em.merge(newWork.getCategory()); // другой инфы о категории, кроме СategoryId, у нас нет -> мержить нечего
+                newWork.setCategory(category);
+                newWork.setAuthor(merge(category.getAuthor(), newWork.getAuthor()));
+                author = category.getAuthor();
+            } else {
+                author = em.find(Author.class, newWork.getAuthor().getLink());
+                if(author != null) {
+                    newWork.setAuthor(merge(author, newWork.getAuthor()));
+                    newWork.getCategory().setAuthor(newWork.getAuthor());
+                }
+            }
+            if(author == null) em.persist(newWork.getAuthor());
+            if(category == null) em.persist(newWork.getCategory());
+            em.persist(newWork);
+            return newWork;
+        } else {
+            Author author = em.merge(newWork.getAuthor());
+            newWork.setAuthor(author);
+            newWork.getCategory().setAuthor(author);
+            newWork.setCategory(em.merge(newWork.getCategory()));
+            return em.merge(newWork);
+        }
+
+    }
+
+    private Author merge(Author origin, Author newData) {
+        boolean merge = false;
+        if(TextUtils.notEmpty(newData.getFullName()) && !newData.getFullName().equals(origin.getFullName())){
+            merge = true;
+            origin.setFullName(newData.getFullName());
+        }
+        if (newData.getLastUpdateDate() != null && !newData.getLastUpdateDate().equals(origin.getLastUpdateDate())) {
+            merge = true;
+            origin.setLastUpdateDate(newData.getLastUpdateDate());
+        }
+        if(merge) {
+            return em.merge(origin);
+        }
+        return origin;
     }
 }

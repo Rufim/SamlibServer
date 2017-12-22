@@ -21,8 +21,8 @@ import java.util.List;
  * Created by Rufim on 22.05.2014.
  */
 @Data
-@EqualsAndHashCode(callSuper = false, exclude = {"rawContent", "rootElements", "chapters", "annotationBlocks", "indents"})
-@ToString(exclude = {"rawContent", "rootElements", "chapters", "annotationBlocks", "indents"})
+@EqualsAndHashCode(callSuper = false)
+@ToString
 @Entity
 @Table(name = "work")
 public class Work implements Serializable, Linkable, Validatable {

@@ -2,6 +2,7 @@ package ru.samlib.server.domain.entity;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import ru.samlib.server.domain.Linkable;
@@ -55,10 +56,13 @@ public class Author implements Serializable, Linkable, Validatable {
     String about;
     String sectionAnnotation;
     @OneToMany(orphanRemoval = true, mappedBy = "author")
+    @JsonIgnore
     List<Category> categories = new LinkedList<>();
     @OneToMany(orphanRemoval = true, mappedBy = "author")
+    @JsonIgnore
     List<Link> links = new LinkedList<>();
     @OneToMany(orphanRemoval = true, mappedBy = "author")
+    @JsonIgnore
     List<Work> works = new LinkedList<>();
 
     @Transient
@@ -181,6 +185,7 @@ public class Author implements Serializable, Linkable, Validatable {
     }
 
     @Transient
+    @JsonIgnore
     public List<Category> getLinkableCategory() {
         return Stream.of(getCategories())
                 .filter(sec -> sec.getLink() != null)
@@ -188,6 +193,7 @@ public class Author implements Serializable, Linkable, Validatable {
     }
 
     @Transient
+    @JsonIgnore
     public List<Category> getStaticCategory() {
         return Stream.of(getCategories())
                 .filter(sec -> sec.getLink() == null)
@@ -195,6 +201,7 @@ public class Author implements Serializable, Linkable, Validatable {
     }
 
     @Transient
+    @JsonIgnore
     public List<Work> getUpdates() {
         List<Work> updates = new ArrayList<>();
         for (Category category : getCategories()) {
@@ -237,6 +244,7 @@ public class Author implements Serializable, Linkable, Validatable {
     }
 
     @Transient
+    @JsonIgnore
     public Map<String, Work> getAllWorks() {
         LinkedHashMap<String, Work> map = new LinkedHashMap<>();
         for (Work work : getWorks()) {
@@ -271,6 +279,8 @@ public class Author implements Serializable, Linkable, Validatable {
         }
     }
 
+    @JsonIgnore
+    @Transient
     public List<Linkable> getLinkables() {
         List<Linkable> linkables = new ArrayList<>();
         if (getRootLinks() != null) {
@@ -283,11 +293,13 @@ public class Author implements Serializable, Linkable, Validatable {
     }
 
     @Transient
+    @JsonIgnore
     public List<Link> getRootLinks() {
         return Stream.of(getLinks()).filter(Link::isRootLink).collect(Collectors.toList());
     }
 
     @Transient
+    @JsonIgnore
     public List<Work> getRootWorks() {
         return Stream.of(getWorks()).filter(Work::isRootWork).collect(Collectors.toList());
     }
@@ -348,6 +360,7 @@ public class Author implements Serializable, Linkable, Validatable {
         getWorks().addAll(rootWorks);
     }
 
+    @JsonIgnore
     public List<Work> getRecommendations() {
         return Stream.of(getAllWorks().entrySet()).map(Map.Entry::getValue).filter(Work::isRecommendation).collect(Collectors.toList());
     }

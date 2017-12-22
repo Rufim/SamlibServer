@@ -29,7 +29,7 @@ public enum Type implements Linkable, Serializable {
     PLAY_SCREENPLAY("Пьеса; сценарий", "/type/index_type_9-1.shtml"),
     MINIATURE("Миниатюра", "/type/index_type_8-1.shtml"),
     INTERVIEW("Интервью", "/type/index_type_14-1.shtml"),
-    OTHER("Прочее", "");
+    OTHER("", "");
 
     private @Getter String title;
     private @Getter String link;

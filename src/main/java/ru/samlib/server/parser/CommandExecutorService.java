@@ -6,6 +6,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestTemplate;
 import ru.samlib.server.domain.Constants;
@@ -88,7 +89,7 @@ public class CommandExecutorService {
         }
     }
 
-
+    @Transactional
     public void parseLogDay(final Date logDay) {
         String url = Constants.Net.LOG_PATH + urlLogDate.format(logDay);
         synchronized (url.intern()) {
@@ -103,6 +104,7 @@ public class CommandExecutorService {
                     return parser.parseInput(response.getBody());
                 }
             });
+            List<Work> workList = new ArrayList<>();
             for (DataCommand dataCommand : result) {
                 executeCommand(dataCommand, info);
             }
@@ -140,7 +142,7 @@ public class CommandExecutorService {
                     Work newWork;
                     if(oldWork != null) {
                         newWork = oldWork;
-                    }  else {
+                    } else {
                         newWork = new Work(dataCommand.link);
                     }
                     newWork.getAuthor().setFullName(dataCommand.authorName);
@@ -152,7 +154,9 @@ public class CommandExecutorService {
                         newCategory.setAuthor(newWork.getAuthor());
                         newWork.setCategory(newCategory);
                     }
-                    newWork.setGenres(Arrays.asList(dataCommand.genre));
+                    ArrayList genres = new ArrayList(1);
+                    genres.add(dataCommand.genre);
+                    newWork.setGenres(genres);
                     newWork.setType(dataCommand.type);
                     newWork.setTitle(dataCommand.title);
                     newWork.setChangedDate(dataCommand.commandDate);
@@ -176,9 +180,7 @@ public class CommandExecutorService {
                             if (oldWork != null) {
                                 newWork.setActivityCounter(oldWork.getActivityCounter());
                             }
-                            authorDao.save(newWork.getAuthor());
-                            categoryDao.save(newWork.getCategory());
-                            workDao.save(newWork);
+                            workDao.saveWork(newWork, oldWork != null);
                             break;
                         case NEW:
                         case TXT:
@@ -187,9 +189,7 @@ public class CommandExecutorService {
                             }
                             newWork.setUpdateDate(dataCommand.commandDate);
                             newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
-                            authorDao.save(newWork.getAuthor());
-                            categoryDao.save(newWork.getCategory());
-                            workDao.save(newWork);
+                            workDao.saveWork(newWork, oldWork != null);
                             break;
                         case DEL:
                             if (oldWork != null) {

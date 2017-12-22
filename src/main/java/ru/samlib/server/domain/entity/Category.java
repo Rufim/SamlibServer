@@ -1,5 +1,6 @@
 package ru.samlib.server.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import ru.samlib.server.domain.Linkable;
 import ru.samlib.server.util.TextUtils;
@@ -30,12 +31,15 @@ public class Category implements Linkable, Serializable {
     String annotation;
     @MapsId("authorLink")
     @ManyToOne
+    @JsonIgnore
     Author author;
     @Enumerated(EnumType.STRING)
     Type type = Type.OTHER;
     @OneToMany(orphanRemoval = true, mappedBy = "category")
+    @JsonIgnore
     List<Work> works = new LinkedList<>();
     @OneToMany(orphanRemoval = true, mappedBy = "category")
+    @JsonIgnore
     List<Link> links = new LinkedList<>();
     String link;
 
@@ -82,6 +86,7 @@ public class Category implements Linkable, Serializable {
     }
 
     @Transient
+    @JsonIgnore
     public Linkable getLinkable() {
         if (Type.OTHER.equals(type)) {
             String title = id == null ? "" : id.title;
@@ -94,6 +99,7 @@ public class Category implements Linkable, Serializable {
     }
 
     @Transient
+    @JsonIgnore
     public List<Linkable> getLinkables() {
         List<Linkable> linkables = new ArrayList<>();
         linkables.addAll(getWorks());

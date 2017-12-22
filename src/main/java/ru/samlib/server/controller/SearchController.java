@@ -52,9 +52,11 @@ public class SearchController {
         modelMap.addAttribute("query", query);
         modelMap.addAttribute("genre", genre);
         modelMap.addAttribute("type", type);
-        modelMap.addAttribute("page", page == null ? 1 : page);
+        modelMap.addAttribute("page",  page = page == null ? 1 : page > 0 ? page : 1);
+        modelMap.addAttribute("minPage", page - 10 < 1 ? 1 : page - 10);
         modelMap.addAttribute("types", (List<Type>) Stream.of(Type.values()).filter(t -> !Type.OTHER.equals(t)).collect(Collectors.toList()));
         modelMap.addAttribute("genres", (List<Genre>) Arrays.asList(Genre.values()));
+        modelMap.addAttribute("pageSize", pageSize);
         return "search";
     }
 

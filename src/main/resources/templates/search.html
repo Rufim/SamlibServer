@@ -19,15 +19,15 @@
     <div th:replace="fragments/header :: header"/>
     <div class="center-block" style="margin-top: 35px">
         <form method="get" action="/search" class=" drop-shadow" style="padding: 15px; border-radius: 10px;">
-            <input type="hidden" name="page" th:value="${param.page}" value="1"/>
-            <input value="" th:value="${param.query}" width="800px" class="form-control" type="search" name="query"
+            <input type="hidden" name="page"  value="1"/>
+            <input value="" th:value="${query}" width="800px" class="form-control" type="search" name="query"
                    placeholder="Введите имя автора или название книги"/>
             <div class="form-group" style="margin-top: 10px;">
                 <label for="type">Форма:</label>
                 <select class="form-control" id="type" name="type">
                     <option></option>
                     <option th:each="t : ${types}" th:value="${t.name()}" th:text="${t.title}"
-                            th:selected="${t.name().equals(param.type)}"></option>
+                            th:selected="${t.name().equals(type)}"></option>
                 </select>
             </div>
             <div class="form-group">
@@ -35,7 +35,7 @@
                 <select class="form-control" name="genre" id="genre">
                     <option></option>
                     <option th:each="g : ${genres}" th:value="${g.name()}" th:text="${g.title}"
-                            th:selected="${g.name().equals(param.genre)}"></option>
+                            th:selected="${g.name().equals(genre)}"></option>
                 </select>
             </div>
             <!-- <div class="form-check">
@@ -73,30 +73,54 @@
                         </td>
                     </tr>
                 </table>
-                <table border="0" class="center-block">
-                    <tr valign="top">
-                        <td th:if="${page == null}">
-                            <span>1</span>
-                        </td>
-                        <td th:if="${page != null}" th:each="i: ${#numbers.sequence(1, page)}">
-                            <span th:if="${page == i}" th:text="${i}"></span>
-                            <span th:if="${page != i}">
-                                <a class="fl" th:href="'/search?query='+ ${param.query}
-                                   + '&amp;type=' + ${param.type}
-                                   + '&amp;genre=' + ${param.genre}
-                                   + '&amp;page=' + ${param.page}
-                                  " th:text="${param.page}"></a>
-                            </span>
-                        </td>
-                    </tr>
-                </table>
+                <div style="padding: 0 20px 20px 20px;">
+                    <table border="0" style="margin-left: 45%;">
+                        <tr valign="top">
+                            <td th:if="${page > 1}">
+                                <a class="fl" th:href="'/search?query='+ ${query}
+                                   + '&amp;type=' + ${type}
+                                   + '&amp;genre=' + ${genre}
+                                   + '&amp;page=' + ${page - 1}
+                                  ">&#60; Предыдущая </a>
+                            </td>
+                            <td th:if="${page != null}" th:each="i: ${#numbers.sequence(minPage, page)}">
+                                <span style="padding: 0 10px 0 10px;" th:if="${page == i}" th:text="${i}"></span>
+                                <span style="padding: 0 10px 0 10px;" th:if="${page != i}">
+                                <a class="fl" th:href="'/search?query='+ ${query}
+                                   + '&amp;type=' + ${type}
+                                   + '&amp;genre=' + ${genre}
+                                   + '&amp;page=' + ${page}
+                                  " th:text="${i}"></a>
+                                </span>
+                            </td>
+                            <td th:if="${works.size() >= pageSize}">
+                                <a class="fl" th:href="'/search?query='+ ${query}
+                                   + '&amp;type=' + ${type}
+                                   + '&amp;genre=' + ${genre}
+                                   + '&amp;page=' + ${page + 1}
+                                  ">Следующая &#62; </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div th:if="${works.isEmpty()}">
                 Ничего не найдено!
+                <div th:if="${page > 1}" style="padding: 0 20px 20px 20px;">
+                    <table border="0" style="margin-left: 45%;">
+                        <tr valign="top">
+                            <td>
+                            <a class="fl" th:href="'/search?query='+ ${query}
+                                   + '&amp;type=' + ${type}
+                                   + '&amp;genre=' + ${genre}
+                                   + '&amp;page=' + ${page - 1}
+                                  ">&#60; Предыдущая </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-
-
     </div>
 </div>
 </body>

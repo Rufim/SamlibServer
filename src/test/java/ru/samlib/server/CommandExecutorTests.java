@@ -14,6 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.client.MockRestServiceServer;
+import org.springframework.util.FileSystemUtils;
 import org.yaml.snakeyaml.Yaml;
 import ru.samlib.server.domain.Constants;
 import ru.samlib.server.domain.dao.*;
@@ -21,10 +22,12 @@ import ru.samlib.server.domain.entity.*;
 import ru.samlib.server.parser.CommandExecutorService;
 import ru.samlib.server.parser.DataCommand;
 import ru.samlib.server.parser.Parser;
+import ru.samlib.server.util.SystemUtils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.net.URI;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Calendar;
 import java.util.List;
 
@@ -52,15 +55,18 @@ public class CommandExecutorTests {
 
 
     @Before
-    public void setUp() throws FileNotFoundException {
+    public void setUp() throws IOException {
         ClassLoader classLoader = getClass().getClassLoader();
         logTestFile = new File(classLoader.getResource("actual-log.txt").getFile());
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        SystemUtils.readStream(new FileInputStream(logTestFile), os, new byte[4000]);
         for (int i = 0; i < 100; i++) {
             this.server.expect(requestTo("/2017/06-07.log"))
                     .andExpect(method(HttpMethod.GET))
-                    .andRespond(withSuccess(readFile(logTestFile, "CP1251"), MediaType.TEXT_PLAIN));
+                    .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
         }
     }
+
 
     @Ignore
     @Test

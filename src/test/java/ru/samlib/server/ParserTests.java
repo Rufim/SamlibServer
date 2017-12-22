@@ -24,10 +24,9 @@ import ru.samlib.server.domain.entity.*;
 import ru.samlib.server.parser.CommandExecutorService;
 import ru.samlib.server.parser.DataCommand;
 import ru.samlib.server.parser.Parser;
+import ru.samlib.server.util.SystemUtils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Calendar;
 import java.util.List;
 
@@ -64,12 +63,14 @@ public class ParserTests {
 
 
     @Before
-    public void setUp() throws FileNotFoundException {
+    public void setUp() throws IOException {
         ClassLoader classLoader = getClass().getClassLoader();
         logTestFile = new File(classLoader.getResource("test-log.txt").getFile());
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        SystemUtils.readStream(new FileInputStream(logTestFile), os, new byte[4000]);
         this.server.expect(requestTo("/2015/06-30.log"))
                 .andExpect(method(HttpMethod.GET))
-                .andRespond(withSuccess(readFile(logTestFile, "CP1251"), MediaType.TEXT_PLAIN));
+                .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
     }
 
     @Test
