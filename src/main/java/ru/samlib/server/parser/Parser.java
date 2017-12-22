@@ -44,7 +44,7 @@ public class Parser {
             StringBuilder builder = new StringBuilder();
             while ((line = reader.readLine()) != null) {
                 if (line.charAt(0) == '/') {
-                    String fullLine = TextUtils.trim(builder.toString());
+                    String fullLine = TextUtils.trim(builder.toString().replace('\0','0'));
                     addLine(fullLine, dataCommands);
                     builder = new StringBuilder();
                 }

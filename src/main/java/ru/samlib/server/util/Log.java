@@ -375,7 +375,10 @@ public final class Log {
             if (info != null) {
                 logEvent.setParsingInfo(info);
             }
-            dao.save(logEvent);
+            try {
+                dao.save(logEvent);
+            } catch (Throwable ignore) {
+            }
         }
     }
 
