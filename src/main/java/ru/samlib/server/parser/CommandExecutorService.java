@@ -24,9 +24,9 @@ import java.util.concurrent.TimeUnit;
 public class CommandExecutorService {
 
     private static final String TAG = CommandExecutorService.class.getSimpleName();
-            /*
-            http://samlib.ru/cgi-bin/areader?q=razdel&order=date&object=/s/saharow_w_i/
-             */
+    /*
+    http://samlib.ru/cgi-bin/areader?q=razdel&order=date&object=/s/saharow_w_i/
+     */
     @Autowired
     private Constants constants;
     @Autowired
@@ -40,13 +40,13 @@ public class CommandExecutorService {
     @Autowired
     private LogEventDao logEventDao;
 
-    private final RestTemplate logTemplate;
+    private final RestTemplate restTemplate;
 
     SimpleDateFormat urlLogDate = new SimpleDateFormat("/yyyy/MM-dd'.log'");
 
 
     public CommandExecutorService(RestTemplateBuilder restTemplateBuilder) {
-        this.logTemplate = restTemplateBuilder.rootUri(Constants.Net.LOG_PATH)
+        this.restTemplate = restTemplateBuilder.rootUri(Constants.Net.LOG_PATH)
                 .setConnectTimeout(15000)
                 .setReadTimeout(15000)
                 .build();
@@ -58,7 +58,7 @@ public class CommandExecutorService {
 
     //@Scheduled(cron = "*/15 * * * * *")  //4 реквеста в минуту
     @Scheduled(fixedDelay = 15000)
-    public void scheduledExecution() {
+    public void scheduledLogParseExecution() {
         synchronized (CommandExecutorService.class) {
             Calendar calendar = Calendar.getInstance();
             Date lastParsedDay;
@@ -89,22 +89,37 @@ public class CommandExecutorService {
         }
     }
 
-    @Transactional
+    @Scheduled(fixedDelay = 60000)
+    public void scheduledAuthorParseExecution() {
+        
+    }
+
+    public void parseAReaderAuthorLink(final String link) {
+        String url = Constants.Net.A_READER_QUERY + link;
+        ParsingInfo info = new ParsingInfo(new Date(), url);
+        parseUrl(url, info, Parser.getAReaderDelegateInstance());
+    }
+
+
     public void parseLogDay(final Date logDay) {
         String url = Constants.Net.LOG_PATH + urlLogDate.format(logDay);
+        ParsingInfo info = new ParsingInfo(logDay, url);
+        parseUrl(url, info, Parser.getLogDelegateInstance());
+    }
+
+    @Transactional
+    public void parseUrl(final String url, final ParsingInfo info, final Parser.ParseDelegate parseDelegate) {
         synchronized (url.intern()) {
             long time = System.currentTimeMillis();
-            ParsingInfo info = new ParsingInfo(logDay, url);
-            info = infoDao.saveAndFlush(info);
+            infoDao.saveAndFlush(info);
             final Parser parser = new Parser(info, logEventDao);
             addLog(Log.LOG_LEVEL.INFO, null, "Start parse. Url=" + url, info);
-            List<DataCommand> result = logTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
+            List<DataCommand> result = restTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
                 @Override
                 public List<DataCommand> extractData(ClientHttpResponse response) throws IOException {
-                    return parser.parseInput(response.getBody());
+                    return parser.parseInput(response.getBody(), parseDelegate);
                 }
             });
-            List<Work> workList = new ArrayList<>();
             for (DataCommand dataCommand : result) {
                 executeCommand(dataCommand, info);
             }
@@ -124,8 +139,8 @@ public class CommandExecutorService {
         try {
             if (dataCommand != null && TextUtils.notEmpty(dataCommand.link)) {
                 String link = dataCommand.link;
-                if(dataCommand.getTitle() != null && dataCommand.getTitle().length() > 250) {
-                    dataCommand.setTitle(dataCommand.getTitle().substring(0,250) + "...");
+                if (dataCommand.getTitle() != null && dataCommand.getTitle().length() > 250) {
+                    dataCommand.setTitle(dataCommand.getTitle().substring(0, 250) + "...");
                 }
                 if (link.endsWith("/about") || link.endsWith("/")) {
                     Author newAuthor = new Author(link.substring(0, link.lastIndexOf("/") + 1));
@@ -140,7 +155,7 @@ public class CommandExecutorService {
                 } else {
                     Work oldWork = workDao.findOne(link);
                     Work newWork;
-                    if(oldWork != null) {
+                    if (oldWork != null) {
                         newWork = oldWork;
                     } else {
                         newWork = new Work(dataCommand.link);
@@ -149,35 +164,46 @@ public class CommandExecutorService {
                     Category newCategory = new Category();
                     newCategory.setType(dataCommand.type);
                     CategoryId id = new CategoryId(newWork.getAuthor().getLink(), newCategory.getTitle());
-                    if(oldWork == null || oldWork.getCategory() == null || !oldWork.getCategory().getId().equals(id)) {
+                    if (oldWork == null || oldWork.getCategory() == null || !oldWork.getCategory().getId().equals(id)) {
                         newCategory.setId(id);
                         newCategory.setAuthor(newWork.getAuthor());
                         newWork.setCategory(newCategory);
                     }
-                    ArrayList genres = new ArrayList(1);
-                    genres.add(dataCommand.genre);
-                    newWork.setGenres(genres);
+                    if (!dataCommand.command.equals(Command.ARD) || oldWork == null) {
+                        ArrayList genres = new ArrayList(1);
+                        genres.add(dataCommand.genre);
+                        newWork.setGenres(genres);
+                    }
                     newWork.setType(dataCommand.type);
                     newWork.setTitle(dataCommand.title);
-                    newWork.setChangedDate(dataCommand.commandDate);
+                    if (!dataCommand.command.equals(Command.ARD)) {
+                        newWork.setChangedDate(dataCommand.commandDate);
+                    } else if (oldWork == null) {
+                        newWork.setChangedDate(dataCommand.createDate);
+                    }
                     newWork.setAnnotation(dataCommand.annotation);
                     newWork.setCreateDate(dataCommand.createDate);
+                    newWork.setWorkAuthorName(dataCommand.authorName);
                     if (oldWork == null) {
                         newWork.setUpdateDate(dataCommand.createDate);
+                        newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
+                    }
+                    if (dataCommand.createDate != null) {
+                        newWork.setCreateDate(dataCommand.createDate);
                     }
                     if (dataCommand.size != null) {
-                        if (oldWork != null && dataCommand.size > oldWork.getSize()) {
+                        if (oldWork != null && !dataCommand.command.equals(Command.ARD) && dataCommand.size > oldWork.getSize()) {
                             int activityWeight = (dataCommand.size - oldWork.getSize()); // 20k
-                            if(oldWork.getUpdateDate() == null) {
+                            if (oldWork.getUpdateDate() == null) {
                                 activityWeight = 1;
                             } else {
                                 int days = (int) TimeUnit.MILLISECONDS.toDays(info.getLogDate().getTime() - oldWork.getUpdateDate().getTime());
-                                if(days <= 0) {
+                                if (days <= 0) {
                                     if (days < 0) activityWeight = 0;
                                     days = 1;
                                 }
-                                activityWeight = (int) (((double)activityWeight) / days);
-                                if(activityWeight < 1) {
+                                activityWeight = (int) (((double) activityWeight) / days);
+                                if (activityWeight < 1) {
                                     activityWeight = 1;
                                 }
                             }
@@ -187,11 +213,10 @@ public class CommandExecutorService {
                         }
                         newWork.setSize(dataCommand.size);
                     }
-                    if (dataCommand.createDate != null) {
-                        newWork.setCreateDate(dataCommand.createDate);
-                    }
-                    newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
                     switch (dataCommand.getCommand()) {
+                        case ARD:
+                            newWork.setRate(dataCommand.rate);
+                            newWork.setViews(dataCommand.votes);
                         case EDT:
                         case RPL:
                         case REN:

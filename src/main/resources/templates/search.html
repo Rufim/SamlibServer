@@ -65,7 +65,7 @@
                                     <td><a target="_blank" class="font-weight-bold"
                                            style="font-size: large; color: darkolivegreen"
                                            th:href="@{'http://www.samlib.ru'+ ${work.author.link}}"
-                                           th:text="${work.author.title}"></a></td>
+                                           th:text="${work.workAuthorName}"></a></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -85,7 +85,7 @@
                                    + '&amp;type=' + ${type}
                                    + '&amp;genre=' + ${genre}
                                    + '&amp;page=' + ${page - 1}
-                                  ">&#60; Предыдущая </a>
+                                  ">Предыдущая</a>
                             </td>
                             <td th:if="${page != null}" th:each="i: ${#numbers.sequence(minPage, page)}">
                                 <span style="padding: 0 10px 0 10px;" th:if="${page == i}" th:text="${i}"></span>
@@ -102,7 +102,7 @@
                                    + '&amp;type=' + ${type}
                                    + '&amp;genre=' + ${genre}
                                    + '&amp;page=' + ${page + 1}
-                                  ">Следующая &#62; </a>
+                                  ">Следующая</a>
                             </td>
                         </tr>
                     </table>

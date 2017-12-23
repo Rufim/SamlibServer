@@ -46,7 +46,7 @@ public class SearchController {
         pageVal -= 1;
         if(pageVal < 0) pageVal = 0;
         pageVal *= pageSize;
-        return workDao.searchWorksByActivity(queryVal, typeVal, genreVal, pageVal, pageVal + pageSize);
+        return workDao.searchWorksByActivityNative(queryVal, typeVal, genreVal, pageVal, pageSize);
     }
 
     @GetMapping("/search")

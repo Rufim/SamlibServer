@@ -7,7 +7,9 @@ import ru.samlib.server.domain.entity.Work;
 import java.util.List;
 
 public interface WorkDaoCustom {
-    
+
+    List<Work> searchWorksByActivityNative(String query, Type type, Genre genre, Integer offset, Integer limit);
+
     List<Work> searchWorksByActivity(String query, Type type, Genre genre, Integer offset, Integer limit);
 
     Work saveWork(Work newWork, boolean update);

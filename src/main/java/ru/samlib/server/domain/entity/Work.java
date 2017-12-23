@@ -41,13 +41,14 @@ public class Work implements Serializable, Linkable, Validatable {
     Category category;
     @ManyToOne
     Author author;
+    String workAuthorName;
     String imageLink;
     Integer size;
     Integer sizeDiff;
     BigDecimal rate;
-    Integer kudoed;
+    Integer votes;
     BigDecimal expertRate;
-    Integer expertKudoed;
+    Integer expertVotes;
     Integer views;
     Long activityIndex = 0L;
     @ElementCollection(targetClass = Genre.class, fetch = FetchType.EAGER)

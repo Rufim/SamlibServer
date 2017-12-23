@@ -13,6 +13,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.client.ExpectedCount;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.util.FileSystemUtils;
 import org.yaml.snakeyaml.Yaml;
@@ -43,7 +44,7 @@ import static ru.samlib.server.util.SystemUtils.readFile;
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureDataJpa
-public class CommandExecutorTests {
+public class CommandExecutorPerformanceTests {
 
     public static final String TAG = ParserTests.class.getSimpleName();
     private File logTestFile;
@@ -60,17 +61,15 @@ public class CommandExecutorTests {
         logTestFile = new File(classLoader.getResource("actual-log.txt").getFile());
         ByteArrayOutputStream os = new ByteArrayOutputStream();
         SystemUtils.readStream(new FileInputStream(logTestFile), os, new byte[4000]);
-        for (int i = 0; i < 100; i++) {
-            this.server.expect(requestTo("/2017/06-07.log"))
-                    .andExpect(method(HttpMethod.GET))
-                    .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
-        }
+        this.server.expect(ExpectedCount.manyTimes(), requestTo("/2017/06-07.log"))
+                .andExpect(method(HttpMethod.GET))
+                .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
     }
 
 
     @Ignore
     @Test
-    public void perfomanceTest() throws Exception {
+    public void performanceTest() throws Exception {
         Calendar calendar = Calendar.getInstance();
         calendar.set(2017, Calendar.JUNE,7);
         for (int i = 0; i < 100; i++) {

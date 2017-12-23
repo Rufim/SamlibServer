@@ -63,7 +63,7 @@ public enum Genre implements Linkable, Serializable {
                     return tryGenre;
             }
         }
-        return null;
+        return EMPTY;
     }
 
     public String getAnnotation() {

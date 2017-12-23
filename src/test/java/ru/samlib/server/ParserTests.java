@@ -10,8 +10,10 @@ import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.client.ExpectedCount;
 import org.springframework.test.web.client.MockRestServiceServer;
 import ru.samlib.server.domain.Constants;
 import ru.samlib.server.domain.dao.AuthorDao;
@@ -39,11 +41,12 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureDataJpa
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class ParserTests {
 
     public static final String TAG = ParserTests.class.getSimpleName();
     private File logTestFile;
-
+    private File aReaderTestFile;
     @Autowired
     private CommandExecutorService executorService;
     @Autowired
@@ -63,11 +66,14 @@ public class ParserTests {
     public void setUp() throws IOException {
         ClassLoader classLoader = getClass().getClassLoader();
         logTestFile = new File(classLoader.getResource("test-log.txt").getFile());
-        ByteArrayOutputStream os = new ByteArrayOutputStream();
-        SystemUtils.readStream(new FileInputStream(logTestFile), os, new byte[4000]);
-        this.server.expect(requestTo("/2015/06-30.log"))
-                .andExpect(method(HttpMethod.GET))
-                .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
+        /*try (ByteArrayOutputStream os = new ByteArrayOutputStream();
+                FileInputStream fis = new FileInputStream(logTestFile)) {
+            SystemUtils.readStream(fis, os, new byte[4000]);
+            this.server.expect(requestTo("/2015/06-30.log"))
+                    .andExpect(method(HttpMethod.GET))
+                    .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
+        }*/
+        aReaderTestFile = new File(classLoader.getResource("areader-sedrik.txt").getFile());
     }
 
     @Test
@@ -78,7 +84,7 @@ public class ParserTests {
         List<DataCommand> result;
         try (FileInputStream inputStream = new FileInputStream(logTestFile)) {
             Parser parser = new Parser(info, logEventDao);
-            result = parser.parseInput(inputStream);
+            result = parser.parseInput(inputStream, Parser.getLogDelegateInstance());
             info = parser.getInfo();
         }
         assertEquals(13, result.size());
@@ -97,6 +103,40 @@ public class ParserTests {
         assertEquals(13, workList.get(0).getActivityIndex().intValue());
         workList = workDao.searchWorksByActivity("дьявол-Хранитель", Type.ARTICLE, Genre.PROSE, null, null);
         assertEquals(1, workList.size());
+    }
+    
+    @Test
+    public void parseAReaderResults() throws IOException {
+        String link = "/s/sedrik/";
+        try (ByteArrayOutputStream os = new ByteArrayOutputStream();
+             FileInputStream fis = new FileInputStream(aReaderTestFile)) {
+            SystemUtils.readStream(fis, os, new byte[4000]);
+            this.server.expect(requestTo(Constants.Net.A_READER_QUERY + link))
+                    .andExpect(method(HttpMethod.GET))
+                    .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
+        }
+        executorService.parseAReaderAuthorLink(link);
+        List<Author> authors = authorDao.findAll();
+        List<Category> categories = categoryDao.findAll();
+        List<Work> works = workDao.findAll();
+        assertEquals(1, authors.size());
+        assertEquals(3, categories.size());
+        assertEquals(58, works.size());
+        works = workDao.searchWorksByActivityNative("дрик", Type.ARTICLE, Genre.EMPTY, null, null);
+        assertEquals(33, works.size());
+        works = workDao.searchWorksByActivityNative("дрик", Type.HEAD, Genre.EMPTY, null, null);
+        assertEquals(1, works.size());
+        assertEquals(0, works.get(0).getActivityIndex().intValue());
+        works = workDao.searchWorksByActivityNative("дрик", Type.STORY, Genre.EMPTY, null, null);
+        assertEquals(1, works.size());
+        works = workDao.searchWorksByActivityNative("Ракот", null, null, null, null);
+        assertEquals(2, works.size());
+        works = workDao.searchWorksByActivityNative("Rakot", null, null, null, null);
+        assertEquals(8, works.size());
+        works = workDao.searchWorksByActivityNative("Keelminir", null, null, null, null);
+        assertEquals(2, works.size());
+        works = workDao.searchWorksByActivityNative("омак", Type.HEAD, Genre.EMPTY, null, null);
+        assertEquals(3, works.size());
     }
 
 }

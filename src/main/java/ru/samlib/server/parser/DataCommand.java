@@ -5,6 +5,7 @@ import lombok.Data;
 import ru.samlib.server.domain.entity.Genre;
 import ru.samlib.server.domain.entity.Type;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
@@ -21,4 +22,6 @@ public class DataCommand {
     Integer imageCount;
     Long unixtime;
     Integer size;
+    BigDecimal rate;
+    Integer votes;
 }
