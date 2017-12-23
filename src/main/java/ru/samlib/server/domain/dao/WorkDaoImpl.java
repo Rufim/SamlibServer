@@ -39,7 +39,7 @@ public class WorkDaoImpl implements WorkDaoCustom {
             where.append("w.type = :type");
         }
         if (where.length() > 0) sequence.append(" where " + where);
-        sequence.append(" ORDER BY w.updateDate DESC, w.activityIndex DESC");
+        sequence.append(" ORDER BY w.activityIndex DESC");
         TypedQuery<Work> typedQuery = em.createQuery(sequence.toString(), Work.class);
         if(TextUtils.notEmpty(query)) typedQuery.setParameter("query", "%" + query + "%");
         if(type != null) typedQuery.setParameter("type", type);
