@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
@@ -35,7 +33,6 @@ import static junit.framework.TestCase.assertTrue;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
-import static ru.samlib.server.util.SystemUtils.readFile;
 
 @RunWith(SpringRunner.class)
 @RestClientTest(value =  CommandExecutorService.class)
@@ -76,7 +73,7 @@ public class ParserTests {
     @Test
     public void parseTestFile() throws Exception {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, 2015);
+        calendar.set(2015, Calendar.JUNE, 30,0,0,0);
         ParsingInfo info = new ParsingInfo(calendar.getTime(), Constants.Net.LOG_PATH + "/2015/06-30.log");
         List<DataCommand> result;
         try (FileInputStream inputStream = new FileInputStream(logTestFile)) {
@@ -97,7 +94,7 @@ public class ParserTests {
         assertEquals(2, works.size());
         List<Work> workList = workDao.searchWorksByActivity("максимОва", Type.NOVEL, Genre.FICTION, null, null);
         assertEquals(1, workList.size());
-        assertEquals(2, workList.get(0).getActivityCounter().intValue());
+        assertEquals(13, workList.get(0).getActivityIndex().intValue());
         workList = workDao.searchWorksByActivity("дьявол-Хранитель", Type.ARTICLE, Genre.PROSE, null, null);
         assertEquals(1, workList.size());
     }

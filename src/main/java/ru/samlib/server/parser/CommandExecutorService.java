@@ -166,6 +166,25 @@ public class CommandExecutorService {
                         newWork.setUpdateDate(dataCommand.createDate);
                     }
                     if (dataCommand.size != null) {
+                        if (oldWork != null && dataCommand.size > oldWork.getSize()) {
+                            int activityWeight = (dataCommand.size - oldWork.getSize()); // 20k
+                            if(oldWork.getUpdateDate() == null) {
+                                activityWeight = 1;
+                            } else {
+                                int days = (int) TimeUnit.MILLISECONDS.toDays(info.getLogDate().getTime() - oldWork.getUpdateDate().getTime());
+                                if(days <= 0) {
+                                    if (days < 0) activityWeight = 0;
+                                    days = 1;
+                                }
+                                activityWeight = (int) (((double)activityWeight) / days);
+                                if(activityWeight < 1) {
+                                    activityWeight = 1;
+                                }
+                            }
+                            newWork.setActivityIndex(oldWork.getActivityIndex() + activityWeight);
+                            newWork.setUpdateDate(dataCommand.commandDate);
+                            newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
+                        }
                         newWork.setSize(dataCommand.size);
                     }
                     if (dataCommand.createDate != null) {
@@ -178,21 +197,19 @@ public class CommandExecutorService {
                         case REN:
                         case UNK:
                             if (oldWork != null) {
-                                newWork.setActivityCounter(oldWork.getActivityCounter());
+                                newWork.setActivityIndex(oldWork.getActivityIndex());
                             }
                             workDao.saveWork(newWork, oldWork != null);
                             break;
                         case NEW:
                         case TXT:
-                            if (oldWork != null) {
-                                newWork.setActivityCounter(oldWork.getActivityCounter() + 1);
-                            }
                             newWork.setUpdateDate(dataCommand.commandDate);
                             newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
                             workDao.saveWork(newWork, oldWork != null);
                             break;
                         case DEL:
                             if (oldWork != null) {
+                                //todo: delete category and author if nessesary !note author and category - orphanRemove
                                 workDao.delete(oldWork);
                             }
                             break;

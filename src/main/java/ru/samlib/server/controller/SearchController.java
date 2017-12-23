@@ -6,6 +6,7 @@ import com.annimon.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,8 +38,10 @@ public class SearchController {
     public Collection<Work> searchWorks(@RequestParam("query") String query, @RequestParam("genre") String genre, @RequestParam("type") String type, @RequestParam("page") Integer page) {
         Log.i(SearchController.class, "q=" + query + " g=" + genre + " t=" + type + " p=" + page);
         String queryVal = query == null ? "" : query;
-        Genre genreVal = Genre.parseGenre(genre);
-        Type typeVal = TextUtils.isEmpty(type) ? null : Type.parseType(type);
+        Genre genreVal = null;
+        Type typeVal = null;
+        try{genreVal = Genre.valueOf(genre);} catch (Throwable ignore) {}
+        try{typeVal = TextUtils.isEmpty(type) ? null : Type.valueOf(type);} catch (Throwable ignore) {};
         Integer pageVal = page == null ? 0 : page;
         pageVal -= 1;
         if(pageVal < 0) pageVal = 0;

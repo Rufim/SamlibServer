@@ -49,7 +49,7 @@ public class Work implements Serializable, Linkable, Validatable {
     BigDecimal expertRate;
     Integer expertKudoed;
     Integer views;
-    Integer activityCounter = 0;
+    Long activityIndex = 0L;
     @ElementCollection(targetClass = Genre.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "genres", uniqueConstraints = @UniqueConstraint(columnNames =
             {"work_link", "genre"}))

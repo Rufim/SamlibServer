@@ -24,7 +24,7 @@ public class WorkDaoImpl implements WorkDaoCustom {
     @Override
     public List<Work> searchWorksByActivity(String query, Type type, Genre genre, Integer offset, Integer limit) {
         StringBuilder sequence = new StringBuilder();
-        sequence.append("select distinct w from Work as w inner join fetch w.genres as g");
+        sequence.append("select distinct w from Work as w join fetch w.genres as g");
         StringBuilder where = new StringBuilder();
         StringBuilder page = new StringBuilder();
         if (TextUtils.notEmpty(query)) {
@@ -39,7 +39,7 @@ public class WorkDaoImpl implements WorkDaoCustom {
             where.append("w.type = :type");
         }
         if (where.length() > 0) sequence.append(" where " + where);
-        sequence.append(" ORDER BY w.updateDate DESC, w.activityCounter DESC");
+        sequence.append(" ORDER BY w.updateDate DESC, w.activityIndex DESC");
         TypedQuery<Work> typedQuery = em.createQuery(sequence.toString(), Work.class);
         if(TextUtils.notEmpty(query)) typedQuery.setParameter("query", "%" + query + "%");
         if(type != null) typedQuery.setParameter("type", type);
