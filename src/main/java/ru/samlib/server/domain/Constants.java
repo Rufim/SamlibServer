@@ -23,7 +23,7 @@ public class Constants {
         public static final String A_READER_QUERY = BASE_DOMAIN + "/cgi-bin/areader?q=razdel&object=";
 
         public static String getStatPage(final String link) {
-            return BASE_DOMAIN + link + ".stat.html";
+            return BASE_DOMAIN + link + "stat.shtml";
         }
     }
 

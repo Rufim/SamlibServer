@@ -362,7 +362,7 @@ public final class Log {
             if (ex != null && ex.getStackTrace().length > 0) {
                 try {
                     StackTraceElement traceElement = ex.getStackTrace()[0];
-                    tag = Class.forName(traceElement.getClassName()).getSimpleName() + "." + traceElement.getMethodName() + "[" + traceElement.getLineNumber() + "]";
+                    tag = Class.forName(traceElement.getClassName()).getSimpleName() + "." + traceElement.getMethodName() + "[" + traceElement.getLineNumber() + "]" + ex != null ? '\n' + getStackTraceString(ex) : "";
                 } catch (ClassNotFoundException ignored) {
                 }
             }

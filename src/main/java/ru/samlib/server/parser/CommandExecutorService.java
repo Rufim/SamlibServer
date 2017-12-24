@@ -2,13 +2,19 @@ package ru.samlib.server.parser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 import ru.samlib.server.domain.Constants;
 import ru.samlib.server.domain.dao.*;
 import ru.samlib.server.domain.entity.*;
@@ -16,6 +22,7 @@ import ru.samlib.server.util.Log;
 import ru.samlib.server.util.TextUtils;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -50,6 +57,19 @@ public class CommandExecutorService {
                 .setConnectTimeout(15000)
                 .setReadTimeout(15000)
                 .build();
+        List<HttpMessageConverter<?>> converters = restTemplate.getMessageConverters();
+        for (HttpMessageConverter<?> converter : converters) {
+            if (converter instanceof MappingJackson2HttpMessageConverter) {
+                try {
+                    List<MediaType> mediaTypes = converter.getSupportedMediaTypes();
+                    List<MediaType> newMediaTypes = new ArrayList<>();
+                    newMediaTypes.add(MediaType.TEXT_HTML);
+                    ((MappingJackson2HttpMessageConverter) converter).setSupportedMediaTypes(newMediaTypes);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public Constants getConstants() {
@@ -96,15 +116,15 @@ public class CommandExecutorService {
     @Scheduled(fixedDelay = 6000)  // 10 в минуту
     public void scheduledAuthorParseExecution() {
         Author author = authorDao.findFirstByMonthUpdateFiredFalseOrderByLastUpdateDateDesc();
-        if (author != null) {
-            parseAReaderAuthorLink(author.getLink());
-            if (constants.isParseStat()) {
-                parseStat(author.getLink());
+        if (author != null && parseAReaderAuthorLink(author.getLink())) {
+            if (constants.isParseStat() && parseStat(author.getLink())) {
+                author.setMonthUpdateFired(true);
+                authorDao.save(author);
             }
         }
     }
 
-    public void parseStat(String link) {
+    public boolean parseStat(String link) {
         String url = Constants.Net.getStatPage(link);
         synchronized (url.intern()) {
             try {
@@ -127,27 +147,29 @@ public class CommandExecutorService {
                 info.setParsed(true);
                 info.setWithoutExceptions(info.getLogEvents().size() == 0);
                 infoDao.saveAndFlush(info);
+                return true;
             } catch (Exception ex) {
                 addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error", null);
             }
         }
+        return false;
     }
 
-    public void parseAReaderAuthorLink(final String link) {
-        String url = Constants.Net.A_READER_QUERY + link;
+    public boolean parseAReaderAuthorLink(final String link) {
+        String url = Constants.Net.A_READER_QUERY + URLEncoder.encode(link);
         ParsingInfo info = new ParsingInfo(new Date(), url);
-        parseUrl(url, info, Parser.getAReaderDelegateInstance());
+        return parseUrl(url, info, Parser.getAReaderDelegateInstance());
     }
 
 
-    public void parseLogDay(final Date logDay) {
+    public boolean parseLogDay(final Date logDay) {
         String url = Constants.Net.LOG_PATH + urlLogDate.format(logDay);
         ParsingInfo info = new ParsingInfo(logDay, url);
-        parseUrl(url, info, Parser.getLogDelegateInstance());
+        return parseUrl(url, info, Parser.getLogDelegateInstance());
     }
 
     @Transactional
-    public void parseUrl(final String url, final ParsingInfo info, final Parser.ParseDelegate parseDelegate) {
+    public boolean parseUrl(final String url, final ParsingInfo info, final Parser.ParseDelegate parseDelegate) {
         synchronized (url.intern()) {
             try {
                 long time = System.currentTimeMillis();
@@ -171,10 +193,12 @@ public class CommandExecutorService {
                 info.setParsed(true);
                 info.setWithoutExceptions(info.getLogEvents().size() == 0);
                 infoDao.saveAndFlush(info);
+                return true;
             } catch (Exception ex) {
                 addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error", null);
             }
         }
+        return false;
     }
 
 
