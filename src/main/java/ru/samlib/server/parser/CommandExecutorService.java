@@ -91,22 +91,29 @@ public class CommandExecutorService {
 
     @Scheduled(fixedDelay = 6000)  // 10 в минуту
     public void scheduledAuthorParseExecution() {
-            
+        Author author = authorDao.findFirstByMonthUpdateFiredFalseOrderByLastUpdateDateDesc();
+        if (author != null) {
+            parseAReaderAuthorLink(author.getLink());
+            if (constants.isParseStat()) {
+                parseStat(author.getLink());
+            }
+        }
+    }
+
+    public void parseStat(String link) {
+        Map<String, Integer> stat = restTemplate.execute(Constants.Net.getStatPage(link), HttpMethod.GET, null, new ResponseExtractor<Map<String, Integer>>() {
+            @Override
+            public Map<String, Integer> extractData(ClientHttpResponse response) throws IOException {
+                return Parser.parseStat(response.getBody());
+            }
+        });
+        workDao.updateStat(stat, link);
     }
 
     public void parseAReaderAuthorLink(final String link) {
         String url = Constants.Net.A_READER_QUERY + link;
         ParsingInfo info = new ParsingInfo(new Date(), url);
         parseUrl(url, info, Parser.getAReaderDelegateInstance());
-        if (constants.isParseStat()) {
-            Map<String,Integer> stat = restTemplate.execute(Constants.Net.getStatPage(link), HttpMethod.GET, null, new ResponseExtractor<Map<String,Integer>>() {
-                @Override
-                public Map<String, Integer> extractData(ClientHttpResponse response) throws IOException {
-                    return Parser.parseStat(response.getBody());
-                }
-            });
-            workDao.updateStat(stat, link);
-        }
     }
 
 
@@ -152,13 +159,23 @@ public class CommandExecutorService {
                     dataCommand.setTitle(dataCommand.getTitle().substring(0, 250) + "...");
                 }
                 if (link.endsWith("/about") || link.endsWith("/")) {
-                    Author newAuthor = new Author(link.substring(0, link.lastIndexOf("/") + 1));
+                    link = link.substring(0, link.lastIndexOf("/") + 1);
+                    Author oldAuthor = authorDao.findOne(link);
+                    Author newAuthor;
+                    if (oldAuthor != null) {
+                        newAuthor = oldAuthor;
+                    } else {
+                        newAuthor = new Author(link);
+                    }
                     newAuthor.setFullName(dataCommand.authorName);
                     if (link.endsWith("/")) {
                         newAuthor.setAbout(dataCommand.title);
                     }
                     if (link.endsWith("/about")) {
                         newAuthor.setAnnotation(dataCommand.annotation);
+                    }
+                    if(newAuthor.getLastUpdateDate() == null) {
+                        newAuthor.setLastUpdateDate(constants.firstLogDay());
                     }
                     authorDao.save(newAuthor);
                 } else {
@@ -218,7 +235,6 @@ public class CommandExecutorService {
                             }
                             newWork.setActivityIndex(oldWork.getActivityIndex() + activityWeight);
                             newWork.setUpdateDate(dataCommand.commandDate);
-                            newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
                         }
                         newWork.setSize(dataCommand.size);
                     }
@@ -233,12 +249,13 @@ public class CommandExecutorService {
                             if (oldWork != null) {
                                 newWork.setActivityIndex(oldWork.getActivityIndex());
                             }
+                            updateDate(newWork);
                             workDao.saveWork(newWork, oldWork != null);
                             break;
                         case NEW:
                         case TXT:
                             newWork.setUpdateDate(dataCommand.commandDate);
-                            newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
+                            updateDate(newWork);
                             workDao.saveWork(newWork, oldWork != null);
                             break;
                         case DEL:
@@ -252,6 +269,12 @@ public class CommandExecutorService {
             }
         } catch (Exception ex) {
             addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error by command - " + dataCommand, info);
+        }
+    }
+
+    private void updateDate(Work newWork) {
+        if (newWork.getAuthor().getLastUpdateDate() == null || newWork.getAuthor().getLastUpdateDate().before(newWork.getUpdateDate())) {
+            newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
         }
     }
 

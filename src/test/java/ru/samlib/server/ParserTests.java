@@ -126,6 +126,7 @@ public class ParserTests {
                     .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
         }
         executorService.parseAReaderAuthorLink(link);
+        executorService.parseStat(link);
         List<Author> authors = authorDao.findAll();
         List<Category> categories = categoryDao.findAll();
         List<Work> works = workDao.findAll();

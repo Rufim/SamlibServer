@@ -3,6 +3,10 @@ package ru.samlib.server.domain;
 import org.intellij.lang.annotations.RegExp;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by Rufim on 07.01.2015.
  */
@@ -27,7 +31,8 @@ public class Constants {
         public static final String TIME_PATTERN = "HH:mm:ss";
         public static final String DATA_PATTERN = "dd/MM/yyyy";
         public static final String DATA_PATTERN_DIFF = "dd.MM.yyyy";
-        public static final String DATA_ISO_8601 = "yyyy-MM-dd HH:mm:ss";
+        public static final String DATA_ISO_8601 = "yyyy-MM-dd";
+        public static final String DATA_ISO_8601_24H = "yyyy-MM-dd HH:mm:ss";
         public static final String DATA_ISO_8601_24H_FULL_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
         public static final String DATA_ISO_8601_24H_FULL_FORMAT_WITHOUT_MC = "yyyy-MM-dd'T'HH:mm:ss'Z'";
         @RegExp
@@ -76,5 +81,9 @@ public class Constants {
 
     public void setParseStat(boolean parseStat) {
         this.parseStat = parseStat;
+    }
+
+    public Date firstLogDay() throws ParseException {
+        return new SimpleDateFormat(Pattern.DATA_ISO_8601).parse(getFirstLogDay());
     }
 }

@@ -43,15 +43,12 @@ public class Author implements Serializable, Linkable, Validatable {
     String authorSiteUrl;
     boolean hasAvatar = false;
     boolean hasAbout = false;
-    boolean hasUpdates = false;
-    boolean newest = false;
-    boolean notNotified = false;
+    boolean monthUpdateFired = false;
     boolean deleted = false;
     Date lastUpdateDate;
     Integer size;
     Integer workCount;
     BigDecimal rate;
-    Integer kudoed;
     Integer views;
     String about;
     String sectionAnnotation;
@@ -100,13 +97,11 @@ public class Author implements Serializable, Linkable, Validatable {
         this.authorSiteUrl = other.getAuthorSiteUrl();
         this.hasAvatar = other.isHasAbout();
         this.hasAbout = other.isHasAbout();
-        this.hasUpdates = other.isHasUpdates();
         this.lastUpdateDate = other.getLastUpdateDate();
-        this.newest = other.isNewest();
+        this.monthUpdateFired = other.isMonthUpdateFired();
         this.size = other.getSize();
         this.workCount = other.getWorkCount();
         this.rate = other.getRate();
-        this.kudoed = other.getKudoed();
         this.views = other.getViews();
         this.about = other.getAbout();
         this.sectionAnnotation = other.sectionAnnotation;
@@ -337,11 +332,6 @@ public class Author implements Serializable, Linkable, Validatable {
             }
         }
         return false;
-    }
-
-    public void hasNewUpdates() {
-        setHasUpdates(true);
-        setNotNotified(true);
     }
 
     public void setRootLinks(List<Link> rootLinks) {
