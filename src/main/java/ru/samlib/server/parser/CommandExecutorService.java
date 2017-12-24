@@ -79,8 +79,7 @@ public class CommandExecutorService {
         return constants;
     }
 
-    //@Scheduled(cron = "*/15 * * * * *")  //4 реквеста в минуту
-    @Scheduled(fixedDelay = 15000)
+    @Scheduled(cron = "${settings.server.parse-log-cron}")  //4 реквеста в минуту
     public void scheduledLogParseExecution() {
         synchronized (CommandExecutorService.class) {
             try {
@@ -103,11 +102,9 @@ public class CommandExecutorService {
                 Calendar dayToParse = Calendar.getInstance();
                 dayToParse.setTime(lastParsedDay);
                 dayToParse.add(Calendar.DAY_OF_YEAR, 1);
-                int daysParsed = 0;
-                while ((calendar.get(Calendar.YEAR) > dayToParse.get(Calendar.YEAR)
-                        || calendar.get(Calendar.DAY_OF_YEAR) > dayToParse.get(Calendar.DAY_OF_YEAR)) && daysParsed < constants.getLogsPerDay()) {
+                if((calendar.get(Calendar.YEAR) > dayToParse.get(Calendar.YEAR)
+                        || calendar.get(Calendar.DAY_OF_YEAR) > dayToParse.get(Calendar.DAY_OF_YEAR))) {
                     parseLogDay(dayToParse.getTime());
-                    daysParsed++;
                     dayToParse.add(Calendar.DAY_OF_YEAR, 1);
                 }
             } catch (Exception ex) {
@@ -116,7 +113,7 @@ public class CommandExecutorService {
         }
     }
 
-    //@Scheduled(fixedDelay = 6000)  // 10 в минуту
+    @Scheduled(cron = "${settings.server.update-authors-cron}")  // 10 в минуту
     public void scheduledAuthorUpdate() {
         synchronized (CommandExecutorService.class) {
             Author author = authorDao.findFirstByMonthUpdateFiredFalseOrderByLastUpdateDateDesc();

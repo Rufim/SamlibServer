@@ -46,7 +46,6 @@ public class Constants {
     }
 
     private String firstLogDay;
-    private Integer logsPerDay;
     private boolean scheduling;
     private boolean parseStat;
 
@@ -56,14 +55,6 @@ public class Constants {
 
     public void setFirstLogDay(String firstLogDay) {
         this.firstLogDay = firstLogDay;
-    }
-
-    public Integer getLogsPerDay() {
-        return logsPerDay;
-    }
-
-    public void setLogsPerDay(Integer logsPerDay) {
-        this.logsPerDay = logsPerDay;
     }
 
 
