@@ -60,31 +60,35 @@ public class CommandExecutorService {
     @Scheduled(fixedDelay = 15000)
     public void scheduledLogParseExecution() {
         synchronized (CommandExecutorService.class) {
-            Calendar calendar = Calendar.getInstance();
-            Date lastParsedDay;
-            ParsingInfo info = infoDao.findFirstByParsedTrueOrderByLogDateDesc();
-            if (info != null) {
-                lastParsedDay = info.getLogDate();
-            } else {
-                try {
-                    lastParsedDay = new SimpleDateFormat("yyyy-MM-dd").parse(constants.getFirstLogDay());
-                } catch (Exception e) {
-                    LogEvent event = new LogEvent();
-                    event.setCorruptedData("Cannot found last parse log day");
-                    logEventDao.save(event);
-                    Log.e(TAG, e.getMessage(), e);
-                    return;
+            try {
+                Calendar calendar = Calendar.getInstance();
+                Date lastParsedDay;
+                ParsingInfo info = infoDao.findFirstByParsedTrueOrderByLogDateDesc();
+                if (info != null) {
+                    lastParsedDay = info.getLogDate();
+                } else {
+                    try {
+                        lastParsedDay = new SimpleDateFormat("yyyy-MM-dd").parse(constants.getFirstLogDay());
+                    } catch (Exception e) {
+                        LogEvent event = new LogEvent();
+                        event.setCorruptedData("Cannot found last parse log day");
+                        logEventDao.save(event);
+                        Log.e(TAG, e.getMessage(), e);
+                        return;
+                    }
                 }
-            }
-            Calendar dayToParse = Calendar.getInstance();
-            dayToParse.setTime(lastParsedDay);
-            dayToParse.add(Calendar.DAY_OF_YEAR, 1);
-            int daysParsed = 0;
-            while ((calendar.get(Calendar.YEAR) > dayToParse.get(Calendar.YEAR)
-                    || calendar.get(Calendar.DAY_OF_YEAR) > dayToParse.get(Calendar.DAY_OF_YEAR)) && daysParsed < constants.getLogsPerDay()) {
-                parseLogDay(dayToParse.getTime());
-                daysParsed++;
+                Calendar dayToParse = Calendar.getInstance();
+                dayToParse.setTime(lastParsedDay);
                 dayToParse.add(Calendar.DAY_OF_YEAR, 1);
+                int daysParsed = 0;
+                while ((calendar.get(Calendar.YEAR) > dayToParse.get(Calendar.YEAR)
+                        || calendar.get(Calendar.DAY_OF_YEAR) > dayToParse.get(Calendar.DAY_OF_YEAR)) && daysParsed < constants.getLogsPerDay()) {
+                    parseLogDay(dayToParse.getTime());
+                    daysParsed++;
+                    dayToParse.add(Calendar.DAY_OF_YEAR, 1);
+                }
+            } catch (Exception ex) {
+                addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error", null);
             }
         }
     }
@@ -101,13 +105,32 @@ public class CommandExecutorService {
     }
 
     public void parseStat(String link) {
-        Map<String, Integer> stat = restTemplate.execute(Constants.Net.getStatPage(link), HttpMethod.GET, null, new ResponseExtractor<Map<String, Integer>>() {
-            @Override
-            public Map<String, Integer> extractData(ClientHttpResponse response) throws IOException {
-                return Parser.parseStat(response.getBody());
+        String url = Constants.Net.getStatPage(link);
+        synchronized (url.intern()) {
+            try {
+                long time = System.currentTimeMillis();
+                ParsingInfo info = new ParsingInfo(new Date(), url);
+                infoDao.saveAndFlush(info);
+                addLog(Log.LOG_LEVEL.INFO, null, "Start stat parse. Url=" + url, info);
+                Map<String, Integer> stat = restTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<Map<String, Integer>>() {
+                    @Override
+                    public Map<String, Integer> extractData(ClientHttpResponse response) throws IOException {
+                        return Parser.parseStat(response.getBody());
+                    }
+                });
+                workDao.updateStat(stat, link);
+                long processTime = System.currentTimeMillis() - time;
+                addLog(Log.LOG_LEVEL.INFO, null, "End stat parse. Url=" + url + " stat size=" + stat.size() + " time=" + String.format("%d min, %d sec",
+                        TimeUnit.MILLISECONDS.toMinutes(processTime),
+                        TimeUnit.MILLISECONDS.toSeconds(processTime) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(processTime))
+                ), info);
+                info.setParsed(true);
+                info.setWithoutExceptions(info.getLogEvents().size() == 0);
+                infoDao.saveAndFlush(info);
+            } catch (Exception ex) {
+                addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error", null);
             }
-        });
-        workDao.updateStat(stat, link);
+        }
     }
 
     public void parseAReaderAuthorLink(final String link) {
@@ -126,27 +149,31 @@ public class CommandExecutorService {
     @Transactional
     public void parseUrl(final String url, final ParsingInfo info, final Parser.ParseDelegate parseDelegate) {
         synchronized (url.intern()) {
-            long time = System.currentTimeMillis();
-            infoDao.saveAndFlush(info);
-            final Parser parser = new Parser(info, logEventDao);
-            addLog(Log.LOG_LEVEL.INFO, null, "Start parse. Url=" + url, info);
-            List<DataCommand> result = restTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
-                @Override
-                public List<DataCommand> extractData(ClientHttpResponse response) throws IOException {
-                    return parser.parseInput(response.getBody(), parseDelegate);
+            try {
+                long time = System.currentTimeMillis();
+                infoDao.saveAndFlush(info);
+                final Parser parser = new Parser(info, logEventDao);
+                addLog(Log.LOG_LEVEL.INFO, null, "Start parse. Url=" + url, info);
+                List<DataCommand> result = restTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
+                    @Override
+                    public List<DataCommand> extractData(ClientHttpResponse response) throws IOException {
+                        return parser.parseInput(response.getBody(), parseDelegate);
+                    }
+                });
+                for (DataCommand dataCommand : result) {
+                    executeCommand(dataCommand, info);
                 }
-            });
-            for (DataCommand dataCommand : result) {
-                executeCommand(dataCommand, info);
+                long processTime = System.currentTimeMillis() - time;
+                addLog(Log.LOG_LEVEL.INFO, null, "End parse. Url=" + url + " commands=" + result.size() + " time=" + String.format("%d min, %d sec",
+                        TimeUnit.MILLISECONDS.toMinutes(processTime),
+                        TimeUnit.MILLISECONDS.toSeconds(processTime) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(processTime))
+                ), info);
+                info.setParsed(true);
+                info.setWithoutExceptions(info.getLogEvents().size() == 0);
+                infoDao.saveAndFlush(info);
+            } catch (Exception ex) {
+                addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error", null);
             }
-            long processTime = System.currentTimeMillis() - time;
-            addLog(Log.LOG_LEVEL.INFO, null, "End parse. Url=" + url + " commands=" + result.size() + " time=" + String.format("%d min, %d sec",
-                    TimeUnit.MILLISECONDS.toMinutes(processTime),
-                    TimeUnit.MILLISECONDS.toSeconds(processTime) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(processTime))
-            ), info);
-            info.setParsed(true);
-            info.setWithoutExceptions(info.getLogEvents().size() == 0);
-            infoDao.saveAndFlush(info);
         }
     }
 
@@ -174,7 +201,7 @@ public class CommandExecutorService {
                     if (link.endsWith("/about")) {
                         newAuthor.setAnnotation(dataCommand.annotation);
                     }
-                    if(newAuthor.getLastUpdateDate() == null) {
+                    if (newAuthor.getLastUpdateDate() == null) {
                         newAuthor.setLastUpdateDate(constants.firstLogDay());
                     }
                     authorDao.save(newAuthor);
@@ -260,7 +287,6 @@ public class CommandExecutorService {
                             break;
                         case DEL:
                             if (oldWork != null) {
-                                //todo: delete category and author if nessesary !note author and category - orphanRemove
                                 workDao.delete(oldWork);
                             }
                             break;
