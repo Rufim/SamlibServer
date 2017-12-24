@@ -118,11 +118,13 @@ public class CommandExecutorService {
 
     //@Scheduled(fixedDelay = 6000)  // 10 в минуту
     public void scheduledAuthorUpdate() {
-        Author author = authorDao.findFirstByMonthUpdateFiredFalseOrderByLastUpdateDateDesc();
-        if (author != null && parseAReaderAuthorLink(author.getLink())) {
-            if (constants.isParseStat() && parseStat(author.getLink())) {
-                author.setMonthUpdateFired(true);
-                authorDao.save(author);
+        synchronized (CommandExecutorService.class) {
+            Author author = authorDao.findFirstByMonthUpdateFiredFalseOrderByLastUpdateDateDesc();
+            if (author != null && parseAReaderAuthorLink(author.getLink())) {
+                if (constants.isParseStat() && parseStat(author.getLink())) {
+                    author.setMonthUpdateFired(true);
+                    authorDao.save(author);
+                }
             }
         }
     }
