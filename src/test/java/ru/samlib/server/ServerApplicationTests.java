@@ -4,17 +4,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Profile;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
+import ru.samlib.server.domain.dao.AuthorDao;
 import ru.samlib.server.domain.dao.ParsingInfoDao;
-import ru.samlib.server.domain.dao.WorkDao;
-import ru.samlib.server.domain.entity.Genre;
+import ru.samlib.server.domain.entity.Author;
 import ru.samlib.server.domain.entity.ParsingInfo;
-import ru.samlib.server.domain.entity.Type;
 import ru.samlib.server.parser.CommandExecutorService;
 
 import java.util.Calendar;
@@ -29,7 +24,8 @@ public class ServerApplicationTests {
 	private ParsingInfoDao parsingInfoDao;
 	@Autowired
 	private CommandExecutorService executorService;
-
+	@Autowired
+	private AuthorDao authorDao;
 
 
 	@Test
@@ -49,6 +45,15 @@ public class ServerApplicationTests {
 	    info.setWithoutExceptions(false);
 		parsingInfoDao.save(info);
 		executorService.scheduledLogParseExecution();
+	}
+
+
+	@Test
+	public void liveTestStat() {
+		Author sedrik = new Author(new Author("/s/sedrik/"));
+		sedrik.setLastUpdateDate(new Date());
+		authorDao.save(sedrik);
+		executorService.scheduledAuthorUpdate();
 	}
 
 }

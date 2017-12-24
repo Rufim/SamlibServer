@@ -63,13 +63,11 @@ public class Work implements Serializable, Linkable, Validatable {
     String annotation;
     Date createDate;
     Date updateDate;
-    Date cachedDate;
     Date changedDate;
     String description;
     boolean hasIllustration = false;
     boolean hasComments = false;
     boolean hasRate = false;
-    boolean changed = false;
     boolean recommendation = false;
     boolean rootWork = false;
 
@@ -211,10 +209,6 @@ public class Work implements Serializable, Linkable, Validatable {
         if (work.getLink() == null && getLink() == null) return true;
         if (work.getLink() == null || getLink() == null) return false;
         return TextUtils.trim(getLink()).equalsIgnoreCase(TextUtils.trim(work.getLink()));
-    }
-
-    public void setChanged(boolean changed) {
-        this.changed = changed;
     }
 
 }

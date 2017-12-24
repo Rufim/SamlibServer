@@ -116,7 +116,9 @@ public class Parser {
     }
 
 
-    private static class AReaderDelegate implements ParseDelegate {
+    public static class AReaderDelegate implements ParseDelegate {
+
+        private AReaderDelegate(){};
 
         //      0       1      2     3      4        5        6    7     8
         //    линк  | author|title|type|size kb|create date|rate|votes|annot|
@@ -159,6 +161,9 @@ public class Parser {
 
 
     private static class LogDelegate implements ParseDelegate {
+
+        private LogDelegate(){};
+
         //     0         1            2             3     4      5    6    7        8         9       10             11
         //    линк  |тег oперации|таймштамп-MySQL|title|author|type|janr|annot|create date|img_cnt|update-unixtime|size kb
         // /m/maksimowa_alina/dymchatyjsiluettebja|EDT|2015-06-30 20:16:07|Дымчатый силуэт тебя|Максимова Алина|Роман|Фантастика|       Новенький баскетболист в университете произвёл на Софию особое впечатление. Да и Дашке он приглянулся. Что делать, |02/06/2015|1|1433273100|695k

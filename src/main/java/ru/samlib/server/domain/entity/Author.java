@@ -195,25 +195,6 @@ public class Author implements Serializable, Linkable, Validatable {
                 .collect(Collectors.toList());
     }
 
-    @Transient
-    @JsonIgnore
-    public List<Work> getUpdates() {
-        List<Work> updates = new ArrayList<>();
-        for (Category category : getCategories()) {
-            for (Work work : category.getWorks()) {
-                if (work.isChanged()) {
-                    updates.add(work);
-                }
-            }
-        }
-        Collections.sort(updates, (o1, o2) -> {
-            if (o1.getCachedDate() == null) {
-                return -1;
-            }
-            return o1.getCachedDate().compareTo(o2.getCachedDate());
-        });
-        return updates;
-    }
 
     public void addCategory(Category category) {
         this.getCategories().add(category);

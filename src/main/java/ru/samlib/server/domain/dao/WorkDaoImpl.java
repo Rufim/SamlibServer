@@ -9,9 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class WorkDaoImpl implements WorkDaoCustom {
 
@@ -30,9 +28,6 @@ public class WorkDaoImpl implements WorkDaoCustom {
     public int updateStat(Map<String, Integer> stats, String authorLink) {
         StringBuilder sequence = new StringBuilder();
         try {
-            if (!em.isJoinedToTransaction()) {
-                em.joinTransaction();
-            }
             for (Map.Entry<String, Integer> stat : stats.entrySet()) {
                 String link = stat.getKey();
                 if (link.equals("./")) {
@@ -49,6 +44,9 @@ public class WorkDaoImpl implements WorkDaoCustom {
                     sequence.append("'; \n");
                 }
             }
+            if (!em.isJoinedToTransaction()) {
+                em.joinTransaction();
+            }
             return em.createNativeQuery(sequence.toString()).executeUpdate();
         } catch (Throwable ex) {
             Log.e("SQL_ERROR:", "error in " + sequence, ex);
@@ -56,6 +54,43 @@ public class WorkDaoImpl implements WorkDaoCustom {
         return 0;
     }
 
+    @Transactional
+    @Override
+    public int deleteNotIn(Collection<String> links, String authorLink) {
+        StringBuilder sequenceGenres = new StringBuilder();
+        StringBuilder sequenceWorks = new StringBuilder();
+        try {
+            sequenceGenres.append("DELETE FROM genres WHERE work_link like '");
+            sequenceGenres.append(authorLink);
+            sequenceGenres.append("%' and work_link not in (");
+            sequenceWorks.append("DELETE FROM work WHERE link like '");
+            sequenceWorks.append(authorLink);
+            sequenceWorks.append("%' and link not in (");
+            boolean first = true;
+            for (String link : links) {
+                if (!first) {
+                    sequenceGenres.append(",");
+                    sequenceWorks.append(",");
+                }
+                sequenceGenres.append("'");
+                sequenceGenres.append(link);
+                sequenceGenres.append("'");
+                sequenceWorks.append("'");
+                sequenceWorks.append(link);
+                sequenceWorks.append("'");
+                first = false;
+            }
+            sequenceGenres.append(");");
+            sequenceWorks.append(");");
+            if (!em.isJoinedToTransaction()) {
+                em.joinTransaction();
+            }
+            return em.createNativeQuery(sequenceGenres.toString()).executeUpdate() + em.createNativeQuery(sequenceWorks.toString()).executeUpdate();
+        } catch (Throwable ex) {
+            Log.e("SQL_ERROR:", "error in " + sequenceGenres + " or " + sequenceWorks, ex);
+        }
+        return 0;
+    }
 
     @Override
     public List<Work> searchWorksByActivityNative(String query, Type type, Genre genre, Integer offset, Integer limit) {

@@ -1,11 +1,14 @@
 package ru.samlib.server.parser;
 
+import com.annimon.stream.Collectors;
+import com.annimon.stream.Stream;
+import com.annimon.stream.function.Function;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
+import org.springframework.boot.web.client.RestTemplateCustomizer;
+import org.springframework.http.*;
+import org.springframework.http.client.ClientHttpRequestExecution;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -22,6 +25,9 @@ import ru.samlib.server.util.Log;
 import ru.samlib.server.util.TextUtils;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
+import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -53,23 +59,20 @@ public class CommandExecutorService {
 
 
     public CommandExecutorService(RestTemplateBuilder restTemplateBuilder) {
-        this.restTemplate = restTemplateBuilder.rootUri(Constants.Net.LOG_PATH)
+        this.restTemplate = restTemplateBuilder.rootUri(Constants.Net.BASE_DOMAIN)
+                .interceptors(new ClientHttpRequestInterceptor() {
+                    @Override
+                    public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
+                        HttpHeaders headers = request.getHeaders();
+                        headers.add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+                        headers.add("User-Agent", "Mozilla/5.0 ");
+                        headers.add("Accept-Encoding", "gzip, deflate");
+                        return execution.execute(request, body);
+                    }
+                })
                 .setConnectTimeout(15000)
                 .setReadTimeout(15000)
                 .build();
-        List<HttpMessageConverter<?>> converters = restTemplate.getMessageConverters();
-        for (HttpMessageConverter<?> converter : converters) {
-            if (converter instanceof MappingJackson2HttpMessageConverter) {
-                try {
-                    List<MediaType> mediaTypes = converter.getSupportedMediaTypes();
-                    List<MediaType> newMediaTypes = new ArrayList<>();
-                    newMediaTypes.add(MediaType.TEXT_HTML);
-                    ((MappingJackson2HttpMessageConverter) converter).setSupportedMediaTypes(newMediaTypes);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 
     public Constants getConstants() {
@@ -113,8 +116,8 @@ public class CommandExecutorService {
         }
     }
 
-    @Scheduled(fixedDelay = 6000)  // 10 в минуту
-    public void scheduledAuthorParseExecution() {
+    //@Scheduled(fixedDelay = 6000)  // 10 в минуту
+    public void scheduledAuthorUpdate() {
         Author author = authorDao.findFirstByMonthUpdateFiredFalseOrderByLastUpdateDateDesc();
         if (author != null && parseAReaderAuthorLink(author.getLink())) {
             if (constants.isParseStat() && parseStat(author.getLink())) {
@@ -156,7 +159,7 @@ public class CommandExecutorService {
     }
 
     public boolean parseAReaderAuthorLink(final String link) {
-        String url = Constants.Net.A_READER_QUERY + URLEncoder.encode(link);
+        String url = Constants.Net.A_READER_QUERY + link;
         ParsingInfo info = new ParsingInfo(new Date(), url);
         return parseUrl(url, info, Parser.getAReaderDelegateInstance());
     }
@@ -184,6 +187,15 @@ public class CommandExecutorService {
                 });
                 for (DataCommand dataCommand : result) {
                     executeCommand(dataCommand, info);
+                }
+                if(parseDelegate.getClass() == Parser.AReaderDelegate.class) {
+                    List<String> persist = Stream.of(result).map(new Function<DataCommand, String>() {
+                        @Override
+                        public String apply(DataCommand value) {
+                            return value.link;
+                        }
+                    }).collect(Collectors.toList());
+                    workDao.deleteNotIn(persist, url.substring(url.lastIndexOf("=") + 1));
                 }
                 long processTime = System.currentTimeMillis() - time;
                 addLog(Log.LOG_LEVEL.INFO, null, "End parse. Url=" + url + " commands=" + result.size() + " time=" + String.format("%d min, %d sec",
@@ -231,6 +243,12 @@ public class CommandExecutorService {
                     authorDao.save(newAuthor);
                 } else {
                     Work oldWork = workDao.findOne(link);
+                    if (Command.DEL.equals(dataCommand.command)) {
+                        if (oldWork != null) {
+                            workDao.delete(oldWork);
+                        }
+                        return;
+                    }
                     Work newWork;
                     if (oldWork != null) {
                         newWork = oldWork;
@@ -287,6 +305,7 @@ public class CommandExecutorService {
                             newWork.setActivityIndex(oldWork.getActivityIndex() + activityWeight);
                             newWork.setUpdateDate(dataCommand.commandDate);
                         }
+                        if(oldWork != null && oldWork.getSize() != null && !oldWork.getSize().equals(dataCommand.size)) newWork.setSizeDiff(dataCommand.size - oldWork.getSize());
                         newWork.setSize(dataCommand.size);
                     }
                     switch (dataCommand.getCommand()) {
@@ -308,11 +327,6 @@ public class CommandExecutorService {
                             newWork.setUpdateDate(dataCommand.commandDate);
                             updateDate(newWork);
                             workDao.saveWork(newWork, oldWork != null);
-                            break;
-                        case DEL:
-                            if (oldWork != null) {
-                                workDao.delete(oldWork);
-                            }
                             break;
                     }
                 }

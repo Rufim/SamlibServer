@@ -152,14 +152,5 @@ public class Category implements Linkable, Serializable {
         }
         return TextUtils.trim(one.getLink()).equalsIgnoreCase(TextUtils.trim(two.getLink()));
     }
-
-    @Transient
-    public boolean isHasUpdates() {
-        for (Work work : getWorks()) {
-            if(work.isChanged() || (work.getSizeDiff() != null && work.getSizeDiff() > 0)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    
 }
