@@ -130,7 +130,7 @@ public class Parser {
                         return null;
                     }
                     DataCommand dataCommand = new DataCommand();
-                    dataCommand.setLink(fields[0]);
+                    dataCommand.setLink("/" + fields[0]);
                     dataCommand.setCommand(Command.ARD);
                     dataCommand.setAuthorName(fields[1]);
                     dataCommand.setTitle(fields[2]);

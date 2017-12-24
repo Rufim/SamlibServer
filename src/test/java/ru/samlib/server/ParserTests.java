@@ -118,6 +118,13 @@ public class ParserTests {
                     .andExpect(method(HttpMethod.GET))
                     .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
         }
+        try (ByteArrayOutputStream os = new ByteArrayOutputStream();
+             FileInputStream fis = new FileInputStream(statFile)) {
+            SystemUtils.readStream(fis, os, new byte[4000]);
+            this.server.expect(requestTo(Constants.Net.getStatPage(link)))
+                    .andExpect(method(HttpMethod.GET))
+                    .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
+        }
         executorService.parseAReaderAuthorLink(link);
         List<Author> authors = authorDao.findAll();
         List<Category> categories = categoryDao.findAll();
@@ -125,6 +132,11 @@ public class ParserTests {
         assertEquals(1, authors.size());
         assertEquals(3, categories.size());
         assertEquals(58, works.size());
+        works = workDao.findFirst3ByOrderByViewsDesc();
+        assertEquals(842222, works.get(0).getViews().intValue());
+        assertEquals(521703, works.get(1).getViews().intValue());
+        assertEquals(458748, works.get(2).getViews().intValue());
+        assertEquals(7387861, authors.get(0).getViews().intValue());
         works = workDao.searchWorksByActivityNative("дрик", Type.ARTICLE, Genre.EMPTY, null, null);
         assertEquals(33, works.size());
         works = workDao.searchWorksByActivityNative("дрик", Type.HEAD, Genre.EMPTY, null, null);
@@ -132,6 +144,7 @@ public class ParserTests {
         assertEquals(0, works.get(0).getActivityIndex().intValue());
         works = workDao.searchWorksByActivityNative("дрик", Type.STORY, Genre.EMPTY, null, null);
         assertEquals(1, works.size());
+        assertEquals(0, works.get(0).getActivityIndex().intValue());
         works = workDao.searchWorksByActivityNative("Ракот", null, null, null, null);
         assertEquals(2, works.size());
         works = workDao.searchWorksByActivityNative("Rakot", null, null, null, null);
@@ -142,13 +155,4 @@ public class ParserTests {
         assertEquals(3, works.size());
     }
 
-
-    @Test
-    public void parseStatPage() throws IOException {
-        Map<String, Integer> stat = null;
-       try (FileInputStream fis = new FileInputStream(statFile)) {
-          stat = Parser.parseStat(fis);
-       }
-       assertTrue(stat.size() == 60); // 58 книг +1 about.html +1 страница автора
-    }
 }

@@ -11,6 +11,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class WorkDaoImpl implements WorkDaoCustom {
 
@@ -23,6 +24,38 @@ public class WorkDaoImpl implements WorkDaoCustom {
     //public void postConstruct() {
     //    this.entityInformation = JpaEntityInformationSupport.getEntityInformation(Work.class, em);
     //}
+
+    @Transactional
+    @Override
+    public int updateStat(Map<String, Integer> stats, String authorLink) {
+        StringBuilder sequence = new StringBuilder();
+        try {
+            if (!em.isJoinedToTransaction()) {
+                em.joinTransaction();
+            }
+            for (Map.Entry<String, Integer> stat : stats.entrySet()) {
+                String link = stat.getKey();
+                if (link.equals("./")) {
+                    sequence.append("UPDATE author SET views = ");
+                    sequence.append(stat.getValue());
+                    sequence.append(" WHERE link = '");
+                    sequence.append(authorLink);
+                    sequence.append("'; \n");
+                } else if (link.endsWith(".shtml") && !link.equals("about.html")) {
+                    sequence.append("UPDATE work SET views = ");
+                    sequence.append(stat.getValue());
+                    sequence.append(" WHERE link = '");
+                    sequence.append(authorLink + link.substring(0, link.lastIndexOf(".shtml")));
+                    sequence.append("'; \n");
+                }
+            }
+            return em.createNativeQuery(sequence.toString()).executeUpdate();
+        } catch (Throwable ex) {
+            Log.e("SQL_ERROR:", "error in " + sequence, ex);
+        }
+        return 0;
+    }
+
 
     @Override
     public List<Work> searchWorksByActivityNative(String query, Type type, Genre genre, Integer offset, Integer limit) {

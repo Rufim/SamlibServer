@@ -27,4 +27,6 @@ public interface WorkDao extends JpaRepository<Work, String>, WorkDaoCustom {
 
     @Query("select distinct w from Work as w left outer join w.author as a inner join fetch w.genres as g where (w.title like ?1 or a.fullName like ?1)")
     List<Work> searchWorksSimple(String query, Pageable pageable);
+
+    List<Work> findFirst3ByOrderByViewsDesc();
 }

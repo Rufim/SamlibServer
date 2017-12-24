@@ -43,6 +43,7 @@ public class Constants {
     private String firstLogDay;
     private Integer logsPerDay;
     private boolean scheduling;
+    private boolean parseStat;
 
     public String getFirstLogDay() {
         return firstLogDay;
@@ -67,5 +68,13 @@ public class Constants {
 
     public void setScheduling(boolean scheduling) {
         this.scheduling = scheduling;
+    }
+
+    public boolean isParseStat() {
+        return parseStat;
+    }
+
+    public void setParseStat(boolean parseStat) {
+        this.parseStat = parseStat;
     }
 }

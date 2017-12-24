@@ -98,6 +98,15 @@ public class CommandExecutorService {
         String url = Constants.Net.A_READER_QUERY + link;
         ParsingInfo info = new ParsingInfo(new Date(), url);
         parseUrl(url, info, Parser.getAReaderDelegateInstance());
+        if (constants.isParseStat()) {
+            Map<String,Integer> stat = restTemplate.execute(Constants.Net.getStatPage(link), HttpMethod.GET, null, new ResponseExtractor<Map<String,Integer>>() {
+                @Override
+                public Map<String, Integer> extractData(ClientHttpResponse response) throws IOException {
+                    return Parser.parseStat(response.getBody());
+                }
+            });
+            workDao.updateStat(stat, link);
+        }
     }
 
 
@@ -216,7 +225,7 @@ public class CommandExecutorService {
                     switch (dataCommand.getCommand()) {
                         case ARD:
                             newWork.setRate(dataCommand.rate);
-                            newWork.setViews(dataCommand.votes);
+                            newWork.setVotes(dataCommand.votes);
                         case EDT:
                         case RPL:
                         case REN:
