@@ -217,8 +217,8 @@ public class CommandExecutorService {
         try {
             if (dataCommand != null && TextUtils.notEmpty(dataCommand.link)) {
                 String link = dataCommand.link;
-                if (dataCommand.getTitle() != null && dataCommand.getTitle().length() > 250) {
-                    dataCommand.setTitle(dataCommand.getTitle().substring(0, 250) + "...");
+                if (dataCommand.getTitle() != null && dataCommand.getTitle().length() > 200) {
+                    dataCommand.setTitle(dataCommand.getTitle().substring(0, 200) + "...");
                 }
                 if (link.endsWith("/about") || link.endsWith("/")) {
                     link = link.substring(0, link.lastIndexOf("/") + 1);
@@ -336,7 +336,7 @@ public class CommandExecutorService {
     }
 
     private void updateDate(Work newWork) {
-        if (newWork.getAuthor().getLastUpdateDate() == null || newWork.getAuthor().getLastUpdateDate().before(newWork.getUpdateDate())) {
+        if (newWork.getUpdateDate() != null && (newWork.getAuthor().getLastUpdateDate() == null ||  newWork.getAuthor().getLastUpdateDate().before(newWork.getUpdateDate()))) {
             newWork.getAuthor().setLastUpdateDate(newWork.getUpdateDate());
         }
     }
