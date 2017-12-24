@@ -29,6 +29,7 @@ import ru.samlib.server.util.SystemUtils;
 import java.io.*;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
@@ -47,6 +48,7 @@ public class ParserTests {
     public static final String TAG = ParserTests.class.getSimpleName();
     private File logTestFile;
     private File aReaderTestFile;
+    private File statFile;
     @Autowired
     private CommandExecutorService executorService;
     @Autowired
@@ -74,6 +76,7 @@ public class ParserTests {
                     .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
         }*/
         aReaderTestFile = new File(classLoader.getResource("areader-sedrik.txt").getFile());
+        statFile = new File(classLoader.getResource("stat-page.txt").getFile());
     }
 
     @Test
@@ -139,4 +142,13 @@ public class ParserTests {
         assertEquals(3, works.size());
     }
 
+
+    @Test
+    public void parseStatPage() throws IOException {
+        Map<String, Integer> stat = null;
+       try (FileInputStream fis = new FileInputStream(statFile)) {
+          stat = Parser.parseStat(fis);
+       }
+       assertTrue(stat.size() == 60); // 58 книг +1 about.html +1 страница автора
+    }
 }

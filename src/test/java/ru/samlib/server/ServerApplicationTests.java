@@ -48,7 +48,7 @@ public class ServerApplicationTests {
 	    info.setParsed(true);
 	    info.setWithoutExceptions(false);
 		parsingInfoDao.save(info);
-		executorService.scheduledExecution();
+		executorService.scheduledLogParseExecution();
 	}
 
 }

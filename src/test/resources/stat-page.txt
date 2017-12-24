@@ -1,0 +1,4871 @@
+
+<html>
+<head>
+        <title>Журнал &quot;Самиздат&quot;: Статистика: Седрик, Фэнтези и Фантастика</title>
+        <link rel="openid.server" href="http://samlib.ru/cgi-bin/oid_login" />
+        <link rel="openid2.provider" href="http://samlib.ru/cgi-bin/oid_login" />
+        </head>
+
+        <body bgcolor="#E9E9E9">
+        <div align="right">
+
+        <h3>Статистика раздела &quot;<a href=./>Седрик</a>&quot;:</h3>
+        </div>
+
+        <center><h2>Журнал &quot;Самиздат&quot;: Фэнтези и Фантастика</h2>
+
+
+
+        <!------- Первый блок ссылок ------------->
+
+<a href=/><font color="#555555" size=-1
+><b>Журнал "Самиздат":</b></font></a>
+
+
+[<A HREF="/cgi-bin/login">Регистрация</A>]
+
+
+[<a href="/cgi-bin/seek">Найти</a>]
+[<a href="/rating/expert/">Рейтинги</a>]
+[<a href="/rating/comment/">Обсуждения</a>]
+[<a href="/long.shtml">Новинки</a>]
+[<a href="/janr/index_janr_time23-1.shtml">Обзоры</a>]
+[<A HREF="/i/info/">Помощь</A>]
+
+
+
+
+
+
+
+<table style="display: block !important" width=99%>
+
+<tr><td>Peклaмa:</td><td> </td>
+<td><div style="text-align:left; float:left; background-color:#b5ee6a;"><nobr><a href=https://noa-lit.ru/skidki.html/?utm_source=si&utm_medium=skidki&utm_campaign=samizdat>Новинки на <b>КНИГОМАН</b></a></nobr></div></td>
+
+<td> </td><td width=60%><hr noshade></td><td> </td>
+
+
+<td><div style="text-align:center; float:center; background-color:#ffcc00;"><nobr><a
+href=http://ebukva.litres.ru/?utm_source=samlib&utm_campaign=partners-ru&utm_medium=partners>Станьте участником премии <b>"ЭЛЕКТРОННАЯ БУКВА"</b></a></nobr></div></td>
+
+
+</td></tr></table>
+
+<table width=98% style="display: block !important"><tr>
+<td>Peклaмa:</td><td> </td>
+
+<td> </td><td width=25%><hr noshade></td><td> </td>
+
+<td>
+  <div style="text-align:center; background-color:#000;border-radius:47px 20px;padding: 1px 1px 1px 1px;"><div style="background-color:#0ca9ae;border-radius:47px 20px;padding: 0px 8px 0px 8px;">
+    <div style="background-color:#14ffee;border-radius: 20px 47px;padding: 0px 8px 0px 8px;"><div style="background-color:#000;font-family: Sans Serif;border-radius: 47px 20px;padding: 0px 12px 0px 12px;"><nobr>
+    <a style="text-decoration: none;" href="https://zelluloza.ru?utm_campaign=samlib1&utm_medium=cpc&utm_source=samlib"><span style="color:#FFFF00">Прода на</span>
+    <span style="color: #c2dddb;text-shadow: 1px 1px 1px rgb(116, 128, 129);font-family: Courier;font-size: 19px;"> ZELLULOZA</span></a></nobr></div></div></div>
+  </div>
+</td>
+
+<td> </td><td width=25%><hr noshade></td><td> </td>
+
+<td><div style="text-align:center; float:left; background-color:#eeea09;"><nobr>
+<a href="http://www.strelbooks.com/free-publication-of-books">
+<b style="color: #040506;">Издавайтесь в StrelBooks бесплатно
+</b></a>
+</nobr></div></td>
+
+<td> </td><td width=25%><hr noshade></td><td> </td>
+
+</tr></table>
+
+<!--Z_LITERA-->
+
+<!-------- Второй блок ссылок  ------->
+
+<nobr>
+[<A HREF="/">Авторы</A>]
+[<A HREF="/janr/">Жанры</A>]
+[<A HREF="/type/">Произведения</A>]
+</nobr>
+
+</center>
+
+
+ <li><i>Статистика рассчитывается раз в сутки. (Sun Dec 24 02:20:30 2017)</i>
+  <li><b>Статистика раздела на top.list.ru</b>:
+ [<a href=http://top.mail.ru/pages?id=77427&period=0&date=2017-12-24&filter_type=0&filter=s/sedrik&pp=20&gender=0&agegroup=0>по дням</a>]
+ [<a href=http://top.mail.ru/pages?id=77427&period=1&date=2017-12-24&filter_type=0&filter=s/sedrik&pp=20&gender=0&agegroup=0>по неделям</a>]
+ [<a href=http://top.mail.ru/pages?id=77427&period=2&date=2017-12-24&filter_type=0&filter=s/sedrik&pp=20&gender=0&agegroup=0>по месяцам</a>]
+ <li><b><a href=/rating/hits/>Рейтинг по количеству посетителей</a></b>
+
+<table border=1 cellspacing=0 cellpadding=0><tr><td><td colspan=2><b>Итого</b></td><td colspan=12 align=center>За последние 12 месяцев</td><td colspan=24 align=center>Dec</td><td colspan=30 align=center>Nov</td><td colspan=8 align=center>Oct</td></tr><tr><td></td><td>Всего</td><td>12мес</td><td><small>Dec</small></td><td><small>Nov</small></td><td><small>Oct</small></td><td><small>Sep</small></td><td><small>Aug</small></td><td><small>Jul</small></td><td><small>Jun</small></td><td><small>May</small></td><td><small>Apr</small></td><td><small>Mar</small></td><td><small>Feb</small></td><td><small>Jan</small></td><td ><font color=red><small>24</small></td><td ><font color=red><small>23</small></td><td ><small>22</small></td><td ><small>21</small></td><td ><small>20</small></td><td ><small>19</small></td><td ><small>18</small></td><td ><font color=red><small>17</small></td><td ><font color=red><small>16</small></td><td ><small>15</small></td><td ><small>14</small></td><td ><small>13</small></td><td ><small>12</small></td><td ><small>11</small></td><td ><font color=red><small>10</small></td><td ><font color=red><small>09</small></td><td ><small>08</small></td><td ><small>07</small></td><td ><small>06</small></td><td ><small>05</small></td><td ><small>04</small></td><td ><font color=red><small>03</small></td><td ><font color=red><small>02</small></td><td bgcolor=c0c0d0><small>01</small></td><td ><small>30</small></td><td ><small>29</small></td><td ><small>28</small></td><td ><small>27</small></td><td ><font color=red><small>26</small></td><td ><font color=red><small>25</small></td><td ><small>24</small></td><td ><small>23</small></td><td ><small>22</small></td><td ><small>21</small></td><td ><small>20</small></td><td ><font color=red><small>19</small></td><td ><font color=red><small>18</small></td><td ><small>17</small></td><td ><small>16</small></td><td ><small>15</small></td><td ><small>14</small></td><td ><small>13</small></td><td ><font color=red><small>12</small></td><td ><font color=red><small>11</small></td><td ><small>10</small></td><td ><small>09</small></td><td ><small>08</small></td><td ><small>07</small></td><td ><small>06</small></td><td ><font color=red><small>05</small></td><td ><font color=red><small>04</small></td><td ><small>03</small></td><td ><small>02</small></td><td bgcolor=c0c0d0><small>01</small></td><td ><small>31</small></td><td ><small>30</small></td><td ><font color=red><small>29</small></td><td ><font color=red><small>28</small></td><td ><small>27</small></td><td ><small>26</small></td><td ><small>25</small></td><td ><small>24</small></td></tr>
+<tr><td>
+<a href=./>По разделу</a></td>
+
+<td>7387861</td><td>402705</td>
+<td><b>16329</b></td>
+<td><b>25347</b></td>
+<td><b>39068</b></td>
+<td><b>41885</b></td>
+<td><b>46450</b></td>
+<td><b>20507</b></td>
+<td><b>24287</b></td>
+<td><b>23440</b></td>
+<td><b>32200</b></td>
+<td><b>43894</b></td>
+<td><b>33075</b></td>
+<td><b>56223</b></td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>248</td>
+<td ><small>276</td>
+<td ><small>286</td>
+<td ><small>260</td>
+<td ><small>342</td>
+<td ><small>265</td>
+<td ><small><font color=red>442</td>
+<td ><small><font color=red>263</td>
+<td ><small>360</td>
+<td ><small>268</td>
+<td ><small>328</td>
+<td ><small>257</td>
+<td ><small>343</td>
+<td ><small><font color=red>310</td>
+<td ><small><font color=red>412</td>
+<td ><small>650</td>
+<td ><small>3710</td>
+<td ><small>491</td>
+<td ><small>648</td>
+<td ><small>1591</td>
+<td ><small><font color=red>2804</td>
+<td ><small><font color=red>546</td>
+<td bgcolor=cacad0><small>1225</td>
+<td ><small>4203</td>
+<td ><small>515</td>
+<td ><small>1040</td>
+<td ><small>954</td>
+<td ><small><font color=red>1287</td>
+<td ><small><font color=red>935</td>
+<td ><small>525</td>
+<td ><small>795</td>
+<td ><small>1082</td>
+<td ><small>2186</td>
+<td ><small>318</td>
+<td ><small><font color=red>435</td>
+<td ><small><font color=red>488</td>
+<td ><small>1173</td>
+<td ><small>831</td>
+<td ><small>440</td>
+<td ><small>377</td>
+<td ><small>717</td>
+<td ><small><font color=red>1288</td>
+<td ><small><font color=red>357</td>
+<td ><small>294</td>
+<td ><small>393</td>
+<td ><small>735</td>
+<td ><small>517</td>
+<td ><small>314</td>
+<td ><small><font color=red>380</td>
+<td ><small><font color=red>409</td>
+<td ><small>1124</td>
+<td ><small>793</td>
+<td bgcolor=cacad0><small>442</td>
+<td ><small>343</td>
+<td ><small>613</td>
+<td ><small><font color=red>1286</td>
+<td ><small><font color=red>1389</td>
+<td ><small>1360</td>
+<td ><small>1012</td>
+<td ><small>580</td>
+<td ><small>1146</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=woinognja.shtml></a>
+<a href=woinognja.shtml>Воин Огня</a></td>
+
+<td>458748</td><td>240083</td>
+<td><b>7236</b></td>
+<td><b>14423</b></td>
+<td><b>14043</b></td>
+<td><b>11348</b></td>
+<td><b>15941</b></td>
+<td><b>19029</b></td>
+<td><b>18330</b></td>
+<td><b>20971</b></td>
+<td><b>29883</b></td>
+<td><b>31318</b></td>
+<td><b>22603</b></td>
+<td><b>34958</b></td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>248</td>
+<td ><small>276</td>
+<td ><small>286</td>
+<td ><small>260</td>
+<td ><small>342</td>
+<td ><small>265</td>
+<td ><small><font color=red>309</td>
+<td ><small><font color=red>263</td>
+<td ><small>360</td>
+<td ><small>268</td>
+<td ><small>328</td>
+<td ><small>257</td>
+<td ><small>343</td>
+<td ><small><font color=red>310</td>
+<td ><small><font color=red>379</td>
+<td ><small>313</td>
+<td ><small>337</td>
+<td ><small>311</td>
+<td ><small>362</td>
+<td ><small>303</td>
+<td ><small><font color=red>388</td>
+<td ><small><font color=red>311</td>
+<td bgcolor=cacad0><small>414</td>
+<td ><small>410</td>
+<td ><small>482</td>
+<td ><small>387</td>
+<td ><small>566</td>
+<td ><small><font color=red>524</td>
+<td ><small><font color=red>563</td>
+<td ><small>525</td>
+<td ><small>795</td>
+<td ><small>1082</td>
+<td ><small>2186</td>
+<td ><small>238</td>
+<td ><small><font color=red>318</td>
+<td ><small><font color=red>287</td>
+<td ><small>338</td>
+<td ><small>278</td>
+<td ><small>370</td>
+<td ><small>307</td>
+<td ><small>497</td>
+<td ><small><font color=red>297</td>
+<td ><small><font color=red>357</td>
+<td ><small>294</td>
+<td ><small>393</td>
+<td ><small>307</td>
+<td ><small>406</td>
+<td ><small>314</td>
+<td ><small><font color=red>366</td>
+<td ><small><font color=red>316</td>
+<td ><small>416</td>
+<td ><small>362</td>
+<td bgcolor=cacad0><small>442</td>
+<td ><small>318</td>
+<td ><small>418</td>
+<td ><small><font color=red>335</td>
+<td ><small><font color=red>447</td>
+<td ><small>348</td>
+<td ><small>534</td>
+<td ><small>313</td>
+<td ><small>392</td>
+</tr>
+<tr><td><a name=spisokfanfikowsmoimikommentarijami.shtml></a>
+<a href=spisokfanfikowsmoimikommentarijami.shtml>Список фанфиков с моими комментариями</a></td>
+
+<td>842222</td><td>115754</td>
+<td><b>5827</b></td>
+<td><b>7802</b></td>
+<td><b>8651</b></td>
+<td><b>12935</b></td>
+<td><b>8341</b></td>
+<td><b>9620</b></td>
+<td><b>13506</b></td>
+<td><b>12842</b></td>
+<td><b>8745</b></td>
+<td><b>9230</b></td>
+<td><b>8571</b></td>
+<td><b>9684</b></td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>191</td>
+<td ><small>260</td>
+<td ><small>267</td>
+<td ><small>208</td>
+<td ><small>273</td>
+<td ><small>257</td>
+<td ><small><font color=red>442</td>
+<td ><small><font color=red>217</td>
+<td ><small>320</td>
+<td ><small>230</td>
+<td ><small>268</td>
+<td ><small>197</td>
+<td ><small>271</td>
+<td ><small><font color=red>203</td>
+<td ><small><font color=red>252</td>
+<td ><small>195</td>
+<td ><small>245</td>
+<td ><small>206</td>
+<td ><small>284</td>
+<td ><small>223</td>
+<td ><small><font color=red>311</td>
+<td ><small><font color=red>219</td>
+<td bgcolor=cacad0><small>284</td>
+<td ><small>214</td>
+<td ><small>255</td>
+<td ><small>205</td>
+<td ><small>244</td>
+<td ><small><font color=red>244</td>
+<td ><small><font color=red>246</td>
+<td ><small>232</td>
+<td ><small>296</td>
+<td ><small>257</td>
+<td ><small>307</td>
+<td ><small>230</td>
+<td ><small><font color=red>284</td>
+<td ><small><font color=red>227</td>
+<td ><small>277</td>
+<td ><small>254</td>
+<td ><small>276</td>
+<td ><small>204</td>
+<td ><small>286</td>
+<td ><small><font color=red>221</td>
+<td ><small><font color=red>278</td>
+<td ><small>229</td>
+<td ><small>313</td>
+<td ><small>237</td>
+<td ><small>319</td>
+<td ><small>258</td>
+<td ><small><font color=red>310</td>
+<td ><small><font color=red>220</td>
+<td ><small>332</td>
+<td ><small>235</td>
+<td bgcolor=cacad0><small>312</td>
+<td ><small>216</td>
+<td ><small>278</td>
+<td ><small><font color=red>218</td>
+<td ><small><font color=red>247</td>
+<td ><small>231</td>
+<td ><small>323</td>
+<td ><small>241</td>
+<td ><small>290</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=apostolnowojwery.shtml></a>
+<a href=apostolnowojwery.shtml>Апостол Новой Веры</a></td>
+
+<td>118304</td><td>118304</td>
+<td><b>4853</b></td>
+<td><b>12914</b></td>
+<td><b>23712</b></td>
+<td><b>39025</b></td>
+<td><b>37800</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>158</td>
+<td ><small>198</td>
+<td ><small>207</td>
+<td ><small>172</td>
+<td ><small>235</td>
+<td ><small>183</td>
+<td ><small><font color=red>223</td>
+<td ><small><font color=red>148</td>
+<td ><small>261</td>
+<td ><small>184</td>
+<td ><small>258</td>
+<td ><small>178</td>
+<td ><small>226</td>
+<td ><small><font color=red>170</td>
+<td ><small><font color=red>228</td>
+<td ><small>171</td>
+<td ><small>252</td>
+<td ><small>175</td>
+<td ><small>277</td>
+<td ><small>213</td>
+<td ><small><font color=red>273</td>
+<td ><small><font color=red>192</td>
+<td bgcolor=cacad0><small>271</td>
+<td ><small>232</td>
+<td ><small>279</td>
+<td ><small>214</td>
+<td ><small>376</td>
+<td ><small><font color=red>251</td>
+<td ><small><font color=red>351</td>
+<td ><small>282</td>
+<td ><small>386</td>
+<td ><small>340</td>
+<td ><small>562</td>
+<td ><small>318</td>
+<td ><small><font color=red>435</td>
+<td ><small><font color=red>488</td>
+<td ><small>1173</td>
+<td ><small>831</td>
+<td ><small>440</td>
+<td ><small>377</td>
+<td ><small>717</td>
+<td ><small><font color=red>1288</td>
+<td ><small><font color=red>303</td>
+<td ><small>222</td>
+<td ><small>318</td>
+<td ><small>269</td>
+<td ><small>349</td>
+<td ><small>299</td>
+<td ><small><font color=red>379</td>
+<td ><small><font color=red>298</td>
+<td ><small>388</td>
+<td ><small>337</td>
+<td bgcolor=cacad0><small>412</td>
+<td ><small>334</td>
+<td ><small>613</td>
+<td ><small><font color=red>1286</td>
+<td ><small><font color=red>408</td>
+<td ><small>316</td>
+<td ><small>442</td>
+<td ><small>318</td>
+<td ><small>470</td>
+</tr>
+<tr><td><a name=rycarxbezstraha.shtml></a>
+<a href=rycarxbezstraha.shtml>Рыцарь Без Страха</a></td>
+
+<td>183649</td><td>183649</td>
+<td><b>6684</b></td>
+<td><b>16363</b></td>
+<td><b>18440</b></td>
+<td><b>13985</b></td>
+<td><b>8421</b></td>
+<td><b>3430</b></td>
+<td><b>3815</b></td>
+<td><b>4923</b></td>
+<td><b>7095</b></td>
+<td><b>19128</b></td>
+<td><b>27874</b></td>
+<td><b>53491</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>158</td>
+<td ><small>217</td>
+<td ><small>212</td>
+<td ><small>183</td>
+<td ><small>262</td>
+<td ><small>188</td>
+<td ><small><font color=red>258</td>
+<td ><small><font color=red>190</td>
+<td ><small>291</td>
+<td ><small>196</td>
+<td ><small>288</td>
+<td ><small>221</td>
+<td ><small>296</td>
+<td ><small><font color=red>224</td>
+<td ><small><font color=red>301</td>
+<td ><small>250</td>
+<td ><small>344</td>
+<td ><small>273</td>
+<td ><small>368</td>
+<td ><small>331</td>
+<td ><small><font color=red>459</td>
+<td ><small><font color=red>420</td>
+<td bgcolor=cacad0><small>753</td>
+<td ><small>1354</td>
+<td ><small>515</td>
+<td ><small>1040</td>
+<td ><small>954</td>
+<td ><small><font color=red>1287</td>
+<td ><small><font color=red>935</td>
+<td ><small>282</td>
+<td ><small>403</td>
+<td ><small>469</td>
+<td ><small>1280</td>
+<td ><small>238</td>
+<td ><small><font color=red>270</td>
+<td ><small><font color=red>278</td>
+<td ><small>308</td>
+<td ><small>272</td>
+<td ><small>343</td>
+<td ><small>273</td>
+<td ><small>452</td>
+<td ><small><font color=red>384</td>
+<td ><small><font color=red>304</td>
+<td ><small>264</td>
+<td ><small>340</td>
+<td ><small>291</td>
+<td ><small>389</td>
+<td ><small>300</td>
+<td ><small><font color=red>380</td>
+<td ><small><font color=red>409</td>
+<td ><small>1124</td>
+<td ><small>793</td>
+<td bgcolor=cacad0><small>432</td>
+<td ><small>343</td>
+<td ><small>505</td>
+<td ><small><font color=red>513</td>
+<td ><small><font color=red>1389</td>
+<td ><small>1360</td>
+<td ><small>277</td>
+<td ><small>221</td>
+<td ><small>300</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=putxsinigami.shtml></a>
+<a href=putxsinigami.shtml>Путь "Синигами"</a></td>
+
+<td>455771</td><td>92732</td>
+<td><b>3100</b></td>
+<td><b>4448</b></td>
+<td><b>5975</b></td>
+<td><b>6975</b></td>
+<td><b>5645</b></td>
+<td><b>11270</b></td>
+<td><b>9128</b></td>
+<td><b>8080</b></td>
+<td><b>15563</b></td>
+<td><b>15726</b></td>
+<td><b>3191</b></td>
+<td><b>3631</b></td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>112</td>
+<td ><small>112</td>
+<td ><small>156</td>
+<td ><small>107</td>
+<td ><small>126</td>
+<td ><small>124</td>
+<td ><small><font color=red>146</td>
+<td ><small><font color=red>129</td>
+<td ><small>176</td>
+<td ><small>135</td>
+<td ><small>148</td>
+<td ><small>125</td>
+<td ><small>162</td>
+<td ><small><font color=red>107</td>
+<td ><small><font color=red>148</td>
+<td ><small>114</td>
+<td ><small>159</td>
+<td ><small>130</td>
+<td ><small>146</td>
+<td ><small>122</td>
+<td ><small><font color=red>149</td>
+<td ><small><font color=red>109</td>
+<td bgcolor=cacad0><small>154</td>
+<td ><small>102</td>
+<td ><small>124</td>
+<td ><small>97</td>
+<td ><small>161</td>
+<td ><small><font color=red>119</td>
+<td ><small><font color=red>151</td>
+<td ><small>115</td>
+<td ><small>140</td>
+<td ><small>111</td>
+<td ><small>164</td>
+<td ><small>142</td>
+<td ><small><font color=red>157</td>
+<td ><small><font color=red>131</td>
+<td ><small>157</td>
+<td ><small>158</td>
+<td ><small>168</td>
+<td ><small>142</td>
+<td ><small>162</td>
+<td ><small><font color=red>122</td>
+<td ><small><font color=red>172</td>
+<td ><small>159</td>
+<td ><small>164</td>
+<td ><small>139</td>
+<td ><small>189</td>
+<td ><small>150</td>
+<td ><small><font color=red>176</td>
+<td ><small><font color=red>142</td>
+<td ><small>207</td>
+<td ><small>143</td>
+<td bgcolor=cacad0><small>184</td>
+<td ><small>141</td>
+<td ><small>187</td>
+<td ><small><font color=red>124</td>
+<td ><small><font color=red>180</td>
+<td ><small>156</td>
+<td ><small>204</td>
+<td ><small>155</td>
+<td ><small>179</td>
+</tr>
+<tr><td><a name=ukurennyjmirtomtretij.shtml></a>
+<a href=ukurennyjmirtomtretij.shtml>Укуренный мир. Том 3.</a></td>
+
+<td>135799</td><td>77566</td>
+<td><b>5670</b></td>
+<td><b>5915</b></td>
+<td><b>6876</b></td>
+<td><b>6029</b></td>
+<td><b>7227</b></td>
+<td><b>6435</b></td>
+<td><b>7777</b></td>
+<td><b>14368</b></td>
+<td><b>11700</b></td>
+<td><b>1800</b></td>
+<td><b>1758</b></td>
+<td><b>2011</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>114</td>
+<td ><small>133</td>
+<td ><small>156</td>
+<td ><small>126</td>
+<td ><small>178</td>
+<td ><small>152</td>
+<td ><small><font color=red>163</td>
+<td ><small><font color=red>122</td>
+<td ><small>219</td>
+<td ><small>171</td>
+<td ><small>213</td>
+<td ><small>186</td>
+<td ><small>220</td>
+<td ><small><font color=red>178</td>
+<td ><small><font color=red>270</td>
+<td ><small>241</td>
+<td ><small>841</td>
+<td ><small>280</td>
+<td ><small>286</td>
+<td ><small>418</td>
+<td ><small><font color=red>781</td>
+<td ><small><font color=red>81</td>
+<td bgcolor=cacad0><small>140</td>
+<td ><small>125</td>
+<td ><small>139</td>
+<td ><small>131</td>
+<td ><small>150</td>
+<td ><small><font color=red>122</td>
+<td ><small><font color=red>142</td>
+<td ><small>95</td>
+<td ><small>145</td>
+<td ><small>127</td>
+<td ><small>197</td>
+<td ><small>140</td>
+<td ><small><font color=red>191</td>
+<td ><small><font color=red>125</td>
+<td ><small>162</td>
+<td ><small>190</td>
+<td ><small>183</td>
+<td ><small>158</td>
+<td ><small>238</td>
+<td ><small><font color=red>212</td>
+<td ><small><font color=red>216</td>
+<td ><small>224</td>
+<td ><small>307</td>
+<td ><small>735</td>
+<td ><small>517</td>
+<td ><small>112</td>
+<td ><small><font color=red>177</td>
+<td ><small><font color=red>144</td>
+<td ><small>182</td>
+<td ><small>155</td>
+<td bgcolor=cacad0><small>174</td>
+<td ><small>166</td>
+<td ><small>231</td>
+<td ><small><font color=red>173</td>
+<td ><small><font color=red>276</td>
+<td ><small>309</td>
+<td ><small>1012</td>
+<td ><small>336</td>
+<td ><small>1146</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=rycarxsmerti.shtml></a>
+<a href=rycarxsmerti.shtml>Рыцарь Смерти</a></td>
+
+<td>130310</td><td>63641</td>
+<td><b>886</b></td>
+<td><b>1375</b></td>
+<td><b>4021</b></td>
+<td><b>2428</b></td>
+<td><b>2403</b></td>
+<td><b>2838</b></td>
+<td><b>3439</b></td>
+<td><b>3590</b></td>
+<td><b>5212</b></td>
+<td><b>7258</b></td>
+<td><b>12464</b></td>
+<td><b>17727</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>25</td>
+<td ><small>29</td>
+<td ><small>28</td>
+<td ><small>27</td>
+<td ><small>40</td>
+<td ><small>25</td>
+<td ><small><font color=red>35</td>
+<td ><small><font color=red>41</td>
+<td ><small>39</td>
+<td ><small>44</td>
+<td ><small>48</td>
+<td ><small>36</td>
+<td ><small>54</td>
+<td ><small><font color=red>46</td>
+<td ><small><font color=red>50</td>
+<td ><small>44</td>
+<td ><small>40</td>
+<td ><small>40</td>
+<td ><small>51</td>
+<td ><small>40</td>
+<td ><small><font color=red>37</td>
+<td ><small><font color=red>29</td>
+<td bgcolor=cacad0><small>38</td>
+<td ><small>44</td>
+<td ><small>35</td>
+<td ><small>22</td>
+<td ><small>29</td>
+<td ><small><font color=red>38</td>
+<td ><small><font color=red>39</td>
+<td ><small>25</td>
+<td ><small>47</td>
+<td ><small>39</td>
+<td ><small>43</td>
+<td ><small>30</td>
+<td ><small><font color=red>40</td>
+<td ><small><font color=red>29</td>
+<td ><small>45</td>
+<td ><small>42</td>
+<td ><small>39</td>
+<td ><small>35</td>
+<td ><small>47</td>
+<td ><small><font color=red>42</td>
+<td ><small><font color=red>60</td>
+<td ><small>49</td>
+<td ><small>40</td>
+<td ><small>46</td>
+<td ><small>59</td>
+<td ><small>51</td>
+<td ><small><font color=red>62</td>
+<td ><small><font color=red>51</td>
+<td ><small>89</td>
+<td ><small>68</td>
+<td bgcolor=cacad0><small>90</td>
+<td ><small>76</td>
+<td ><small>97</td>
+<td ><small><font color=red>119</td>
+<td ><small><font color=red>155</td>
+<td ><small>179</td>
+<td ><small>287</td>
+<td ><small>580</td>
+<td ><small>658</td>
+</tr>
+<tr><td><a name=simbiont.shtml></a>
+<a href=simbiont.shtml>Симбионт</a></td>
+
+<td>521703</td><td>55220</td>
+<td><b>2374</b></td>
+<td><b>3124</b></td>
+<td><b>3348</b></td>
+<td><b>3675</b></td>
+<td><b>3899</b></td>
+<td><b>5265</b></td>
+<td><b>5763</b></td>
+<td><b>6124</b></td>
+<td><b>5799</b></td>
+<td><b>5791</b></td>
+<td><b>4848</b></td>
+<td><b>5210</b></td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>78</td>
+<td ><small>114</td>
+<td ><small>113</td>
+<td ><small>84</td>
+<td ><small>132</td>
+<td ><small>108</td>
+<td ><small><font color=red>105</td>
+<td ><small><font color=red>95</td>
+<td ><small>121</td>
+<td ><small>95</td>
+<td ><small>130</td>
+<td ><small>90</td>
+<td ><small>110</td>
+<td ><small><font color=red>77</td>
+<td ><small><font color=red>118</td>
+<td ><small>85</td>
+<td ><small>110</td>
+<td ><small>98</td>
+<td ><small>84</td>
+<td ><small>98</td>
+<td ><small><font color=red>111</td>
+<td ><small><font color=red>98</td>
+<td bgcolor=cacad0><small>118</td>
+<td ><small>82</td>
+<td ><small>95</td>
+<td ><small>72</td>
+<td ><small>102</td>
+<td ><small><font color=red>94</td>
+<td ><small><font color=red>121</td>
+<td ><small>82</td>
+<td ><small>104</td>
+<td ><small>101</td>
+<td ><small>120</td>
+<td ><small>96</td>
+<td ><small><font color=red>121</td>
+<td ><small><font color=red>109</td>
+<td ><small>113</td>
+<td ><small>113</td>
+<td ><small>115</td>
+<td ><small>97</td>
+<td ><small>106</td>
+<td ><small><font color=red>118</td>
+<td ><small><font color=red>95</td>
+<td ><small>108</td>
+<td ><small>99</td>
+<td ><small>90</td>
+<td ><small>110</td>
+<td ><small>89</td>
+<td ><small><font color=red>107</td>
+<td ><small><font color=red>93</td>
+<td ><small>127</td>
+<td ><small>108</td>
+<td bgcolor=cacad0><small>137</td>
+<td ><small>112</td>
+<td ><small>118</td>
+<td ><small><font color=red>97</td>
+<td ><small><font color=red>125</td>
+<td ><small>99</td>
+<td ><small>111</td>
+<td ><small>96</td>
+<td ><small>127</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=odinudachnyjprizyw.shtml></a>
+<a href=odinudachnyjprizyw.shtml>Один удачный призыв</a></td>
+
+<td>162330</td><td>55079</td>
+<td><b>1850</b></td>
+<td><b>2529</b></td>
+<td><b>4500</b></td>
+<td><b>5644</b></td>
+<td><b>3106</b></td>
+<td><b>2881</b></td>
+<td><b>3020</b></td>
+<td><b>3804</b></td>
+<td><b>3802</b></td>
+<td><b>6926</b></td>
+<td><b>7133</b></td>
+<td><b>9884</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>53</td>
+<td ><small>71</td>
+<td ><small>86</td>
+<td ><small>88</td>
+<td ><small>94</td>
+<td ><small>81</td>
+<td ><small><font color=red>95</td>
+<td ><small><font color=red>67</td>
+<td ><small>102</td>
+<td ><small>74</td>
+<td ><small>102</td>
+<td ><small>74</td>
+<td ><small>84</td>
+<td ><small><font color=red>71</td>
+<td ><small><font color=red>78</td>
+<td ><small>78</td>
+<td ><small>78</td>
+<td ><small>65</td>
+<td ><small>81</td>
+<td ><small>74</td>
+<td ><small><font color=red>88</td>
+<td ><small><font color=red>70</td>
+<td bgcolor=cacad0><small>96</td>
+<td ><small>83</td>
+<td ><small>76</td>
+<td ><small>86</td>
+<td ><small>96</td>
+<td ><small><font color=red>69</td>
+<td ><small><font color=red>89</td>
+<td ><small>84</td>
+<td ><small>95</td>
+<td ><small>69</td>
+<td ><small>109</td>
+<td ><small>73</td>
+<td ><small><font color=red>99</td>
+<td ><small><font color=red>87</td>
+<td ><small>93</td>
+<td ><small>86</td>
+<td ><small>71</td>
+<td ><small>69</td>
+<td ><small>95</td>
+<td ><small><font color=red>63</td>
+<td ><small><font color=red>96</td>
+<td ><small>75</td>
+<td ><small>80</td>
+<td ><small>71</td>
+<td ><small>76</td>
+<td ><small>68</td>
+<td ><small><font color=red>98</td>
+<td ><small><font color=red>74</td>
+<td ><small>103</td>
+<td ><small>92</td>
+<td bgcolor=cacad0><small>104</td>
+<td ><small>67</td>
+<td ><small>104</td>
+<td ><small><font color=red>84</td>
+<td ><small><font color=red>103</td>
+<td ><small>93</td>
+<td ><small>120</td>
+<td ><small>100</td>
+<td ><small>120</td>
+</tr>
+<tr><td><a name=fanfikponarutodewjatihwostyjdemon-1.shtml></a>
+<a href=fanfikponarutodewjatihwostyjdemon-1.shtml>Девятихвостый демон. Часть 2</a></td>
+
+<td>350735</td><td>50848</td>
+<td><b>1688</b></td>
+<td><b>2307</b></td>
+<td><b>2564</b></td>
+<td><b>2702</b></td>
+<td><b>5770</b></td>
+<td><b>4698</b></td>
+<td><b>10120</b></td>
+<td><b>5248</b></td>
+<td><b>2852</b></td>
+<td><b>5489</b></td>
+<td><b>3320</b></td>
+<td><b>4090</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>49</td>
+<td ><small>68</td>
+<td ><small>74</td>
+<td ><small>73</td>
+<td ><small>75</td>
+<td ><small>66</td>
+<td ><small><font color=red>83</td>
+<td ><small><font color=red>75</td>
+<td ><small>86</td>
+<td ><small>75</td>
+<td ><small>69</td>
+<td ><small>51</td>
+<td ><small>93</td>
+<td ><small><font color=red>69</td>
+<td ><small><font color=red>96</td>
+<td ><small>69</td>
+<td ><small>72</td>
+<td ><small>66</td>
+<td ><small>90</td>
+<td ><small>67</td>
+<td ><small><font color=red>92</td>
+<td ><small><font color=red>50</td>
+<td bgcolor=cacad0><small>79</td>
+<td ><small>69</td>
+<td ><small>74</td>
+<td ><small>59</td>
+<td ><small>84</td>
+<td ><small><font color=red>68</td>
+<td ><small><font color=red>86</td>
+<td ><small>73</td>
+<td ><small>93</td>
+<td ><small>64</td>
+<td ><small>84</td>
+<td ><small>74</td>
+<td ><small><font color=red>91</td>
+<td ><small><font color=red>66</td>
+<td ><small>74</td>
+<td ><small>67</td>
+<td ><small>80</td>
+<td ><small>69</td>
+<td ><small>82</td>
+<td ><small><font color=red>65</td>
+<td ><small><font color=red>89</td>
+<td ><small>79</td>
+<td ><small>90</td>
+<td ><small>72</td>
+<td ><small>77</td>
+<td ><small>62</td>
+<td ><small><font color=red>71</td>
+<td ><small><font color=red>62</td>
+<td ><small>87</td>
+<td ><small>91</td>
+<td bgcolor=cacad0><small>105</td>
+<td ><small>104</td>
+<td ><small>100</td>
+<td ><small><font color=red>67</td>
+<td ><small><font color=red>80</td>
+<td ><small>77</td>
+<td ><small>70</td>
+<td ><small>78</td>
+<td ><small>90</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=ukurennyjmir.shtml></a>
+<a href=ukurennyjmir.shtml>Укуренный мир. Том 1</a></td>
+
+<td>399164</td><td>47051</td>
+<td><b>2547</b></td>
+<td><b>3128</b></td>
+<td><b>3382</b></td>
+<td><b>3413</b></td>
+<td><b>3806</b></td>
+<td><b>3357</b></td>
+<td><b>3429</b></td>
+<td><b>5733</b></td>
+<td><b>5937</b></td>
+<td><b>4073</b></td>
+<td><b>3794</b></td>
+<td><b>4452</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>83</td>
+<td ><small>80</td>
+<td ><small>99</td>
+<td ><small>85</td>
+<td ><small>105</td>
+<td ><small>96</td>
+<td ><small><font color=red>106</td>
+<td ><small><font color=red>84</td>
+<td ><small>137</td>
+<td ><small>96</td>
+<td ><small>146</td>
+<td ><small>111</td>
+<td ><small>140</td>
+<td ><small><font color=red>88</td>
+<td ><small><font color=red>127</td>
+<td ><small>125</td>
+<td ><small>161</td>
+<td ><small>98</td>
+<td ><small>143</td>
+<td ><small>109</td>
+<td ><small><font color=red>136</td>
+<td ><small><font color=red>85</td>
+<td bgcolor=cacad0><small>106</td>
+<td ><small>82</td>
+<td ><small>99</td>
+<td ><small>83</td>
+<td ><small>108</td>
+<td ><small><font color=red>98</td>
+<td ><small><font color=red>101</td>
+<td ><small>78</td>
+<td ><small>110</td>
+<td ><small>81</td>
+<td ><small>132</td>
+<td ><small>97</td>
+<td ><small><font color=red>105</td>
+<td ><small><font color=red>101</td>
+<td ><small>109</td>
+<td ><small>93</td>
+<td ><small>109</td>
+<td ><small>95</td>
+<td ><small>127</td>
+<td ><small><font color=red>110</td>
+<td ><small><font color=red>112</td>
+<td ><small>118</td>
+<td ><small>117</td>
+<td ><small>100</td>
+<td ><small>123</td>
+<td ><small>82</td>
+<td ><small><font color=red>117</td>
+<td ><small><font color=red>85</td>
+<td ><small>126</td>
+<td ><small>124</td>
+<td bgcolor=cacad0><small>106</td>
+<td ><small>113</td>
+<td ><small>143</td>
+<td ><small><font color=red>111</td>
+<td ><small><font color=red>141</td>
+<td ><small>144</td>
+<td ><small>164</td>
+<td ><small>118</td>
+<td ><small>161</td>
+</tr>
+<tr><td><a name=rozhdeniepatriarha.shtml></a>
+<a href=rozhdeniepatriarha.shtml>Рождение патриарха</a></td>
+
+<td>270621</td><td>42234</td>
+<td><b>1766</b></td>
+<td><b>2398</b></td>
+<td><b>2880</b></td>
+<td><b>2779</b></td>
+<td><b>3447</b></td>
+<td><b>3194</b></td>
+<td><b>4609</b></td>
+<td><b>5292</b></td>
+<td><b>4918</b></td>
+<td><b>3522</b></td>
+<td><b>3395</b></td>
+<td><b>4034</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>76</td>
+<td ><small>65</td>
+<td ><small>72</td>
+<td ><small>61</td>
+<td ><small>79</td>
+<td ><small>62</td>
+<td ><small><font color=red>79</td>
+<td ><small><font color=red>74</td>
+<td ><small>87</td>
+<td ><small>63</td>
+<td ><small>66</td>
+<td ><small>68</td>
+<td ><small>75</td>
+<td ><small><font color=red>75</td>
+<td ><small><font color=red>78</td>
+<td ><small>91</td>
+<td ><small>100</td>
+<td ><small>98</td>
+<td ><small>78</td>
+<td ><small>69</td>
+<td ><small><font color=red>92</td>
+<td ><small><font color=red>72</td>
+<td bgcolor=cacad0><small>85</td>
+<td ><small>66</td>
+<td ><small>88</td>
+<td ><small>83</td>
+<td ><small>98</td>
+<td ><small><font color=red>65</td>
+<td ><small><font color=red>74</td>
+<td ><small>65</td>
+<td ><small>59</td>
+<td ><small>73</td>
+<td ><small>101</td>
+<td ><small>66</td>
+<td ><small><font color=red>95</td>
+<td ><small><font color=red>60</td>
+<td ><small>85</td>
+<td ><small>70</td>
+<td ><small>79</td>
+<td ><small>91</td>
+<td ><small>92</td>
+<td ><small><font color=red>67</td>
+<td ><small><font color=red>84</td>
+<td ><small>84</td>
+<td ><small>80</td>
+<td ><small>95</td>
+<td ><small>83</td>
+<td ><small>89</td>
+<td ><small><font color=red>82</td>
+<td ><small><font color=red>69</td>
+<td ><small>82</td>
+<td ><small>80</td>
+<td bgcolor=cacad0><small>93</td>
+<td ><small>86</td>
+<td ><small>95</td>
+<td ><small><font color=red>85</td>
+<td ><small><font color=red>86</td>
+<td ><small>96</td>
+<td ><small>97</td>
+<td ><small>73</td>
+<td ><small>111</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=fanfikpoewangelionu.shtml></a>
+<a href=fanfikpoewangelionu.shtml>Меланхолия Синдзи Икари, часть 1</a></td>
+
+<td>393714</td><td>41315</td>
+<td><b>2030</b></td>
+<td><b>2605</b></td>
+<td><b>2754</b></td>
+<td><b>2680</b></td>
+<td><b>3095</b></td>
+<td><b>2938</b></td>
+<td><b>3131</b></td>
+<td><b>4653</b></td>
+<td><b>3862</b></td>
+<td><b>4065</b></td>
+<td><b>4789</b></td>
+<td><b>4713</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>66</td>
+<td ><small>79</td>
+<td ><small>105</td>
+<td ><small>82</td>
+<td ><small>81</td>
+<td ><small>81</td>
+<td ><small><font color=red>94</td>
+<td ><small><font color=red>62</td>
+<td ><small>117</td>
+<td ><small>82</td>
+<td ><small>93</td>
+<td ><small>83</td>
+<td ><small>94</td>
+<td ><small><font color=red>84</td>
+<td ><small><font color=red>89</td>
+<td ><small>80</td>
+<td ><small>90</td>
+<td ><small>88</td>
+<td ><small>114</td>
+<td ><small>91</td>
+<td ><small><font color=red>96</td>
+<td ><small><font color=red>81</td>
+<td bgcolor=cacad0><small>98</td>
+<td ><small>96</td>
+<td ><small>115</td>
+<td ><small>97</td>
+<td ><small>91</td>
+<td ><small><font color=red>72</td>
+<td ><small><font color=red>95</td>
+<td ><small>79</td>
+<td ><small>89</td>
+<td ><small>56</td>
+<td ><small>111</td>
+<td ><small>84</td>
+<td ><small><font color=red>87</td>
+<td ><small><font color=red>83</td>
+<td ><small>84</td>
+<td ><small>84</td>
+<td ><small>77</td>
+<td ><small>81</td>
+<td ><small>101</td>
+<td ><small><font color=red>71</td>
+<td ><small><font color=red>100</td>
+<td ><small>90</td>
+<td ><small>76</td>
+<td ><small>75</td>
+<td ><small>74</td>
+<td ><small>61</td>
+<td ><small><font color=red>84</td>
+<td ><small><font color=red>72</td>
+<td ><small>102</td>
+<td ><small>104</td>
+<td bgcolor=cacad0><small>114</td>
+<td ><small>89</td>
+<td ><small>103</td>
+<td ><small><font color=red>77</td>
+<td ><small><font color=red>105</td>
+<td ><small>77</td>
+<td ><small>85</td>
+<td ><small>80</td>
+<td ><small>65</td>
+</tr>
+<tr><td><a name=fanfikponarutodewjatihwostyjdemon.shtml></a>
+<a href=fanfikponarutodewjatihwostyjdemon.shtml>Девятихвостый демон, часть 1.</a></td>
+
+<td>419809</td><td>39044</td>
+<td><b>1812</b></td>
+<td><b>2539</b></td>
+<td><b>2926</b></td>
+<td><b>2730</b></td>
+<td><b>3260</b></td>
+<td><b>3425</b></td>
+<td><b>5148</b></td>
+<td><b>3640</b></td>
+<td><b>2878</b></td>
+<td><b>4264</b></td>
+<td><b>2970</b></td>
+<td><b>3452</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>62</td>
+<td ><small>81</td>
+<td ><small>96</td>
+<td ><small>58</td>
+<td ><small>84</td>
+<td ><small>66</td>
+<td ><small><font color=red>81</td>
+<td ><small><font color=red>75</td>
+<td ><small>123</td>
+<td ><small>80</td>
+<td ><small>88</td>
+<td ><small>77</td>
+<td ><small>67</td>
+<td ><small><font color=red>77</td>
+<td ><small><font color=red>77</td>
+<td ><small>74</td>
+<td ><small>70</td>
+<td ><small>67</td>
+<td ><small>91</td>
+<td ><small>75</td>
+<td ><small><font color=red>99</td>
+<td ><small><font color=red>60</td>
+<td bgcolor=cacad0><small>83</td>
+<td ><small>74</td>
+<td ><small>88</td>
+<td ><small>66</td>
+<td ><small>93</td>
+<td ><small><font color=red>72</td>
+<td ><small><font color=red>89</td>
+<td ><small>88</td>
+<td ><small>102</td>
+<td ><small>81</td>
+<td ><small>118</td>
+<td ><small>75</td>
+<td ><small><font color=red>75</td>
+<td ><small><font color=red>95</td>
+<td ><small>86</td>
+<td ><small>94</td>
+<td ><small>84</td>
+<td ><small>73</td>
+<td ><small>87</td>
+<td ><small><font color=red>67</td>
+<td ><small><font color=red>80</td>
+<td ><small>80</td>
+<td ><small>70</td>
+<td ><small>76</td>
+<td ><small>88</td>
+<td ><small>77</td>
+<td ><small><font color=red>70</td>
+<td ><small><font color=red>73</td>
+<td ><small>98</td>
+<td ><small>92</td>
+<td bgcolor=cacad0><small>128</td>
+<td ><small>118</td>
+<td ><small>113</td>
+<td ><small><font color=red>100</td>
+<td ><small><font color=red>88</td>
+<td ><small>101</td>
+<td ><small>105</td>
+<td ><small>84</td>
+<td ><small>120</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=melanholijasindziikarichastx2.shtml></a>
+<a href=melanholijasindziikarichastx2.shtml>Меланхолия Синдзи Икари, часть 2</a></td>
+
+<td>146340</td><td>36193</td>
+<td><b>1341</b></td>
+<td><b>1871</b></td>
+<td><b>2112</b></td>
+<td><b>2149</b></td>
+<td><b>3263</b></td>
+<td><b>2958</b></td>
+<td><b>3266</b></td>
+<td><b>5644</b></td>
+<td><b>2403</b></td>
+<td><b>2394</b></td>
+<td><b>2916</b></td>
+<td><b>5876</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>42</td>
+<td ><small>67</td>
+<td ><small>72</td>
+<td ><small>48</td>
+<td ><small>75</td>
+<td ><small>54</td>
+<td ><small><font color=red>62</td>
+<td ><small><font color=red>54</td>
+<td ><small>57</td>
+<td ><small>44</td>
+<td ><small>62</td>
+<td ><small>42</td>
+<td ><small>85</td>
+<td ><small><font color=red>52</td>
+<td ><small><font color=red>68</td>
+<td ><small>49</td>
+<td ><small>54</td>
+<td ><small>49</td>
+<td ><small>63</td>
+<td ><small>55</td>
+<td ><small><font color=red>73</td>
+<td ><small><font color=red>48</td>
+<td bgcolor=cacad0><small>66</td>
+<td ><small>66</td>
+<td ><small>77</td>
+<td ><small>53</td>
+<td ><small>72</td>
+<td ><small><font color=red>58</td>
+<td ><small><font color=red>57</td>
+<td ><small>53</td>
+<td ><small>62</td>
+<td ><small>50</td>
+<td ><small>85</td>
+<td ><small>60</td>
+<td ><small><font color=red>74</td>
+<td ><small><font color=red>50</td>
+<td ><small>60</td>
+<td ><small>53</td>
+<td ><small>71</td>
+<td ><small>52</td>
+<td ><small>79</td>
+<td ><small><font color=red>52</td>
+<td ><small><font color=red>69</td>
+<td ><small>53</td>
+<td ><small>48</td>
+<td ><small>58</td>
+<td ><small>69</td>
+<td ><small>67</td>
+<td ><small><font color=red>58</td>
+<td ><small><font color=red>47</td>
+<td ><small>72</td>
+<td ><small>63</td>
+<td bgcolor=cacad0><small>83</td>
+<td ><small>61</td>
+<td ><small>73</td>
+<td ><small><font color=red>65</td>
+<td ><small><font color=red>62</td>
+<td ><small>58</td>
+<td ><small>67</td>
+<td ><small>64</td>
+<td ><small>68</td>
+</tr>
+<tr><td><a name=garripotterisurowajarealxnostx.shtml></a>
+<a href=garripotterisurowajarealxnostx.shtml>Гарри Поттер и Суровая Реальность</a></td>
+
+<td>380501</td><td>31363</td>
+<td><b>1375</b></td>
+<td><b>2135</b></td>
+<td><b>2569</b></td>
+<td><b>2395</b></td>
+<td><b>2510</b></td>
+<td><b>2223</b></td>
+<td><b>2372</b></td>
+<td><b>2971</b></td>
+<td><b>2801</b></td>
+<td><b>3527</b></td>
+<td><b>3037</b></td>
+<td><b>3448</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>46</td>
+<td ><small>58</td>
+<td ><small>64</td>
+<td ><small>68</td>
+<td ><small>46</td>
+<td ><small>43</td>
+<td ><small><font color=red>56</td>
+<td ><small><font color=red>42</td>
+<td ><small>58</td>
+<td ><small>56</td>
+<td ><small>61</td>
+<td ><small>54</td>
+<td ><small>78</td>
+<td ><small><font color=red>57</td>
+<td ><small><font color=red>56</td>
+<td ><small>68</td>
+<td ><small>77</td>
+<td ><small>60</td>
+<td ><small>57</td>
+<td ><small>53</td>
+<td ><small><font color=red>92</td>
+<td ><small><font color=red>55</td>
+<td bgcolor=cacad0><small>69</td>
+<td ><small>54</td>
+<td ><small>71</td>
+<td ><small>47</td>
+<td ><small>66</td>
+<td ><small><font color=red>64</td>
+<td ><small><font color=red>68</td>
+<td ><small>66</td>
+<td ><small>65</td>
+<td ><small>53</td>
+<td ><small>77</td>
+<td ><small>77</td>
+<td ><small><font color=red>77</td>
+<td ><small><font color=red>83</td>
+<td ><small>87</td>
+<td ><small>68</td>
+<td ><small>76</td>
+<td ><small>68</td>
+<td ><small>76</td>
+<td ><small><font color=red>77</td>
+<td ><small><font color=red>70</td>
+<td ><small>77</td>
+<td ><small>67</td>
+<td ><small>62</td>
+<td ><small>70</td>
+<td ><small>76</td>
+<td ><small><font color=red>82</td>
+<td ><small><font color=red>75</td>
+<td ><small>74</td>
+<td ><small>77</td>
+<td bgcolor=cacad0><small>85</td>
+<td ><small>71</td>
+<td ><small>87</td>
+<td ><small><font color=red>62</td>
+<td ><small><font color=red>71</td>
+<td ><small>91</td>
+<td ><small>80</td>
+<td ><small>87</td>
+<td ><small>96</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=natrezim.shtml></a>
+<a href=natrezim.shtml>Натрезим</a></td>
+
+<td>207980</td><td>29831</td>
+<td><b>1513</b></td>
+<td><b>2237</b></td>
+<td><b>2515</b></td>
+<td><b>2438</b></td>
+<td><b>2094</b></td>
+<td><b>2002</b></td>
+<td><b>2074</b></td>
+<td><b>2475</b></td>
+<td><b>2717</b></td>
+<td><b>3528</b></td>
+<td><b>2834</b></td>
+<td><b>3404</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>43</td>
+<td ><small>59</td>
+<td ><small>64</td>
+<td ><small>61</td>
+<td ><small>50</td>
+<td ><small>55</td>
+<td ><small><font color=red>72</td>
+<td ><small><font color=red>52</td>
+<td ><small>81</td>
+<td ><small>52</td>
+<td ><small>62</td>
+<td ><small>73</td>
+<td ><small>66</td>
+<td ><small><font color=red>70</td>
+<td ><small><font color=red>79</td>
+<td ><small>95</td>
+<td ><small>75</td>
+<td ><small>72</td>
+<td ><small>70</td>
+<td ><small>48</td>
+<td ><small><font color=red>89</td>
+<td ><small><font color=red>63</td>
+<td bgcolor=cacad0><small>61</td>
+<td ><small>51</td>
+<td ><small>63</td>
+<td ><small>61</td>
+<td ><small>71</td>
+<td ><small><font color=red>52</td>
+<td ><small><font color=red>63</td>
+<td ><small>66</td>
+<td ><small>65</td>
+<td ><small>59</td>
+<td ><small>80</td>
+<td ><small>64</td>
+<td ><small><font color=red>72</td>
+<td ><small><font color=red>80</td>
+<td ><small>73</td>
+<td ><small>71</td>
+<td ><small>80</td>
+<td ><small>79</td>
+<td ><small>81</td>
+<td ><small><font color=red>85</td>
+<td ><small><font color=red>146</td>
+<td ><small>106</td>
+<td ><small>71</td>
+<td ><small>72</td>
+<td ><small>72</td>
+<td ><small>63</td>
+<td ><small><font color=red>78</td>
+<td ><small><font color=red>65</td>
+<td ><small>92</td>
+<td ><small>68</td>
+<td bgcolor=cacad0><small>88</td>
+<td ><small>61</td>
+<td ><small>73</td>
+<td ><small><font color=red>75</td>
+<td ><small><font color=red>81</td>
+<td ><small>72</td>
+<td ><small>81</td>
+<td ><small>73</td>
+<td ><small>91</td>
+</tr>
+<tr><td><a name=ukurennyjmirtomwtoroj.shtml></a>
+<a href=ukurennyjmirtomwtoroj.shtml>Укуренный мир. Том 2.</a></td>
+
+<td>253072</td><td>29650</td>
+<td><b>1566</b></td>
+<td><b>2011</b></td>
+<td><b>2103</b></td>
+<td><b>2157</b></td>
+<td><b>2221</b></td>
+<td><b>2043</b></td>
+<td><b>2147</b></td>
+<td><b>3681</b></td>
+<td><b>4018</b></td>
+<td><b>2758</b></td>
+<td><b>2277</b></td>
+<td><b>2668</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>35</td>
+<td ><small>65</td>
+<td ><small>62</td>
+<td ><small>51</td>
+<td ><small>82</td>
+<td ><small>56</td>
+<td ><small><font color=red>74</td>
+<td ><small><font color=red>64</td>
+<td ><small>91</td>
+<td ><small>68</td>
+<td ><small>83</td>
+<td ><small>56</td>
+<td ><small>80</td>
+<td ><small><font color=red>48</td>
+<td ><small><font color=red>79</td>
+<td ><small>66</td>
+<td ><small>88</td>
+<td ><small>77</td>
+<td ><small>78</td>
+<td ><small>76</td>
+<td ><small><font color=red>84</td>
+<td ><small><font color=red>48</td>
+<td bgcolor=cacad0><small>55</td>
+<td ><small>53</td>
+<td ><small>55</td>
+<td ><small>48</td>
+<td ><small>67</td>
+<td ><small><font color=red>61</td>
+<td ><small><font color=red>64</td>
+<td ><small>54</td>
+<td ><small>62</td>
+<td ><small>53</td>
+<td ><small>72</td>
+<td ><small>60</td>
+<td ><small><font color=red>63</td>
+<td ><small><font color=red>70</td>
+<td ><small>61</td>
+<td ><small>60</td>
+<td ><small>80</td>
+<td ><small>74</td>
+<td ><small>92</td>
+<td ><small><font color=red>69</td>
+<td ><small><font color=red>77</td>
+<td ><small>85</td>
+<td ><small>76</td>
+<td ><small>91</td>
+<td ><small>69</td>
+<td ><small>48</td>
+<td ><small><font color=red>64</td>
+<td ><small><font color=red>52</td>
+<td ><small>82</td>
+<td ><small>68</td>
+<td bgcolor=cacad0><small>81</td>
+<td ><small>77</td>
+<td ><small>88</td>
+<td ><small><font color=red>62</td>
+<td ><small><font color=red>95</td>
+<td ><small>105</td>
+<td ><small>110</td>
+<td ><small>86</td>
+<td ><small>112</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=fanfikpogarripotteru.shtml></a>
+<a href=fanfikpogarripotteru.shtml>Командировка Князя Тьмы.</a></td>
+
+<td>280765</td><td>27777</td>
+<td><b>1598</b></td>
+<td><b>1965</b></td>
+<td><b>2369</b></td>
+<td><b>2058</b></td>
+<td><b>2106</b></td>
+<td><b>2295</b></td>
+<td><b>2407</b></td>
+<td><b>2392</b></td>
+<td><b>2499</b></td>
+<td><b>2684</b></td>
+<td><b>2311</b></td>
+<td><b>3093</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>70</td>
+<td ><small>80</td>
+<td ><small>74</td>
+<td ><small>72</td>
+<td ><small>69</td>
+<td ><small>56</td>
+<td ><small><font color=red>73</td>
+<td ><small><font color=red>70</td>
+<td ><small>69</td>
+<td ><small>61</td>
+<td ><small>64</td>
+<td ><small>58</td>
+<td ><small>91</td>
+<td ><small><font color=red>64</td>
+<td ><small><font color=red>79</td>
+<td ><small>77</td>
+<td ><small>76</td>
+<td ><small>60</td>
+<td ><small>65</td>
+<td ><small>58</td>
+<td ><small><font color=red>80</td>
+<td ><small><font color=red>63</td>
+<td bgcolor=cacad0><small>68</td>
+<td ><small>64</td>
+<td ><small>78</td>
+<td ><small>49</td>
+<td ><small>60</td>
+<td ><small><font color=red>62</td>
+<td ><small><font color=red>77</td>
+<td ><small>67</td>
+<td ><small>74</td>
+<td ><small>75</td>
+<td ><small>65</td>
+<td ><small>48</td>
+<td ><small><font color=red>84</td>
+<td ><small><font color=red>65</td>
+<td ><small>62</td>
+<td ><small>56</td>
+<td ><small>67</td>
+<td ><small>60</td>
+<td ><small>65</td>
+<td ><small><font color=red>55</td>
+<td ><small><font color=red>74</td>
+<td ><small>56</td>
+<td ><small>57</td>
+<td ><small>59</td>
+<td ><small>73</td>
+<td ><small>67</td>
+<td ><small><font color=red>78</td>
+<td ><small><font color=red>63</td>
+<td ><small>61</td>
+<td ><small>65</td>
+<td bgcolor=cacad0><small>79</td>
+<td ><small>63</td>
+<td ><small>75</td>
+<td ><small><font color=red>60</td>
+<td ><small><font color=red>66</td>
+<td ><small>79</td>
+<td ><small>64</td>
+<td ><small>74</td>
+<td ><small>75</td>
+</tr>
+</table>
+<br><table border=1 cellspacing=0 cellpadding=0><tr><td><td colspan=2><b>Итого</b></td><td colspan=12 align=center>За последние 12 месяцев</td><td colspan=24 align=center>Dec</td><td colspan=30 align=center>Nov</td><td colspan=8 align=center>Oct</td></tr><tr><td></td><td>Всего</td><td>12мес</td><td><small>Dec</small></td><td><small>Nov</small></td><td><small>Oct</small></td><td><small>Sep</small></td><td><small>Aug</small></td><td><small>Jul</small></td><td><small>Jun</small></td><td><small>May</small></td><td><small>Apr</small></td><td><small>Mar</small></td><td><small>Feb</small></td><td><small>Jan</small></td><td ><font color=red><small>24</small></td><td ><font color=red><small>23</small></td><td ><small>22</small></td><td ><small>21</small></td><td ><small>20</small></td><td ><small>19</small></td><td ><small>18</small></td><td ><font color=red><small>17</small></td><td ><font color=red><small>16</small></td><td ><small>15</small></td><td ><small>14</small></td><td ><small>13</small></td><td ><small>12</small></td><td ><small>11</small></td><td ><font color=red><small>10</small></td><td ><font color=red><small>09</small></td><td ><small>08</small></td><td ><small>07</small></td><td ><small>06</small></td><td ><small>05</small></td><td ><small>04</small></td><td ><font color=red><small>03</small></td><td ><font color=red><small>02</small></td><td bgcolor=c0c0d0><small>01</small></td><td ><small>30</small></td><td ><small>29</small></td><td ><small>28</small></td><td ><small>27</small></td><td ><font color=red><small>26</small></td><td ><font color=red><small>25</small></td><td ><small>24</small></td><td ><small>23</small></td><td ><small>22</small></td><td ><small>21</small></td><td ><small>20</small></td><td ><font color=red><small>19</small></td><td ><font color=red><small>18</small></td><td ><small>17</small></td><td ><small>16</small></td><td ><small>15</small></td><td ><small>14</small></td><td ><small>13</small></td><td ><font color=red><small>12</small></td><td ><font color=red><small>11</small></td><td ><small>10</small></td><td ><small>09</small></td><td ><small>08</small></td><td ><small>07</small></td><td ><small>06</small></td><td ><font color=red><small>05</small></td><td ><font color=red><small>04</small></td><td ><small>03</small></td><td ><small>02</small></td><td bgcolor=c0c0d0><small>01</small></td><td ><small>31</small></td><td ><small>30</small></td><td ><font color=red><small>29</small></td><td ><font color=red><small>28</small></td><td ><small>27</small></td><td ><small>26</small></td><td ><small>25</small></td><td ><small>24</small></td></tr>
+
+<tr><td><a name=demonwampir.shtml></a>
+<a href=demonwampir.shtml>Демон + Вампир</a></td>
+
+<td>24486</td><td>24486</td>
+<td><b>1809</b></td>
+<td><b>3594</b></td>
+<td><b>19083</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>72</td>
+<td ><small>71</td>
+<td ><small>77</td>
+<td ><small>63</td>
+<td ><small>76</td>
+<td ><small>85</td>
+<td ><small><font color=red>89</td>
+<td ><small><font color=red>60</td>
+<td ><small>99</td>
+<td ><small>64</td>
+<td ><small>87</td>
+<td ><small>83</td>
+<td ><small>85</td>
+<td ><small><font color=red>68</td>
+<td ><small><font color=red>95</td>
+<td ><small>65</td>
+<td ><small>89</td>
+<td ><small>63</td>
+<td ><small>95</td>
+<td ><small>73</td>
+<td ><small><font color=red>88</td>
+<td ><small><font color=red>79</td>
+<td bgcolor=cacad0><small>83</td>
+<td ><small>71</td>
+<td ><small>97</td>
+<td ><small>68</td>
+<td ><small>107</td>
+<td ><small><font color=red>75</td>
+<td ><small><font color=red>105</td>
+<td ><small>82</td>
+<td ><small>118</td>
+<td ><small>96</td>
+<td ><small>130</td>
+<td ><small>86</td>
+<td ><small><font color=red>111</td>
+<td ><small><font color=red>105</td>
+<td ><small>110</td>
+<td ><small>113</td>
+<td ><small>104</td>
+<td ><small>109</td>
+<td ><small>135</td>
+<td ><small><font color=red>103</td>
+<td ><small><font color=red>143</td>
+<td ><small>99</td>
+<td ><small>132</td>
+<td ><small>132</td>
+<td ><small>141</td>
+<td ><small>118</td>
+<td ><small><font color=red>166</td>
+<td ><small><font color=red>159</td>
+<td ><small>192</td>
+<td ><small>167</td>
+<td bgcolor=cacad0><small>220</td>
+<td ><small>152</td>
+<td ><small>237</td>
+<td ><small><font color=red>185</td>
+<td ><small><font color=red>216</td>
+<td ><small>205</td>
+<td ><small>242</td>
+<td ><small>232</td>
+<td ><small>474</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=admiralzabytojepohi.shtml></a>
+<a href=admiralzabytojepohi.shtml>Солдаты забытой эпохи.</a></td>
+
+<td>251377</td><td>21098</td>
+<td><b>1004</b></td>
+<td><b>1503</b></td>
+<td><b>1649</b></td>
+<td><b>1427</b></td>
+<td><b>1377</b></td>
+<td><b>1285</b></td>
+<td><b>1447</b></td>
+<td><b>2153</b></td>
+<td><b>1850</b></td>
+<td><b>2302</b></td>
+<td><b>1966</b></td>
+<td><b>3135</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>40</td>
+<td ><small>32</td>
+<td ><small>43</td>
+<td ><small>30</td>
+<td ><small>46</td>
+<td ><small>46</td>
+<td ><small><font color=red>36</td>
+<td ><small><font color=red>31</td>
+<td ><small>62</td>
+<td ><small>46</td>
+<td ><small>47</td>
+<td ><small>35</td>
+<td ><small>50</td>
+<td ><small><font color=red>30</td>
+<td ><small><font color=red>55</td>
+<td ><small>52</td>
+<td ><small>55</td>
+<td ><small>43</td>
+<td ><small>56</td>
+<td ><small>37</td>
+<td ><small><font color=red>46</td>
+<td ><small><font color=red>34</td>
+<td bgcolor=cacad0><small>51</td>
+<td ><small>39</td>
+<td ><small>36</td>
+<td ><small>41</td>
+<td ><small>53</td>
+<td ><small><font color=red>41</td>
+<td ><small><font color=red>44</td>
+<td ><small>47</td>
+<td ><small>64</td>
+<td ><small>52</td>
+<td ><small>64</td>
+<td ><small>55</td>
+<td ><small><font color=red>43</td>
+<td ><small><font color=red>48</td>
+<td ><small>50</td>
+<td ><small>51</td>
+<td ><small>50</td>
+<td ><small>44</td>
+<td ><small>54</td>
+<td ><small><font color=red>46</td>
+<td ><small><font color=red>51</td>
+<td ><small>45</td>
+<td ><small>44</td>
+<td ><small>42</td>
+<td ><small>45</td>
+<td ><small>60</td>
+<td ><small><font color=red>48</td>
+<td ><small><font color=red>38</td>
+<td ><small>75</td>
+<td ><small>70</td>
+<td bgcolor=cacad0><small>63</td>
+<td ><small>52</td>
+<td ><small>64</td>
+<td ><small><font color=red>60</td>
+<td ><small><font color=red>74</td>
+<td ><small>87</td>
+<td ><small>65</td>
+<td ><small>47</td>
+<td ><small>52</td>
+</tr>
+<tr><td><a name=wentiljator.shtml></a>
+<a href=wentiljator.shtml>Вентилятор</a></td>
+
+<td>19219</td><td>19219</td>
+<td><b>316</b></td>
+<td><b>497</b></td>
+<td><b>609</b></td>
+<td><b>556</b></td>
+<td><b>590</b></td>
+<td><b>424</b></td>
+<td><b>414</b></td>
+<td><b>470</b></td>
+<td><b>834</b></td>
+<td><b>2639</b></td>
+<td><b>940</b></td>
+<td><b>10930</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>14</td>
+<td ><small>9</td>
+<td ><small>5</td>
+<td ><small>8</td>
+<td ><small>21</td>
+<td ><small>15</td>
+<td ><small><font color=red>13</td>
+<td ><small><font color=red>10</td>
+<td ><small>6</td>
+<td ><small>18</td>
+<td ><small>21</td>
+<td ><small>9</td>
+<td ><small>9</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>18</td>
+<td ><small>11</td>
+<td ><small>11</td>
+<td ><small>20</td>
+<td ><small>18</td>
+<td ><small>14</td>
+<td ><small><font color=red>18</td>
+<td ><small><font color=red>16</td>
+<td bgcolor=cacad0><small>21</td>
+<td ><small>24</td>
+<td ><small>22</td>
+<td ><small>18</td>
+<td ><small>17</td>
+<td ><small><font color=red>16</td>
+<td ><small><font color=red>18</td>
+<td ><small>11</td>
+<td ><small>11</td>
+<td ><small>4</td>
+<td ><small>25</td>
+<td ><small>13</td>
+<td ><small><font color=red>17</td>
+<td ><small><font color=red>19</td>
+<td ><small>15</td>
+<td ><small>14</td>
+<td ><small>13</td>
+<td ><small>12</td>
+<td ><small>26</td>
+<td ><small><font color=red>12</td>
+<td ><small><font color=red>15</td>
+<td ><small>17</td>
+<td ><small>13</td>
+<td ><small>17</td>
+<td ><small>20</td>
+<td ><small>15</td>
+<td ><small><font color=red>15</td>
+<td ><small><font color=red>24</td>
+<td ><small>20</td>
+<td ><small>13</td>
+<td bgcolor=cacad0><small>21</td>
+<td ><small>13</td>
+<td ><small>15</td>
+<td ><small><font color=red>34</td>
+<td ><small><font color=red>23</td>
+<td ><small>20</td>
+<td ><small>20</td>
+<td ><small>16</td>
+<td ><small>13</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=stanowleniepatriarha.shtml></a>
+<a href=stanowleniepatriarha.shtml>Становление Патриарха</a></td>
+
+<td>206863</td><td>16775</td>
+<td><b>908</b></td>
+<td><b>1126</b></td>
+<td><b>1309</b></td>
+<td><b>1258</b></td>
+<td><b>1378</b></td>
+<td><b>1335</b></td>
+<td><b>1260</b></td>
+<td><b>1494</b></td>
+<td><b>1613</b></td>
+<td><b>1487</b></td>
+<td><b>1553</b></td>
+<td><b>2054</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>33</td>
+<td ><small>31</td>
+<td ><small>34</td>
+<td ><small>37</td>
+<td ><small>35</td>
+<td ><small>36</td>
+<td ><small><font color=red>35</td>
+<td ><small><font color=red>24</td>
+<td ><small>50</td>
+<td ><small>44</td>
+<td ><small>23</td>
+<td ><small>37</td>
+<td ><small>44</td>
+<td ><small><font color=red>46</td>
+<td ><small><font color=red>46</td>
+<td ><small>31</td>
+<td ><small>48</td>
+<td ><small>44</td>
+<td ><small>39</td>
+<td ><small>47</td>
+<td ><small><font color=red>57</td>
+<td ><small><font color=red>41</td>
+<td bgcolor=cacad0><small>46</td>
+<td ><small>33</td>
+<td ><small>43</td>
+<td ><small>28</td>
+<td ><small>48</td>
+<td ><small><font color=red>42</td>
+<td ><small><font color=red>51</td>
+<td ><small>32</td>
+<td ><small>41</td>
+<td ><small>29</td>
+<td ><small>52</td>
+<td ><small>33</td>
+<td ><small><font color=red>40</td>
+<td ><small><font color=red>32</td>
+<td ><small>43</td>
+<td ><small>33</td>
+<td ><small>34</td>
+<td ><small>33</td>
+<td ><small>46</td>
+<td ><small><font color=red>26</td>
+<td ><small><font color=red>37</td>
+<td ><small>32</td>
+<td ><small>46</td>
+<td ><small>29</td>
+<td ><small>36</td>
+<td ><small>35</td>
+<td ><small><font color=red>38</td>
+<td ><small><font color=red>31</td>
+<td ><small>43</td>
+<td ><small>33</td>
+<td bgcolor=cacad0><small>47</td>
+<td ><small>36</td>
+<td ><small>51</td>
+<td ><small><font color=red>39</td>
+<td ><small><font color=red>42</td>
+<td ><small>36</td>
+<td ><small>43</td>
+<td ><small>39</td>
+<td ><small>49</td>
+</tr>
+<tr><td><a name=zarisowkapoigregotika.shtml></a>
+<a href=zarisowkapoigregotika.shtml>Зарисовка по игре "Готика"</a></td>
+
+<td>37824</td><td>13307</td>
+<td><b>426</b></td>
+<td><b>1491</b></td>
+<td><b>2247</b></td>
+<td><b>591</b></td>
+<td><b>947</b></td>
+<td><b>3405</b></td>
+<td><b>531</b></td>
+<td><b>1650</b></td>
+<td><b>349</b></td>
+<td><b>436</b></td>
+<td><b>480</b></td>
+<td><b>754</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>15</td>
+<td ><small>11</td>
+<td ><small>19</td>
+<td ><small>20</td>
+<td ><small>18</td>
+<td ><small>15</td>
+<td ><small><font color=red>21</td>
+<td ><small><font color=red>12</td>
+<td ><small>20</td>
+<td ><small>15</td>
+<td ><small>21</td>
+<td ><small>12</td>
+<td ><small>24</td>
+<td ><small><font color=red>19</td>
+<td ><small><font color=red>20</td>
+<td ><small>17</td>
+<td ><small>16</td>
+<td ><small>16</td>
+<td ><small>24</td>
+<td ><small>14</td>
+<td ><small><font color=red>29</td>
+<td ><small><font color=red>15</td>
+<td bgcolor=cacad0><small>33</td>
+<td ><small>21</td>
+<td ><small>22</td>
+<td ><small>25</td>
+<td ><small>30</td>
+<td ><small><font color=red>23</td>
+<td ><small><font color=red>24</td>
+<td ><small>21</td>
+<td ><small>27</td>
+<td ><small>25</td>
+<td ><small>29</td>
+<td ><small>29</td>
+<td ><small><font color=red>39</td>
+<td ><small><font color=red>26</td>
+<td ><small>48</td>
+<td ><small>42</td>
+<td ><small>38</td>
+<td ><small>32</td>
+<td ><small>41</td>
+<td ><small><font color=red>35</td>
+<td ><small><font color=red>44</td>
+<td ><small>38</td>
+<td ><small>56</td>
+<td ><small>35</td>
+<td ><small>49</td>
+<td ><small>49</td>
+<td ><small><font color=red>58</td>
+<td ><small><font color=red>57</td>
+<td ><small>108</td>
+<td ><small>101</td>
+<td bgcolor=cacad0><small>319</td>
+<td ><small>232</td>
+<td ><small>47</td>
+<td ><small><font color=red>43</td>
+<td ><small><font color=red>52</td>
+<td ><small>58</td>
+<td ><small>64</td>
+<td ><small>62</td>
+<td ><small>64</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=natrezim2.shtml></a>
+<a href=natrezim2.shtml>Натрезим 2.</a></td>
+
+<td>51609</td><td>12820</td>
+<td><b>636</b></td>
+<td><b>1620</b></td>
+<td><b>1033</b></td>
+<td><b>1024</b></td>
+<td><b>1017</b></td>
+<td><b>915</b></td>
+<td><b>821</b></td>
+<td><b>973</b></td>
+<td><b>932</b></td>
+<td><b>1228</b></td>
+<td><b>1091</b></td>
+<td><b>1530</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>19</td>
+<td ><small>20</td>
+<td ><small>29</td>
+<td ><small>23</td>
+<td ><small>26</td>
+<td ><small>23</td>
+<td ><small><font color=red>34</td>
+<td ><small><font color=red>29</td>
+<td ><small>41</td>
+<td ><small>14</td>
+<td ><small>31</td>
+<td ><small>24</td>
+<td ><small>32</td>
+<td ><small><font color=red>32</td>
+<td ><small><font color=red>29</td>
+<td ><small>31</td>
+<td ><small>27</td>
+<td ><small>30</td>
+<td ><small>26</td>
+<td ><small>21</td>
+<td ><small><font color=red>33</td>
+<td ><small><font color=red>28</td>
+<td bgcolor=cacad0><small>34</td>
+<td ><small>22</td>
+<td ><small>34</td>
+<td ><small>33</td>
+<td ><small>32</td>
+<td ><small><font color=red>28</td>
+<td ><small><font color=red>37</td>
+<td ><small>33</td>
+<td ><small>35</td>
+<td ><small>42</td>
+<td ><small>42</td>
+<td ><small>39</td>
+<td ><small><font color=red>47</td>
+<td ><small><font color=red>31</td>
+<td ><small>50</td>
+<td ><small>45</td>
+<td ><small>46</td>
+<td ><small>50</td>
+<td ><small>67</td>
+<td ><small><font color=red>90</td>
+<td ><small><font color=red>235</td>
+<td ><small>272</td>
+<td ><small>42</td>
+<td ><small>33</td>
+<td ><small>40</td>
+<td ><small>35</td>
+<td ><small><font color=red>30</td>
+<td ><small><font color=red>31</td>
+<td ><small>24</td>
+<td ><small>36</td>
+<td bgcolor=cacad0><small>39</td>
+<td ><small>21</td>
+<td ><small>31</td>
+<td ><small><font color=red>37</td>
+<td ><small><font color=red>20</td>
+<td ><small>38</td>
+<td ><small>41</td>
+<td ><small>28</td>
+<td ><small>38</td>
+</tr>
+<tr><td><a name=prawilarazdela.shtml></a>
+<a href=prawilarazdela.shtml>Правила раздела</a></td>
+
+<td>30486</td><td>9860</td>
+<td><b>257</b></td>
+<td><b>1101</b></td>
+<td><b>1422</b></td>
+<td><b>2035</b></td>
+<td><b>286</b></td>
+<td><b>263</b></td>
+<td><b>232</b></td>
+<td><b>311</b></td>
+<td><b>1516</b></td>
+<td><b>1813</b></td>
+<td><b>270</b></td>
+<td><b>354</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>10</td>
+<td ><small>10</td>
+<td ><small>12</td>
+<td ><small>14</td>
+<td ><small>15</td>
+<td ><small>8</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>7</td>
+<td ><small>7</td>
+<td ><small>12</td>
+<td ><small>9</td>
+<td ><small>11</td>
+<td ><small>9</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>10</td>
+<td ><small>9</td>
+<td ><small>16</td>
+<td ><small>22</td>
+<td ><small>10</td>
+<td ><small>8</td>
+<td ><small><font color=red>12</td>
+<td ><small><font color=red>12</td>
+<td bgcolor=cacad0><small>16</td>
+<td ><small>15</td>
+<td ><small>19</td>
+<td ><small>21</td>
+<td ><small>12</td>
+<td ><small><font color=red>24</td>
+<td ><small><font color=red>16</td>
+<td ><small>15</td>
+<td ><small>24</td>
+<td ><small>25</td>
+<td ><small>172</td>
+<td ><small>28</td>
+<td ><small><font color=red>36</td>
+<td ><small><font color=red>44</td>
+<td ><small>68</td>
+<td ><small>61</td>
+<td ><small>63</td>
+<td ><small>69</td>
+<td ><small>209</td>
+<td ><small><font color=red>36</td>
+<td ><small><font color=red>12</td>
+<td ><small>10</td>
+<td ><small>11</td>
+<td ><small>9</td>
+<td ><small>12</td>
+<td ><small>10</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>15</td>
+<td ><small>18</td>
+<td ><small>15</td>
+<td bgcolor=cacad0><small>21</td>
+<td ><small>12</td>
+<td ><small>19</td>
+<td ><small><font color=red>14</td>
+<td ><small><font color=red>13</td>
+<td ><small>19</td>
+<td ><small>20</td>
+<td ><small>15</td>
+<td ><small>40</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=prodolzheniefanfikapozwezdnymwojnam30112017.shtml></a>
+<a href=prodolzheniefanfikapozwezdnymwojnam30112017.shtml>Продолжение фанфика по "Звёздным Войнам" 30.11.2017</a></td>
+
+<td>8193</td><td>8193</td>
+<td><b>3990</b></td>
+<td><b>4203</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>51</td>
+<td ><small>41</td>
+<td ><small>45</td>
+<td ><small>62</td>
+<td ><small>73</td>
+<td ><small>105</td>
+<td ><small><font color=red>59</td>
+<td ><small><font color=red>60</td>
+<td ><small>67</td>
+<td ><small>59</td>
+<td ><small>75</td>
+<td ><small>45</td>
+<td ><small>84</td>
+<td ><small><font color=red>79</td>
+<td ><small><font color=red>104</td>
+<td ><small>114</td>
+<td ><small>151</td>
+<td ><small>165</td>
+<td ><small>195</td>
+<td ><small>223</td>
+<td ><small><font color=red>361</td>
+<td ><small><font color=red>546</td>
+<td bgcolor=cacad0><small>1225</td>
+<td ><small>4203</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td bgcolor=cacad0><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+</tr>
+<tr><td><a name=wazhnodljawsehkritikowiopytnyhchitatelej.shtml></a>
+<a href=wazhnodljawsehkritikowiopytnyhchitatelej.shtml>Важно! Для всех критиков и опытных читателей!</a></td>
+
+<td>39351</td><td>7368</td>
+<td><b>238</b></td>
+<td><b>355</b></td>
+<td><b>439</b></td>
+<td><b>469</b></td>
+<td><b>356</b></td>
+<td><b>329</b></td>
+<td><b>348</b></td>
+<td><b>747</b></td>
+<td><b>2755</b></td>
+<td><b>474</b></td>
+<td><b>369</b></td>
+<td><b>489</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>10</td>
+<td ><small>10</td>
+<td ><small>11</td>
+<td ><small>14</td>
+<td ><small>10</td>
+<td ><small>21</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>15</td>
+<td ><small>14</td>
+<td ><small>17</td>
+<td ><small>7</td>
+<td ><small>7</td>
+<td ><small>16</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>9</td>
+<td ><small>10</td>
+<td ><small>12</td>
+<td ><small>15</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>5</td>
+<td bgcolor=cacad0><small>10</td>
+<td ><small>15</td>
+<td ><small>9</td>
+<td ><small>9</td>
+<td ><small>13</td>
+<td ><small><font color=red>15</td>
+<td ><small><font color=red>9</td>
+<td ><small>6</td>
+<td ><small>14</td>
+<td ><small>12</td>
+<td ><small>18</td>
+<td ><small>10</td>
+<td ><small><font color=red>13</td>
+<td ><small><font color=red>9</td>
+<td ><small>13</td>
+<td ><small>17</td>
+<td ><small>16</td>
+<td ><small>14</td>
+<td ><small>18</td>
+<td ><small><font color=red>10</td>
+<td ><small><font color=red>9</td>
+<td ><small>8</td>
+<td ><small>14</td>
+<td ><small>6</td>
+<td ><small>12</td>
+<td ><small>12</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>8</td>
+<td ><small>15</td>
+<td ><small>7</td>
+<td bgcolor=cacad0><small>13</td>
+<td ><small>6</td>
+<td ><small>19</td>
+<td ><small><font color=red>16</td>
+<td ><small><font color=red>11</td>
+<td ><small>14</td>
+<td ><small>9</td>
+<td ><small>17</td>
+<td ><small>11</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=rycarxsmertitehnicheskajainformacija.shtml></a>
+<a href=rycarxsmertitehnicheskajainformacija.shtml>Рыцарь Смерти. Техническая информация.</a></td>
+
+<td>15469</td><td>7026</td>
+<td><b>156</b></td>
+<td><b>297</b></td>
+<td><b>447</b></td>
+<td><b>386</b></td>
+<td><b>369</b></td>
+<td><b>364</b></td>
+<td><b>335</b></td>
+<td><b>375</b></td>
+<td><b>468</b></td>
+<td><b>561</b></td>
+<td><b>1220</b></td>
+<td><b>2048</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>8</td>
+<td ><small>7</td>
+<td ><small>7</td>
+<td ><small>6</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small><font color=red>12</td>
+<td ><small><font color=red>6</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>8</td>
+<td ><small>7</td>
+<td ><small>6</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>4</td>
+<td ><small>3</td>
+<td ><small>10</td>
+<td ><small>7</td>
+<td ><small>4</td>
+<td ><small>9</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>8</td>
+<td bgcolor=cacad0><small>13</td>
+<td ><small>16</td>
+<td ><small>8</td>
+<td ><small>8</td>
+<td ><small>7</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>8</td>
+<td ><small>6</td>
+<td ><small>8</td>
+<td ><small>7</td>
+<td ><small>11</td>
+<td ><small>6</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>6</td>
+<td ><small>20</td>
+<td ><small>8</td>
+<td ><small>5</td>
+<td ><small>8</td>
+<td ><small>13</td>
+<td ><small><font color=red>10</td>
+<td ><small><font color=red>8</td>
+<td ><small>7</td>
+<td ><small>13</td>
+<td ><small>5</td>
+<td ><small>10</td>
+<td ><small>12</td>
+<td ><small><font color=red>10</td>
+<td ><small><font color=red>11</td>
+<td ><small>20</td>
+<td ><small>13</td>
+<td bgcolor=cacad0><small>17</td>
+<td ><small>16</td>
+<td ><small>15</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>21</td>
+<td ><small>19</td>
+<td ><small>16</td>
+<td ><small>33</td>
+<td ><small>27</td>
+</tr>
+<tr><td><a name=x-comfaktorkejna.shtml></a>
+<a href=x-comfaktorkejna.shtml>X-com: Фактор Кейна.</a></td>
+
+<td>59720</td><td>7009</td>
+<td><b>343</b></td>
+<td><b>515</b></td>
+<td><b>651</b></td>
+<td><b>561</b></td>
+<td><b>613</b></td>
+<td><b>678</b></td>
+<td><b>602</b></td>
+<td><b>579</b></td>
+<td><b>469</b></td>
+<td><b>527</b></td>
+<td><b>620</b></td>
+<td><b>851</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>11</td>
+<td ><small>12</td>
+<td ><small>9</td>
+<td ><small>7</td>
+<td ><small>12</td>
+<td ><small>16</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>11</td>
+<td ><small>23</td>
+<td ><small>22</td>
+<td ><small>25</td>
+<td ><small>21</td>
+<td ><small>19</td>
+<td ><small><font color=red>13</td>
+<td ><small><font color=red>16</td>
+<td ><small>14</td>
+<td ><small>15</td>
+<td ><small>14</td>
+<td ><small>21</td>
+<td ><small>9</td>
+<td ><small><font color=red>18</td>
+<td ><small><font color=red>11</td>
+<td bgcolor=cacad0><small>14</td>
+<td ><small>11</td>
+<td ><small>8</td>
+<td ><small>10</td>
+<td ><small>10</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>22</td>
+<td ><small>24</td>
+<td ><small>29</td>
+<td ><small>7</td>
+<td ><small>14</td>
+<td ><small>15</td>
+<td ><small><font color=red>18</td>
+<td ><small><font color=red>18</td>
+<td ><small>19</td>
+<td ><small>9</td>
+<td ><small>17</td>
+<td ><small>27</td>
+<td ><small>22</td>
+<td ><small><font color=red>27</td>
+<td ><small><font color=red>23</td>
+<td ><small>18</td>
+<td ><small>9</td>
+<td ><small>10</td>
+<td ><small>10</td>
+<td ><small>17</td>
+<td ><small><font color=red>17</td>
+<td ><small><font color=red>22</td>
+<td ><small>16</td>
+<td ><small>31</td>
+<td bgcolor=cacad0><small>26</td>
+<td ><small>28</td>
+<td ><small>26</td>
+<td ><small><font color=red>23</td>
+<td ><small><font color=red>10</td>
+<td ><small>21</td>
+<td ><small>12</td>
+<td ><small>13</td>
+<td ><small>12</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=prodolzheniefanfikapohwostufei06122017.shtml></a>
+<a href=prodolzheniefanfikapohwostufei06122017.shtml>Продолжение фанфика по "Хвосту Феи" 06.12.2017</a></td>
+
+<td>6906</td><td>6906</td>
+<td><b>6906</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>61</td>
+<td ><small>54</td>
+<td ><small>67</td>
+<td ><small>73</td>
+<td ><small>88</td>
+<td ><small>76</td>
+<td ><small><font color=red>85</td>
+<td ><small><font color=red>92</td>
+<td ><small>141</td>
+<td ><small>131</td>
+<td ><small>157</td>
+<td ><small>158</td>
+<td ><small>194</td>
+<td ><small><font color=red>264</td>
+<td ><small><font color=red>412</td>
+<td ><small>650</td>
+<td ><small>3710</td>
+<td ><small>491</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td bgcolor=cacad0><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td bgcolor=cacad0><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+</tr>
+<tr><td><a name=prodolzheniefanfikapohwostufei03122017.shtml></a>
+<a href=prodolzheniefanfikapohwostufei03122017.shtml>Продолжение фанфика по "Хвосту Феи" 03.12.2017</a></td>
+
+<td>6886</td><td>6886</td>
+<td><b>6886</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td><b>0</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>31</td>
+<td ><small>37</td>
+<td ><small>36</td>
+<td ><small>50</td>
+<td ><small>46</td>
+<td ><small>34</td>
+<td ><small><font color=red>47</td>
+<td ><small><font color=red>46</td>
+<td ><small>69</td>
+<td ><small>58</td>
+<td ><small>73</td>
+<td ><small>79</td>
+<td ><small>91</td>
+<td ><small><font color=red>103</td>
+<td ><small><font color=red>155</td>
+<td ><small>171</td>
+<td ><small>349</td>
+<td ><small>367</td>
+<td ><small>648</td>
+<td ><small>1591</td>
+<td ><small><font color=red>2804</td>
+<td ><small><font color=red>0</td>
+<td bgcolor=cacad0><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td bgcolor=cacad0><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>0</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=w-umnyepopadancywluizuili10sposobowsdohnutx.shtml></a>
+<a href=w-umnyepopadancywluizuili10sposobowsdohnutx.shtml>В-умные попаданцы в Луизу или 10 способов сдохнуть.</a></td>
+
+<td>20846</td><td>6771</td>
+<td><b>285</b></td>
+<td><b>396</b></td>
+<td><b>550</b></td>
+<td><b>595</b></td>
+<td><b>539</b></td>
+<td><b>549</b></td>
+<td><b>455</b></td>
+<td><b>537</b></td>
+<td><b>588</b></td>
+<td><b>620</b></td>
+<td><b>711</b></td>
+<td><b>946</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>11</td>
+<td ><small>5</td>
+<td ><small>17</td>
+<td ><small>14</td>
+<td ><small>9</td>
+<td ><small>14</td>
+<td ><small><font color=red>12</td>
+<td ><small><font color=red>10</td>
+<td ><small>12</td>
+<td ><small>13</td>
+<td ><small>15</td>
+<td ><small>7</td>
+<td ><small>14</td>
+<td ><small><font color=red>13</td>
+<td ><small><font color=red>21</td>
+<td ><small>10</td>
+<td ><small>11</td>
+<td ><small>10</td>
+<td ><small>11</td>
+<td ><small>15</td>
+<td ><small><font color=red>15</td>
+<td ><small><font color=red>11</td>
+<td bgcolor=cacad0><small>15</td>
+<td ><small>12</td>
+<td ><small>13</td>
+<td ><small>14</td>
+<td ><small>9</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>17</td>
+<td ><small>3</td>
+<td ><small>12</td>
+<td ><small>9</td>
+<td ><small>16</td>
+<td ><small>8</td>
+<td ><small><font color=red>18</td>
+<td ><small><font color=red>13</td>
+<td ><small>19</td>
+<td ><small>16</td>
+<td ><small>17</td>
+<td ><small>13</td>
+<td ><small>14</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>15</td>
+<td ><small>12</td>
+<td ><small>11</td>
+<td ><small>10</td>
+<td ><small>10</td>
+<td ><small>16</td>
+<td ><small><font color=red>21</td>
+<td ><small><font color=red>10</td>
+<td ><small>15</td>
+<td ><small>10</td>
+<td bgcolor=cacad0><small>23</td>
+<td ><small>20</td>
+<td ><small>14</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>16</td>
+<td ><small>11</td>
+<td ><small>17</td>
+<td ><small>6</td>
+<td ><small>15</td>
+</tr>
+<tr><td><a name=kratkajaistorijarossiidljachajnikow.shtml></a>
+<a href=kratkajaistorijarossiidljachajnikow.shtml>Краткая история России для чайников.</a></td>
+
+<td>14317</td><td>6155</td>
+<td><b>542</b></td>
+<td><b>396</b></td>
+<td><b>477</b></td>
+<td><b>545</b></td>
+<td><b>516</b></td>
+<td><b>406</b></td>
+<td><b>363</b></td>
+<td><b>394</b></td>
+<td><b>499</b></td>
+<td><b>582</b></td>
+<td><b>573</b></td>
+<td><b>862</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>5</td>
+<td ><small>10</td>
+<td ><small>9</td>
+<td ><small>14</td>
+<td ><small>10</td>
+<td ><small>16</td>
+<td ><small><font color=red>21</td>
+<td ><small><font color=red>43</td>
+<td ><small>28</td>
+<td ><small>16</td>
+<td ><small>20</td>
+<td ><small>20</td>
+<td ><small>27</td>
+<td ><small><font color=red>26</td>
+<td ><small><font color=red>33</td>
+<td ><small>54</td>
+<td ><small>129</td>
+<td ><small>11</td>
+<td ><small>9</td>
+<td ><small>8</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>11</td>
+<td bgcolor=cacad0><small>14</td>
+<td ><small>13</td>
+<td ><small>16</td>
+<td ><small>13</td>
+<td ><small>10</td>
+<td ><small><font color=red>13</td>
+<td ><small><font color=red>11</td>
+<td ><small>7</td>
+<td ><small>16</td>
+<td ><small>9</td>
+<td ><small>17</td>
+<td ><small>15</td>
+<td ><small><font color=red>13</td>
+<td ><small><font color=red>11</td>
+<td ><small>22</td>
+<td ><small>19</td>
+<td ><small>10</td>
+<td ><small>17</td>
+<td ><small>13</td>
+<td ><small><font color=red>15</td>
+<td ><small><font color=red>11</td>
+<td ><small>8</td>
+<td ><small>17</td>
+<td ><small>11</td>
+<td ><small>5</td>
+<td ><small>15</td>
+<td ><small><font color=red>13</td>
+<td ><small><font color=red>11</td>
+<td ><small>17</td>
+<td ><small>12</td>
+<td bgcolor=cacad0><small>16</td>
+<td ><small>13</td>
+<td ><small>17</td>
+<td ><small><font color=red>13</td>
+<td ><small><font color=red>11</td>
+<td ><small>12</td>
+<td ><small>12</td>
+<td ><small>17</td>
+<td ><small>12</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=omakkfanfikampogarripotteru.shtml></a>
+<a href=omakkfanfikampogarripotteru.shtml>Омак к фанфикам по Гарри Поттеру.</a></td>
+
+<td>31722</td><td>5663</td>
+<td><b>257</b></td>
+<td><b>412</b></td>
+<td><b>491</b></td>
+<td><b>463</b></td>
+<td><b>530</b></td>
+<td><b>467</b></td>
+<td><b>457</b></td>
+<td><b>478</b></td>
+<td><b>499</b></td>
+<td><b>512</b></td>
+<td><b>484</b></td>
+<td><b>613</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>7</td>
+<td ><small>16</td>
+<td ><small>8</td>
+<td ><small>17</td>
+<td ><small>6</td>
+<td ><small>10</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>11</td>
+<td ><small>13</td>
+<td ><small>14</td>
+<td ><small>13</td>
+<td ><small>11</td>
+<td ><small>18</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>11</td>
+<td ><small>9</td>
+<td ><small>15</td>
+<td ><small>7</td>
+<td ><small>12</td>
+<td ><small>11</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>9</td>
+<td bgcolor=cacad0><small>10</td>
+<td ><small>10</td>
+<td ><small>16</td>
+<td ><small>9</td>
+<td ><small>13</td>
+<td ><small><font color=red>19</td>
+<td ><small><font color=red>13</td>
+<td ><small>9</td>
+<td ><small>14</td>
+<td ><small>12</td>
+<td ><small>23</td>
+<td ><small>8</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>10</td>
+<td ><small>9</td>
+<td ><small>13</td>
+<td ><small>8</td>
+<td ><small>19</td>
+<td ><small>18</td>
+<td ><small><font color=red>14</td>
+<td ><small><font color=red>13</td>
+<td ><small>27</td>
+<td ><small>12</td>
+<td ><small>9</td>
+<td ><small>14</td>
+<td ><small>16</td>
+<td ><small><font color=red>12</td>
+<td ><small><font color=red>17</td>
+<td ><small>15</td>
+<td ><small>17</td>
+<td bgcolor=cacad0><small>12</td>
+<td ><small>16</td>
+<td ><small>12</td>
+<td ><small><font color=red>16</td>
+<td ><small><font color=red>14</td>
+<td ><small>14</td>
+<td ><small>12</td>
+<td ><small>13</td>
+<td ><small>20</td>
+</tr>
+<tr><td><a name=scenariidljafanfikow.shtml></a>
+<a href=scenariidljafanfikow.shtml>Сценарии для фанфиков</a></td>
+
+<td>44556</td><td>5017</td>
+<td><b>379</b></td>
+<td><b>399</b></td>
+<td><b>412</b></td>
+<td><b>418</b></td>
+<td><b>405</b></td>
+<td><b>369</b></td>
+<td><b>331</b></td>
+<td><b>392</b></td>
+<td><b>399</b></td>
+<td><b>490</b></td>
+<td><b>421</b></td>
+<td><b>602</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>10</td>
+<td ><small>15</td>
+<td ><small>14</td>
+<td ><small>21</td>
+<td ><small>14</td>
+<td ><small>12</td>
+<td ><small><font color=red>16</td>
+<td ><small><font color=red>21</td>
+<td ><small>16</td>
+<td ><small>16</td>
+<td ><small>18</td>
+<td ><small>15</td>
+<td ><small>25</td>
+<td ><small><font color=red>18</td>
+<td ><small><font color=red>22</td>
+<td ><small>10</td>
+<td ><small>10</td>
+<td ><small>12</td>
+<td ><small>21</td>
+<td ><small>13</td>
+<td ><small><font color=red>21</td>
+<td ><small><font color=red>19</td>
+<td bgcolor=cacad0><small>20</td>
+<td ><small>16</td>
+<td ><small>16</td>
+<td ><small>17</td>
+<td ><small>15</td>
+<td ><small><font color=red>15</td>
+<td ><small><font color=red>12</td>
+<td ><small>6</td>
+<td ><small>18</td>
+<td ><small>16</td>
+<td ><small>7</td>
+<td ><small>13</td>
+<td ><small><font color=red>16</td>
+<td ><small><font color=red>14</td>
+<td ><small>18</td>
+<td ><small>18</td>
+<td ><small>8</td>
+<td ><small>8</td>
+<td ><small>11</td>
+<td ><small><font color=red>13</td>
+<td ><small><font color=red>19</td>
+<td ><small>14</td>
+<td ><small>15</td>
+<td ><small>5</td>
+<td ><small>9</td>
+<td ><small>10</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>18</td>
+<td ><small>14</td>
+<td ><small>15</td>
+<td bgcolor=cacad0><small>15</td>
+<td ><small>15</td>
+<td ><small>11</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>12</td>
+<td ><small>13</td>
+<td ><small>5</td>
+<td ><small>13</td>
+<td ><small>10</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=omak.shtml></a>
+<a href=omak.shtml>Омак</a></td>
+
+<td>27994</td><td>4933</td>
+<td><b>178</b></td>
+<td><b>302</b></td>
+<td><b>331</b></td>
+<td><b>375</b></td>
+<td><b>404</b></td>
+<td><b>591</b></td>
+<td><b>341</b></td>
+<td><b>416</b></td>
+<td><b>778</b></td>
+<td><b>590</b></td>
+<td><b>277</b></td>
+<td><b>350</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>9</td>
+<td ><small>5</td>
+<td ><small>9</td>
+<td ><small>4</td>
+<td ><small>7</td>
+<td ><small>12</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>9</td>
+<td ><small>9</td>
+<td ><small>6</td>
+<td ><small>7</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>8</td>
+<td ><small>9</td>
+<td ><small>6</td>
+<td ><small>9</td>
+<td ><small>10</td>
+<td ><small>6</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>6</td>
+<td bgcolor=cacad0><small>10</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small>11</td>
+<td ><small>8</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>11</td>
+<td ><small>8</td>
+<td ><small>9</td>
+<td ><small>10</td>
+<td ><small>13</td>
+<td ><small>9</td>
+<td ><small><font color=red>12</td>
+<td ><small><font color=red>8</td>
+<td ><small>8</td>
+<td ><small>9</td>
+<td ><small>11</td>
+<td ><small>12</td>
+<td ><small>22</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>6</td>
+<td ><small>8</td>
+<td ><small>12</td>
+<td ><small>12</td>
+<td ><small>10</td>
+<td ><small>10</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>11</td>
+<td ><small>16</td>
+<td ><small>6</td>
+<td bgcolor=cacad0><small>10</td>
+<td ><small>9</td>
+<td ><small>17</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>8</td>
+<td ><small>8</td>
+<td ><small>8</td>
+<td ><small>10</td>
+<td ><small>13</td>
+</tr>
+<tr><td><a name=omak3.shtml></a>
+<a href=omak3.shtml>Император</a></td>
+
+<td>56590</td><td>4485</td>
+<td><b>227</b></td>
+<td><b>326</b></td>
+<td><b>314</b></td>
+<td><b>391</b></td>
+<td><b>373</b></td>
+<td><b>352</b></td>
+<td><b>321</b></td>
+<td><b>428</b></td>
+<td><b>470</b></td>
+<td><b>456</b></td>
+<td><b>371</b></td>
+<td><b>456</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>9</td>
+<td ><small>8</td>
+<td ><small>12</td>
+<td ><small>10</td>
+<td ><small>8</td>
+<td ><small>11</td>
+<td ><small><font color=red>12</td>
+<td ><small><font color=red>11</td>
+<td ><small>10</td>
+<td ><small>12</td>
+<td ><small>11</td>
+<td ><small>13</td>
+<td ><small>14</td>
+<td ><small><font color=red>10</td>
+<td ><small><font color=red>10</td>
+<td ><small>9</td>
+<td ><small>5</td>
+<td ><small>9</td>
+<td ><small>12</td>
+<td ><small>7</td>
+<td ><small><font color=red>10</td>
+<td ><small><font color=red>8</td>
+<td bgcolor=cacad0><small>6</td>
+<td ><small>9</td>
+<td ><small>7</td>
+<td ><small>8</td>
+<td ><small>11</td>
+<td ><small><font color=red>13</td>
+<td ><small><font color=red>15</td>
+<td ><small>13</td>
+<td ><small>16</td>
+<td ><small>6</td>
+<td ><small>15</td>
+<td ><small>13</td>
+<td ><small><font color=red>15</td>
+<td ><small><font color=red>15</td>
+<td ><small>9</td>
+<td ><small>8</td>
+<td ><small>9</td>
+<td ><small>12</td>
+<td ><small>9</td>
+<td ><small><font color=red>12</td>
+<td ><small><font color=red>9</td>
+<td ><small>10</td>
+<td ><small>8</td>
+<td ><small>12</td>
+<td ><small>8</td>
+<td ><small>8</td>
+<td ><small><font color=red>10</td>
+<td ><small><font color=red>14</td>
+<td ><small>4</td>
+<td ><small>11</td>
+<td bgcolor=cacad0><small>17</td>
+<td ><small>10</td>
+<td ><small>8</td>
+<td ><small><font color=red>15</td>
+<td ><small><font color=red>11</td>
+<td ><small>7</td>
+<td ><small>12</td>
+<td ><small>9</td>
+<td ><small>10</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=aforizmyicitatyokritikahokritike.shtml></a>
+<a href=aforizmyicitatyokritikahokritike.shtml>Афоризмы и цитаты о критиках и критике</a></td>
+
+<td>16947</td><td>3566</td>
+<td><b>151</b></td>
+<td><b>251</b></td>
+<td><b>301</b></td>
+<td><b>350</b></td>
+<td><b>345</b></td>
+<td><b>241</b></td>
+<td><b>256</b></td>
+<td><b>237</b></td>
+<td><b>281</b></td>
+<td><b>357</b></td>
+<td><b>348</b></td>
+<td><b>448</b></td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>5</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small>5</td>
+<td ><small>6</td>
+<td ><small>8</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>5</td>
+<td ><small>5</td>
+<td ><small>10</td>
+<td ><small>9</td>
+<td ><small>5</td>
+<td ><small>11</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>6</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>8</td>
+<td ><small>10</td>
+<td ><small>11</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>3</td>
+<td bgcolor=cacad0><small>5</td>
+<td ><small>11</td>
+<td ><small>6</td>
+<td ><small>7</td>
+<td ><small>8</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>5</td>
+<td ><small>7</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small>14</td>
+<td ><small>2</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>10</td>
+<td ><small>6</td>
+<td ><small>11</td>
+<td ><small>13</td>
+<td ><small>11</td>
+<td ><small>9</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>13</td>
+<td ><small>4</td>
+<td ><small>10</td>
+<td ><small>10</td>
+<td ><small>9</td>
+<td ><small>6</td>
+<td ><small><font color=red>12</td>
+<td ><small><font color=red>8</td>
+<td ><small>12</td>
+<td ><small>9</td>
+<td bgcolor=cacad0><small>6</td>
+<td ><small>7</td>
+<td ><small>11</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>6</td>
+<td ><small>8</td>
+<td ><small>8</td>
+<td ><small>12</td>
+<td ><small>8</td>
+</tr>
+</table>
+<br><table border=1 cellspacing=0 cellpadding=0><tr><td><td colspan=2><b>Итого</b></td><td colspan=12 align=center>За последние 12 месяцев</td><td colspan=24 align=center>Dec</td><td colspan=30 align=center>Nov</td><td colspan=8 align=center>Oct</td></tr><tr><td></td><td>Всего</td><td>12мес</td><td><small>Dec</small></td><td><small>Nov</small></td><td><small>Oct</small></td><td><small>Sep</small></td><td><small>Aug</small></td><td><small>Jul</small></td><td><small>Jun</small></td><td><small>May</small></td><td><small>Apr</small></td><td><small>Mar</small></td><td><small>Feb</small></td><td><small>Jan</small></td><td ><font color=red><small>24</small></td><td ><font color=red><small>23</small></td><td ><small>22</small></td><td ><small>21</small></td><td ><small>20</small></td><td ><small>19</small></td><td ><small>18</small></td><td ><font color=red><small>17</small></td><td ><font color=red><small>16</small></td><td ><small>15</small></td><td ><small>14</small></td><td ><small>13</small></td><td ><small>12</small></td><td ><small>11</small></td><td ><font color=red><small>10</small></td><td ><font color=red><small>09</small></td><td ><small>08</small></td><td ><small>07</small></td><td ><small>06</small></td><td ><small>05</small></td><td ><small>04</small></td><td ><font color=red><small>03</small></td><td ><font color=red><small>02</small></td><td bgcolor=c0c0d0><small>01</small></td><td ><small>30</small></td><td ><small>29</small></td><td ><small>28</small></td><td ><small>27</small></td><td ><font color=red><small>26</small></td><td ><font color=red><small>25</small></td><td ><small>24</small></td><td ><small>23</small></td><td ><small>22</small></td><td ><small>21</small></td><td ><small>20</small></td><td ><font color=red><small>19</small></td><td ><font color=red><small>18</small></td><td ><small>17</small></td><td ><small>16</small></td><td ><small>15</small></td><td ><small>14</small></td><td ><small>13</small></td><td ><font color=red><small>12</small></td><td ><font color=red><small>11</small></td><td ><small>10</small></td><td ><small>09</small></td><td ><small>08</small></td><td ><small>07</small></td><td ><small>06</small></td><td ><font color=red><small>05</small></td><td ><font color=red><small>04</small></td><td ><small>03</small></td><td ><small>02</small></td><td bgcolor=c0c0d0><small>01</small></td><td ><small>31</small></td><td ><small>30</small></td><td ><font color=red><small>29</small></td><td ><font color=red><small>28</small></td><td ><small>27</small></td><td ><small>26</small></td><td ><small>25</small></td><td ><small>24</small></td></tr>
+
+<tr><td><a name=smeshnyekartinkiponaruto.shtml></a>
+<a href=smeshnyekartinkiponaruto.shtml>Смешные картинки по Наруто</a></td>
+
+<td>23557</td><td>3534</td>
+<td><b>158</b></td>
+<td><b>284</b></td>
+<td><b>283</b></td>
+<td><b>253</b></td>
+<td><b>335</b></td>
+<td><b>268</b></td>
+<td><b>309</b></td>
+<td><b>329</b></td>
+<td><b>288</b></td>
+<td><b>357</b></td>
+<td><b>301</b></td>
+<td><b>369</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>6</td>
+<td ><small>6</td>
+<td ><small>10</td>
+<td ><small>10</td>
+<td ><small>9</td>
+<td ><small>6</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>5</td>
+<td ><small>9</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>5</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>8</td>
+<td ><small>11</td>
+<td ><small>6</td>
+<td ><small>7</td>
+<td ><small>8</td>
+<td ><small>7</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>4</td>
+<td bgcolor=cacad0><small>7</td>
+<td ><small>8</td>
+<td ><small>6</td>
+<td ><small>4</td>
+<td ><small>10</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>7</td>
+<td ><small>6</td>
+<td ><small>8</td>
+<td ><small>7</td>
+<td ><small>18</td>
+<td ><small>10</td>
+<td ><small><font color=red>14</td>
+<td ><small><font color=red>13</td>
+<td ><small>10</td>
+<td ><small>12</td>
+<td ><small>9</td>
+<td ><small>11</td>
+<td ><small>6</td>
+<td ><small><font color=red>10</td>
+<td ><small><font color=red>9</td>
+<td ><small>6</td>
+<td ><small>7</td>
+<td ><small>11</td>
+<td ><small>13</td>
+<td ><small>13</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>9</td>
+<td ><small>8</td>
+<td ><small>8</td>
+<td bgcolor=cacad0><small>14</td>
+<td ><small>16</td>
+<td ><small>11</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>4</td>
+<td ><small>7</td>
+<td ><small>9</td>
+<td ><small>9</td>
+<td ><small>6</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=stanowlenieglawa12.shtml></a>
+<a href=stanowlenieglawa12.shtml>Становление. Глава 12</a></td>
+
+<td>27041</td><td>3318</td>
+<td><b>170</b></td>
+<td><b>269</b></td>
+<td><b>284</b></td>
+<td><b>246</b></td>
+<td><b>280</b></td>
+<td><b>227</b></td>
+<td><b>248</b></td>
+<td><b>272</b></td>
+<td><b>344</b></td>
+<td><b>293</b></td>
+<td><b>308</b></td>
+<td><b>377</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>11</td>
+<td ><small>6</td>
+<td ><small>4</td>
+<td ><small>7</td>
+<td ><small>7</td>
+<td ><small>7</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>6</td>
+<td ><small>4</td>
+<td ><small>7</td>
+<td ><small>9</td>
+<td ><small>7</td>
+<td ><small>7</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>13</td>
+<td ><small>11</td>
+<td ><small>5</td>
+<td ><small>6</td>
+<td ><small>5</td>
+<td ><small>9</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>10</td>
+<td bgcolor=cacad0><small>7</td>
+<td ><small>7</td>
+<td ><small>11</td>
+<td ><small>11</td>
+<td ><small>8</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>7</td>
+<td ><small>4</td>
+<td ><small>13</td>
+<td ><small>8</td>
+<td ><small>13</td>
+<td ><small>6</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>5</td>
+<td ><small>15</td>
+<td ><small>6</td>
+<td ><small>8</td>
+<td ><small>11</td>
+<td ><small>5</td>
+<td ><small><font color=red>14</td>
+<td ><small><font color=red>9</td>
+<td ><small>5</td>
+<td ><small>12</td>
+<td ><small>11</td>
+<td ><small>10</td>
+<td ><small>8</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>6</td>
+<td ><small>15</td>
+<td ><small>10</td>
+<td bgcolor=cacad0><small>9</td>
+<td ><small>8</td>
+<td ><small>10</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>4</td>
+<td ><small>7</td>
+<td ><small>11</td>
+<td ><small>10</td>
+<td ><small>15</td>
+</tr>
+<tr><td><a name=about.shtml></a>
+<a href=about.shtml>Информация о владельце раздела</a></td>
+
+<td>17720</td><td>2949</td>
+<td><b>87</b></td>
+<td><b>121</b></td>
+<td><b>187</b></td>
+<td><b>164</b></td>
+<td><b>155</b></td>
+<td><b>146</b></td>
+<td><b>181</b></td>
+<td><b>169</b></td>
+<td><b>425</b></td>
+<td><b>444</b></td>
+<td><b>367</b></td>
+<td><b>503</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>3</td>
+<td ><small>2</td>
+<td ><small>1</td>
+<td ><small>2</td>
+<td ><small>2</td>
+<td ><small>2</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>5</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small>4</td>
+<td ><small>6</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>5</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>3</td>
+<td bgcolor=cacad0><small>6</td>
+<td ><small>7</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>3</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>6</td>
+<td ><small>2</td>
+<td ><small>1</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>1</td>
+<td ><small>8</td>
+<td ><small>6</td>
+<td ><small>5</td>
+<td ><small>10</td>
+<td ><small>2</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>6</td>
+<td ><small>1</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>4</td>
+<td ><small>1</td>
+<td ><small>7</td>
+<td bgcolor=cacad0><small>1</td>
+<td ><small>2</td>
+<td ><small>7</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>11</td>
+<td ><small>1</td>
+<td ><small>9</td>
+<td ><small>6</td>
+<td ><small>4</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=wahaomak1.shtml></a>
+<a href=wahaomak1.shtml>Ваха. Омак 1.</a></td>
+
+<td>15676</td><td>2622</td>
+<td><b>117</b></td>
+<td><b>195</b></td>
+<td><b>206</b></td>
+<td><b>217</b></td>
+<td><b>227</b></td>
+<td><b>228</b></td>
+<td><b>230</b></td>
+<td><b>202</b></td>
+<td><b>227</b></td>
+<td><b>229</b></td>
+<td><b>245</b></td>
+<td><b>299</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>6</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small>0</td>
+<td ><small>10</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>6</td>
+<td ><small>6</td>
+<td ><small>6</td>
+<td ><small>8</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>5</td>
+<td ><small>7</td>
+<td ><small>8</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>8</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>8</td>
+<td bgcolor=cacad0><small>4</td>
+<td ><small>10</td>
+<td ><small>7</td>
+<td ><small>9</td>
+<td ><small>10</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>8</td>
+<td ><small>11</td>
+<td ><small>9</td>
+<td ><small>9</td>
+<td ><small>9</td>
+<td ><small>3</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>7</td>
+<td ><small>9</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>14</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>2</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>0</td>
+<td ><small>5</td>
+<td ><small>8</td>
+<td bgcolor=cacad0><small>4</td>
+<td ><small>8</td>
+<td ><small>5</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>7</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>10</td>
+<td ><small>6</td>
+</tr>
+<tr><td><a name=ewangelionomak3reasonableangels.shtml></a>
+<a href=ewangelionomak3reasonableangels.shtml>Евангелион. Омак 3 "Reasonable angel's"</a></td>
+
+<td>13980</td><td>2590</td>
+<td><b>79</b></td>
+<td><b>135</b></td>
+<td><b>162</b></td>
+<td><b>141</b></td>
+<td><b>195</b></td>
+<td><b>284</b></td>
+<td><b>213</b></td>
+<td><b>241</b></td>
+<td><b>222</b></td>
+<td><b>285</b></td>
+<td><b>251</b></td>
+<td><b>382</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>2</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>5</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>6</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>4</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>1</td>
+<td ><small>5</td>
+<td ><small>1</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>4</td>
+<td bgcolor=cacad0><small>4</td>
+<td ><small>3</td>
+<td ><small>8</td>
+<td ><small>7</td>
+<td ><small>4</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>6</td>
+<td ><small>3</td>
+<td ><small>7</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>3</td>
+<td ><small>8</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>4</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>1</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td bgcolor=cacad0><small>3</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>4</td>
+<td ><small>6</td>
+<td ><small>9</td>
+<td ><small>5</td>
+<td ><small>5</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=smeshnyekartinkipoanime.shtml></a>
+<a href=smeshnyekartinkipoanime.shtml>Смешные картинки по аниме и не только.</a></td>
+
+<td>20792</td><td>2579</td>
+<td><b>132</b></td>
+<td><b>184</b></td>
+<td><b>225</b></td>
+<td><b>253</b></td>
+<td><b>201</b></td>
+<td><b>190</b></td>
+<td><b>176</b></td>
+<td><b>228</b></td>
+<td><b>251</b></td>
+<td><b>210</b></td>
+<td><b>224</b></td>
+<td><b>305</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>1</td>
+<td ><small>7</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>7</td>
+<td ><small>5</td>
+<td ><small>10</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small>6</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>6</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>10</td>
+<td ><small>5</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>7</td>
+<td bgcolor=cacad0><small>9</td>
+<td ><small>10</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>10</td>
+<td ><small>7</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small>10</td>
+<td ><small>5</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>6</td>
+<td ><small>11</td>
+<td ><small>2</td>
+<td ><small>5</td>
+<td ><small>9</td>
+<td ><small>4</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>7</td>
+<td ><small>8</td>
+<td ><small>2</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small>8</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>7</td>
+<td ><small>8</td>
+<td ><small>7</td>
+<td bgcolor=cacad0><small>4</td>
+<td ><small>10</td>
+<td ><small>7</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>4</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small>6</td>
+<td ><small>4</td>
+</tr>
+<tr><td><a name=omak-2.shtml></a>
+<a href=omak-2.shtml>Омак</a></td>
+
+<td>4973</td><td>1992</td>
+<td><b>104</b></td>
+<td><b>134</b></td>
+<td><b>140</b></td>
+<td><b>133</b></td>
+<td><b>140</b></td>
+<td><b>159</b></td>
+<td><b>135</b></td>
+<td><b>152</b></td>
+<td><b>184</b></td>
+<td><b>214</b></td>
+<td><b>205</b></td>
+<td><b>292</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>7</td>
+<td ><small>2</td>
+<td ><small>8</td>
+<td ><small>6</td>
+<td ><small>8</td>
+<td ><small>5</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>7</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small>4</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>6</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>2</td>
+<td bgcolor=cacad0><small>3</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>6</td>
+<td ><small>4</td>
+<td ><small>7</td>
+<td ><small>5</td>
+<td ><small>9</td>
+<td ><small>2</td>
+<td ><small><font color=red>8</td>
+<td ><small><font color=red>3</td>
+<td ><small>10</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>8</td>
+<td ><small>6</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>4</td>
+<td ><small>7</td>
+<td ><small>2</td>
+<td ><small>7</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>0</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td bgcolor=cacad0><small>5</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>5</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>5</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=omakposimbiontupopadaniewalxterawzeronotsukaima.shtml></a>
+<a href=omakposimbiontupopadaniewalxterawzeronotsukaima.shtml>Омак по "Симбионту". Попадание Вальтера в "Zero no Tsukaima"</a></td>
+
+<td>15293</td><td>1757</td>
+<td><b>75</b></td>
+<td><b>128</b></td>
+<td><b>135</b></td>
+<td><b>153</b></td>
+<td><b>135</b></td>
+<td><b>152</b></td>
+<td><b>124</b></td>
+<td><b>145</b></td>
+<td><b>171</b></td>
+<td><b>147</b></td>
+<td><b>153</b></td>
+<td><b>239</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>1</td>
+<td ><small>2</td>
+<td ><small>7</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small>7</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>6</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>3</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>2</td>
+<td bgcolor=cacad0><small>3</td>
+<td ><small>2</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>5</td>
+<td ><small>7</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>7</td>
+<td ><small>2</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>8</td>
+<td ><small>7</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>5</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>2</td>
+<td ><small>2</td>
+<td ><small>5</td>
+<td bgcolor=cacad0><small>4</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>4</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>7</td>
+<td ><small>10</td>
+</tr>
+<tr><td><a name=omakotemnyhmagahisilereputacii.shtml></a>
+<a href=omakotemnyhmagahisilereputacii.shtml>Омак о Тёмных магах и силе репутации.</a></td>
+
+<td>8976</td><td>1727</td>
+<td><b>73</b></td>
+<td><b>118</b></td>
+<td><b>130</b></td>
+<td><b>132</b></td>
+<td><b>145</b></td>
+<td><b>146</b></td>
+<td><b>128</b></td>
+<td><b>147</b></td>
+<td><b>174</b></td>
+<td><b>139</b></td>
+<td><b>165</b></td>
+<td><b>230</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>4</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small>1</td>
+<td ><small>7</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>5</td>
+<td ><small>1</td>
+<td ><small>6</td>
+<td ><small>4</td>
+<td ><small>1</td>
+<td ><small>1</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>5</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>4</td>
+<td bgcolor=cacad0><small>4</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>8</td>
+<td ><small>2</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>8</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>6</td>
+<td ><small>4</td>
+<td ><small>1</td>
+<td ><small>2</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>4</td>
+<td ><small>5</td>
+<td ><small>6</td>
+<td ><small>8</td>
+<td ><small>3</td>
+<td ><small>0</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>3</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td bgcolor=cacad0><small>2</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>4</td>
+<td ><small>1</td>
+<td ><small>4</td>
+<td ><small>6</td>
+<td ><small>7</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=omak2.shtml></a>
+<a href=omak2.shtml>Омак 2 по Бличу.</a></td>
+
+<td>15648</td><td>1683</td>
+<td><b>85</b></td>
+<td><b>129</b></td>
+<td><b>132</b></td>
+<td><b>140</b></td>
+<td><b>148</b></td>
+<td><b>170</b></td>
+<td><b>135</b></td>
+<td><b>143</b></td>
+<td><b>159</b></td>
+<td><b>118</b></td>
+<td><b>134</b></td>
+<td><b>190</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>2</td>
+<td ><small>2</td>
+<td ><small>6</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>6</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>6</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>5</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>2</td>
+<td bgcolor=cacad0><small>6</td>
+<td ><small>0</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>4</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>6</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>1</td>
+<td ><small><font color=red>10</td>
+<td ><small><font color=red>6</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>5</td>
+<td ><small>8</td>
+<td ><small>6</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>1</td>
+<td ><small>7</td>
+<td ><small>8</td>
+<td ><small>9</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>1</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td bgcolor=cacad0><small>2</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>3</td>
+<td ><small>1</td>
+<td ><small>5</td>
+<td ><small>6</td>
+<td ><small>5</td>
+</tr>
+<tr><td><a name=hwostfeiomak1.shtml></a>
+<a href=hwostfeiomak1.shtml>Хвост Феи. Омак 1</a></td>
+
+<td>14282</td><td>1658</td>
+<td><b>79</b></td>
+<td><b>109</b></td>
+<td><b>117</b></td>
+<td><b>131</b></td>
+<td><b>124</b></td>
+<td><b>158</b></td>
+<td><b>127</b></td>
+<td><b>156</b></td>
+<td><b>193</b></td>
+<td><b>139</b></td>
+<td><b>122</b></td>
+<td><b>203</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>3</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small>3</td>
+<td ><small>0</td>
+<td ><small>5</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>4</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>4</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small>3</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>3</td>
+<td bgcolor=cacad0><small>2</td>
+<td ><small>0</td>
+<td ><small>2</td>
+<td ><small>6</td>
+<td ><small>1</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>1</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>1</td>
+<td ><small><font color=red>11</td>
+<td ><small><font color=red>5</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>5</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>5</td>
+<td ><small>8</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small>5</td>
+<td ><small>1</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>1</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td bgcolor=cacad0><small>2</td>
+<td ><small>4</td>
+<td ><small>8</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>6</td>
+<td ><small>0</td>
+<td ><small>5</td>
+<td ><small>6</td>
+<td ><small>3</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=hwostfeiomak3.shtml></a>
+<a href=hwostfeiomak3.shtml>Хвост Феи. Омак 3</a></td>
+
+<td>14436</td><td>1654</td>
+<td><b>79</b></td>
+<td><b>125</b></td>
+<td><b>139</b></td>
+<td><b>123</b></td>
+<td><b>119</b></td>
+<td><b>147</b></td>
+<td><b>118</b></td>
+<td><b>135</b></td>
+<td><b>177</b></td>
+<td><b>156</b></td>
+<td><b>136</b></td>
+<td><b>200</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>2</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>5</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>5</td>
+<td ><small>2</td>
+<td ><small>1</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>5</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>4</td>
+<td bgcolor=cacad0><small>2</td>
+<td ><small>1</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>1</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>5</td>
+<td ><small>8</td>
+<td ><small>1</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>7</td>
+<td ><small>8</td>
+<td ><small>6</td>
+<td ><small>5</td>
+<td ><small>9</td>
+<td ><small>3</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>0</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td bgcolor=cacad0><small>1</td>
+<td ><small>5</td>
+<td ><small>7</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>6</td>
+<td ><small>4</td>
+<td ><small>7</td>
+<td ><small>6</td>
+<td ><small>6</td>
+</tr>
+<tr><td><a name=omak-1.shtml></a>
+<a href=omak-1.shtml>Хвост Феи. Омак</a></td>
+
+<td>17984</td><td>1638</td>
+<td><b>85</b></td>
+<td><b>101</b></td>
+<td><b>133</b></td>
+<td><b>132</b></td>
+<td><b>126</b></td>
+<td><b>162</b></td>
+<td><b>112</b></td>
+<td><b>146</b></td>
+<td><b>167</b></td>
+<td><b>133</b></td>
+<td><b>133</b></td>
+<td><b>208</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>3</td>
+<td ><small>3</td>
+<td ><small>7</td>
+<td ><small>5</td>
+<td ><small>0</td>
+<td ><small>7</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>5</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>6</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>4</td>
+<td bgcolor=cacad0><small>1</td>
+<td ><small>0</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>0</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>4</td>
+<td ><small>4</td>
+<td ><small>0</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small>7</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>4</td>
+<td ><small>8</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small>1</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>0</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td bgcolor=cacad0><small>3</td>
+<td ><small>4</td>
+<td ><small>8</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>3</td>
+<td ><small>0</td>
+<td ><small>6</td>
+<td ><small>8</td>
+<td ><small>8</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=omaknasibiontaotchajanie-toskapolestnicam.shtml></a>
+<a href=omaknasibiontaotchajanie-toskapolestnicam.shtml>Омак на Сибионта. "Отчаяние - Тоска по лестницам"</a></td>
+
+<td>10900</td><td>1530</td>
+<td><b>56</b></td>
+<td><b>109</b></td>
+<td><b>107</b></td>
+<td><b>108</b></td>
+<td><b>141</b></td>
+<td><b>129</b></td>
+<td><b>116</b></td>
+<td><b>131</b></td>
+<td><b>150</b></td>
+<td><b>124</b></td>
+<td><b>151</b></td>
+<td><b>208</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>0</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>5</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>1</td>
+<td ><small>1</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>5</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>0</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>3</td>
+<td bgcolor=cacad0><small>1</td>
+<td ><small>4</td>
+<td ><small>1</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>4</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>4</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>4</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>4</td>
+<td ><small>6</td>
+<td ><small>2</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>1</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td bgcolor=cacad0><small>3</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>2</td>
+<td ><small>2</td>
+<td ><small>7</td>
+<td ><small>2</td>
+<td ><small>4</td>
+</tr>
+<tr><td><a name=omaknomerraz.shtml></a>
+<a href=omaknomerraz.shtml>Евангелион. Омак номер 1.</a></td>
+
+<td>13983</td><td>1522</td>
+<td><b>77</b></td>
+<td><b>114</b></td>
+<td><b>131</b></td>
+<td><b>113</b></td>
+<td><b>125</b></td>
+<td><b>142</b></td>
+<td><b>105</b></td>
+<td><b>130</b></td>
+<td><b>147</b></td>
+<td><b>118</b></td>
+<td><b>131</b></td>
+<td><b>189</b></td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>1</td>
+<td ><small>6</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>1</td>
+<td ><small>5</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>5</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small>8</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>2</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>3</td>
+<td bgcolor=cacad0><small>3</td>
+<td ><small>1</td>
+<td ><small>6</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>3</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>1</td>
+<td ><small><font color=red>9</td>
+<td ><small><font color=red>8</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>5</td>
+<td ><small>5</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>3</td>
+<td ><small>4</td>
+<td ><small>6</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>2</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td bgcolor=cacad0><small>3</td>
+<td ><small>1</td>
+<td ><small>4</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>5</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>6</td>
+<td ><small>5</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=omaknasimbiontapjatxsekundpoletnormalxnyj.shtml></a>
+<a href=omaknasimbiontapjatxsekundpoletnormalxnyj.shtml>Омак на Симбионта. "Пять секунд полет нормальный."</a></td>
+
+<td>12499</td><td>1511</td>
+<td><b>67</b></td>
+<td><b>106</b></td>
+<td><b>117</b></td>
+<td><b>123</b></td>
+<td><b>129</b></td>
+<td><b>131</b></td>
+<td><b>119</b></td>
+<td><b>135</b></td>
+<td><b>136</b></td>
+<td><b>124</b></td>
+<td><b>136</b></td>
+<td><b>188</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>2</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>5</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>3</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>5</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small>0</td>
+<td ><small>3</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>2</td>
+<td bgcolor=cacad0><small>3</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>6</td>
+<td ><small>2</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>6</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>3</td>
+<td ><small>6</td>
+<td ><small>3</td>
+<td ><small>0</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>4</td>
+<td ><small>6</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>6</td>
+<td ><small>0</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>1</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td bgcolor=cacad0><small>3</td>
+<td ><small>1</td>
+<td ><small>2</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>4</td>
+<td ><small>2</td>
+<td ><small>8</td>
+<td ><small>2</td>
+<td ><small>6</td>
+</tr>
+<tr><td><a name=hwostfeiomak2.shtml></a>
+<a href=hwostfeiomak2.shtml>Хвост Феи. Омак 2</a></td>
+
+<td>13014</td><td>1497</td>
+<td><b>69</b></td>
+<td><b>86</b></td>
+<td><b>117</b></td>
+<td><b>126</b></td>
+<td><b>115</b></td>
+<td><b>146</b></td>
+<td><b>110</b></td>
+<td><b>131</b></td>
+<td><b>156</b></td>
+<td><b>126</b></td>
+<td><b>117</b></td>
+<td><b>198</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>1</td>
+<td ><small>6</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>3</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>7</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>1</td>
+<td ><small>0</td>
+<td ><small>3</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>4</td>
+<td bgcolor=cacad0><small>1</td>
+<td ><small>0</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>1</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>2</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>3</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>4</td>
+<td ><small>7</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small>5</td>
+<td ><small>0</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>0</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td bgcolor=cacad0><small>1</td>
+<td ><small>4</td>
+<td ><small>7</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>3</td>
+<td ><small>1</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small>6</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=prishellesnikiwsehrazognal.shtml></a>
+<a href=prishellesnikiwsehrazognal.shtml>Пришёл лесник и всех разогнал.</a></td>
+
+<td>23280</td><td>1488</td>
+<td><b>67</b></td>
+<td><b>103</b></td>
+<td><b>108</b></td>
+<td><b>123</b></td>
+<td><b>131</b></td>
+<td><b>143</b></td>
+<td><b>120</b></td>
+<td><b>126</b></td>
+<td><b>139</b></td>
+<td><b>114</b></td>
+<td><b>132</b></td>
+<td><b>182</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>1</td>
+<td ><small>1</td>
+<td ><small>1</td>
+<td ><small>5</td>
+<td ><small>1</td>
+<td ><small>6</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>4</td>
+<td ><small>2</td>
+<td ><small>6</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>4</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small>0</td>
+<td ><small>3</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>3</td>
+<td bgcolor=cacad0><small>2</td>
+<td ><small>1</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>6</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>1</td>
+<td ><small>5</td>
+<td ><small>4</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>3</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small>6</td>
+<td ><small>4</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>4</td>
+<td ><small>1</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>4</td>
+<td ><small>2</td>
+<td ><small>6</td>
+<td bgcolor=cacad0><small>4</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small><font color=red>6</td>
+<td ><small><font color=red>4</td>
+<td ><small>1</td>
+<td ><small>6</td>
+<td ><small>7</td>
+<td ><small>3</td>
+</tr>
+<tr><td><a name=omakposimbiontuwladykapeshery.shtml></a>
+<a href=omakposimbiontuwladykapeshery.shtml>Омак по Симбионту. "Владыка пещеры"</a></td>
+
+<td>10915</td><td>1424</td>
+<td><b>59</b></td>
+<td><b>95</b></td>
+<td><b>125</b></td>
+<td><b>120</b></td>
+<td><b>105</b></td>
+<td><b>134</b></td>
+<td><b>103</b></td>
+<td><b>126</b></td>
+<td><b>140</b></td>
+<td><b>98</b></td>
+<td><b>119</b></td>
+<td><b>200</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>1</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>3</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>4</td>
+<td ><small>1</td>
+<td ><small>4</td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>6</td>
+<td ><small>2</td>
+<td ><small>2</td>
+<td ><small>1</td>
+<td ><small>2</td>
+<td ><small>1</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>2</td>
+<td bgcolor=cacad0><small>1</td>
+<td ><small>0</td>
+<td ><small>1</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>5</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>2</td>
+<td ><small><font color=red>5</td>
+<td ><small><font color=red>2</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>5</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>2</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>6</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small><font color=red>4</td>
+<td ><small><font color=red>3</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td bgcolor=cacad0><small>3</td>
+<td ><small>2</td>
+<td ><small>5</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>4</td>
+<td ><small>3</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small>4</td>
+</tr>
+<tr bgcolor=cacad0><td><a name=omaknomer2.shtml></a>
+<a href=omaknomer2.shtml>Евангелион. Омак номер 2.</a></td>
+
+<td>10014</td><td>1297</td>
+<td><b>52</b></td>
+<td><b>83</b></td>
+<td><b>109</b></td>
+<td><b>89</b></td>
+<td><b>107</b></td>
+<td><b>115</b></td>
+<td><b>97</b></td>
+<td><b>124</b></td>
+<td><b>134</b></td>
+<td><b>104</b></td>
+<td><b>120</b></td>
+<td><b>163</b></td>
+<td ><small><font color=red>0</td>
+<td ><small><font color=red>1</td>
+<td ><small>1</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>1</td>
+<td ><small>3</td>
+<td ><small><font color=red>1</td>
+<td ><small><font color=red>4</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>3</td>
+<td ><small>3</td>
+<td ><small>0</td>
+<td ><small>0</td>
+<td ><small>1</td>
+<td ><small>2</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>3</td>
+<td bgcolor=cacad0><small>3</td>
+<td ><small>2</td>
+<td ><small>1</td>
+<td ><small>4</td>
+<td ><small>3</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>3</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>1</td>
+<td ><small><font color=red>7</td>
+<td ><small><font color=red>4</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>3</td>
+<td ><small>2</td>
+<td ><small>3</td>
+<td ><small><font color=red>2</td>
+<td ><small><font color=red>1</td>
+<td ><small>3</td>
+<td ><small>5</td>
+<td ><small>2</td>
+<td ><small>4</td>
+<td ><small>2</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>1</td>
+<td ><small>1</td>
+<td ><small>1</td>
+<td bgcolor=cacad0><small>2</td>
+<td ><small>1</td>
+<td ><small>2</td>
+<td ><small><font color=red>3</td>
+<td ><small><font color=red>3</td>
+<td ><small>2</td>
+<td ><small>6</td>
+<td ><small>3</td>
+<td ><small>3</td>
+</tr>
+</table>
+<br><table border=1 cellspacing=0 cellpadding=0><tr><td><td colspan=2><b>Итого</b></td><td colspan=12 align=center>За последние 12 месяцев</td><td colspan=24 align=center>Dec</td><td colspan=30 align=center>Nov</td><td colspan=8 align=center>Oct</td></tr><tr><td></td><td>Всего</td><td>12мес</td><td><small>Dec</small></td><td><small>Nov</small></td><td><small>Oct</small></td><td><small>Sep</small></td><td><small>Aug</small></td><td><small>Jul</small></td><td><small>Jun</small></td><td><small>May</small></td><td><small>Apr</small></td><td><small>Mar</small></td><td><small>Feb</small></td><td><small>Jan</small></td><td ><font color=red><small>24</small></td><td ><font color=red><small>23</small></td><td ><small>22</small></td><td ><small>21</small></td><td ><small>20</small></td><td ><small>19</small></td><td ><small>18</small></td><td ><font color=red><small>17</small></td><td ><font color=red><small>16</small></td><td ><small>15</small></td><td ><small>14</small></td><td ><small>13</small></td><td ><small>12</small></td><td ><small>11</small></td><td ><font color=red><small>10</small></td><td ><font color=red><small>09</small></td><td ><small>08</small></td><td ><small>07</small></td><td ><small>06</small></td><td ><small>05</small></td><td ><small>04</small></td><td ><font color=red><small>03</small></td><td ><font color=red><small>02</small></td><td bgcolor=c0c0d0><small>01</small></td><td ><small>30</small></td><td ><small>29</small></td><td ><small>28</small></td><td ><small>27</small></td><td ><font color=red><small>26</small></td><td ><font color=red><small>25</small></td><td ><small>24</small></td><td ><small>23</small></td><td ><small>22</small></td><td ><small>21</small></td><td ><small>20</small></td><td ><font color=red><small>19</small></td><td ><font color=red><small>18</small></td><td ><small>17</small></td><td ><small>16</small></td><td ><small>15</small></td><td ><small>14</small></td><td ><small>13</small></td><td ><font color=red><small>12</small></td><td ><font color=red><small>11</small></td><td ><small>10</small></td><td ><small>09</small></td><td ><small>08</small></td><td ><small>07</small></td><td ><small>06</small></td><td ><font color=red><small>05</small></td><td ><font color=red><small>04</small></td><td ><small>03</small></td><td ><small>02</small></td><td bgcolor=c0c0d0><small>01</small></td><td ><small>31</small></td><td ><small>30</small></td><td ><font color=red><small>29</small></td><td ><font color=red><small>28</small></td><td ><small>27</small></td><td ><small>26</small></td><td ><small>25</small></td><td ><small>24</small></td></tr>
+
+</table>
+
+
+
+
+<!--------- Подножие ------------------------------->
+
+<hr align="CENTER" size="2" noshade>
+<p><center>  <i><a href="/p/petrienko_p_w/"
+ >Связаться с программистом сайта</a>.</i></center>
+<p>
+<p>
+<noindex>
+
+<p><font size="2">Новые книги авторов СИ, вышедшие из печати:<br> Э.Бланк&nbsp;<a href=/b/belousowa_e_e/atrion.shtml>"Атрион. Влюблен и опасен"</a> Е.Шепельский&nbsp;<a href=/s/shepelxskij_e_a/propadanec.shtml>"Пропаданец"</a> Е.Сафонова&nbsp;<a href=/s/safonowa_e/integrate_the_light.shtml>"Риджийский гамбит. Интегрировать свет"</a> В.Карелова&nbsp;<a href=/k/karelowa_w/akademiyaveritas.shtml>"Академия Истины"</a> С.Бакшеев&nbsp;<a href=/b/baksheew_s_p/kompozitor-1.shtml>"Композитор"</a> А.Медведева&nbsp;<a href=/m/medwedewa_elena/kaknewezetpopadankam.shtml>"Как не везет попаданкам!"</a> Н.Сапункова&nbsp;<a href=/s/sapunkowa_n_a/nevesta1.shtml>"Невеста без места"</a> И.Котова&nbsp;<a href=/k/kotowa_i_w/05king.shtml>"Королевская кровь. Медвежье солнце"</a> <center><i><small><a href=/d/denisowa_e/1.shtml>Как попасть в этoт список</a></small></i></center>
+
+</noindex>
+
+<div align=right>
+Сайт - <a href=http://www.artlib.ru>"Художники"</a> .. || .. <a href=http://www.recself.ru/?id=2025&idr=0>Доска об'явлений "Книги"</a></div>
+</body>
+</html>

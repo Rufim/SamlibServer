@@ -17,6 +17,10 @@ public class Constants {
         public static final String USER_AGENT = "Mozilla";
         public static final String LOG_PATH = BASE_DOMAIN + "/logs";
         public static final String A_READER_QUERY = BASE_DOMAIN + "/cgi-bin/areader?q=razdel&object=";
+
+        public static String getStatPage(final String link) {
+            return BASE_DOMAIN + link + ".stat.html";
+        }
     }
 
     public static class Pattern {

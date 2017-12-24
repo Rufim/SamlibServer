@@ -37,7 +37,7 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-devtools")
 	compile("org.webjars:bootstrap:3.3.7")
 	compile("org.webjars:jquery:2.1.4")
-	compile "com.annimon:stream:1.1.0"
+	compile("com.annimon:stream:1.1.0")
 	runtime('org.postgresql:postgresql')
 	compileOnly('org.projectlombok:lombok')
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')

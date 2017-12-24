@@ -89,9 +89,9 @@ public class CommandExecutorService {
         }
     }
 
-    @Scheduled(fixedDelay = 60000)
+    @Scheduled(fixedDelay = 6000)  // 10 в минуту
     public void scheduledAuthorParseExecution() {
-        
+            
     }
 
     public void parseAReaderAuthorLink(final String link) {

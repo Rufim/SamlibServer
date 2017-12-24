@@ -1,6 +1,5 @@
 package ru.samlib.server.parser;
 
-import org.jetbrains.annotations.NotNull;
 import ru.samlib.server.domain.Constants;
 import ru.samlib.server.domain.dao.LogEventDao;
 import ru.samlib.server.domain.entity.Genre;
@@ -10,12 +9,15 @@ import ru.samlib.server.util.Log;
 import ru.samlib.server.util.TextUtils;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class Parser {
@@ -25,6 +27,9 @@ public class Parser {
     private final static SimpleDateFormat dateTimeFormat = new SimpleDateFormat(Constants.Pattern.DATA_ISO_8601);
     private final static SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.Pattern.DATA_PATTERN);
     private final static SimpleDateFormat dateFormatDiff = new SimpleDateFormat(Constants.Pattern.DATA_PATTERN_DIFF);
+
+    private final static Pattern linkAndName = Pattern.compile("<a href=(.+)>(.+)</a></td>");
+    private final static Pattern views = Pattern.compile("<td>(\\d+)</td><td>(\\d+)</td>");
 
     private final LogEventDao logEventDao;
     
@@ -75,6 +80,28 @@ public class Parser {
         return dataCommands;
     }
 
+    public static Map<String, Integer> parseStat(InputStream inputStream) throws IOException {
+        if (inputStream == null) throw new IllegalArgumentException("Nulls not accepted");
+        Map<String , Integer> stat = new LinkedHashMap<>();
+        try (final InputStream is = inputStream;
+             final InputStreamReader isr = new InputStreamReader(is, "CP1251");
+             final BufferedReader reader = new BufferedReader(isr)){
+            String line = "";
+            while ((line = reader.readLine()) != null) {
+                Matcher matcher = linkAndName.matcher(line);
+                if(matcher.matches()) {
+                    String link = matcher.group(1);
+                    if((line = reader.readLine()) != null && line.isEmpty()) {
+                        line = reader.readLine();
+                        if(line != null && (matcher = views.matcher(line)).matches()) {
+                            stat.put(link, Integer.parseInt(matcher.group(1)));
+                        }
+                    }
+                }
+            }
+        }
+        return stat;
+    }
 
     private void addLine(String fullLine, List<DataCommand> dataCommands, ParseDelegate delegate) {
         if (TextUtils.notEmpty(fullLine)) {
