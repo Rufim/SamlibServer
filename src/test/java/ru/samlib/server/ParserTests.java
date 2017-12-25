@@ -90,7 +90,7 @@ public class ParserTests {
             result = parser.parseInput(inputStream, Parser.getLogDelegateInstance());
             info = parser.getInfo();
         }
-        assertEquals(13, result.size());
+        assertEquals(15, result.size());
         for (DataCommand dataCommand : result) {
             executorService.executeCommand(dataCommand, info);
         }
@@ -98,7 +98,7 @@ public class ParserTests {
         List<Author> authors = authorDao.findAll();
         List<Category> categories =  categoryDao.findAll();
         List<Work> works =  workDao.findAll();
-        assertEquals(5, authors.size());
+        assertEquals(4, authors.size());
         assertEquals(3, categories.size());
         assertEquals(2, works.size());
         List<Work> workList = workDao.searchWorksByActivity("максимОва", Type.NOVEL, Genre.FICTION, null, null);
@@ -106,6 +106,7 @@ public class ParserTests {
         assertEquals(13, workList.get(0).getActivityIndex().intValue());
         workList = workDao.searchWorksByActivity("дьявол-Хранитель", Type.ARTICLE, Genre.PROSE, null, null);
         assertEquals(1, workList.size());
+        assertTrue(workList.get(0).getLink().startsWith("/b/baljawichene_d"));
     }
     
     @Test

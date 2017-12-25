@@ -211,4 +211,9 @@ public class Work implements Serializable, Linkable, Validatable {
         return TextUtils.trim(getLink()).equalsIgnoreCase(TextUtils.trim(work.getLink()));
     }
 
+    public void setNewAuthorLink(String newAuthorLink) {
+        if(link != null) {
+            link = newAuthorLink + link.substring(link.lastIndexOf("/") + 1);
+        }
+    }
 }

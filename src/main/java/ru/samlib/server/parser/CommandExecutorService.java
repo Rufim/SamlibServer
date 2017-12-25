@@ -263,7 +263,8 @@ public class CommandExecutorService {
                         return;
                     }
                     if (dataCommand.command.equals(Command.REN) && link.endsWith("/") && oldAuthor != null) {
-                        throw new NotSupportedException("Wait for implementation");
+                        authorDao.changeAuthorLink(oldAuthor, dataCommand.title);
+                        return;
                     }
                     newAuthor.setFullName(dataCommand.authorName);
                     if (link.endsWith("/about")) {

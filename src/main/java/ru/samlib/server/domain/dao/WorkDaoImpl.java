@@ -47,7 +47,7 @@ public class WorkDaoImpl implements WorkDaoCustom {
             }
             if (!em.isJoinedToTransaction()) {
                 em.joinTransaction();
-            }
+            }                       
             return em.createNativeQuery(sequence.toString()).executeUpdate();
         } catch (Throwable ex) {
             Log.e("SQL_ERROR:", "error in " + sequence, ex);
