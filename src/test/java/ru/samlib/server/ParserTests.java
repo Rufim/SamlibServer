@@ -90,7 +90,7 @@ public class ParserTests {
             result = parser.parseInput(inputStream, Parser.getLogDelegateInstance());
             info = parser.getInfo();
         }
-        assertEquals(15, result.size());
+        assertEquals(16, result.size());
         for (DataCommand dataCommand : result) {
             executorService.executeCommand(dataCommand, info);
         }
