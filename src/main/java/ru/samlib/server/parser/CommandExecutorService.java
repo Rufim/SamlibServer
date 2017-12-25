@@ -23,6 +23,7 @@ import ru.samlib.server.domain.entity.*;
 import ru.samlib.server.util.Log;
 import ru.samlib.server.util.TextUtils;
 
+import javax.transaction.NotSupportedException;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
@@ -214,7 +215,7 @@ public class CommandExecutorService {
         return false;
     }
 
-
+    //TODO: HANDLE COMMAND !!! /f/fedotow_wdadimir_semenowich/|REN(f/fedotow_wladimir_semenowich)|2017-12-13 19:51:26|Ещё горит надежды свет|Федотов Вдадимир Семёнович|Нет|||05/12/2017|||
     public void executeCommand(DataCommand dataCommand, ParsingInfo info) {
         try {
             if (dataCommand != null && TextUtils.notEmpty(dataCommand.link)) {
@@ -231,12 +232,18 @@ public class CommandExecutorService {
                     } else {
                         newAuthor = new Author(link);
                     }
-                    newAuthor.setFullName(dataCommand.authorName);
-                    if (link.endsWith("/")) {
-                        newAuthor.setAbout(dataCommand.title);
+                    if (dataCommand.command.equals(Command.DEL) && link.endsWith("/") && oldAuthor != null) {
+                        authorDao.delete(oldAuthor);
+                        return;
                     }
+                    if (dataCommand.command.equals(Command.REN) && link.endsWith("/") && oldAuthor != null) {
+                        throw new NotSupportedException("Wait for implementation");
+                    }
+                    newAuthor.setFullName(dataCommand.authorName);
                     if (link.endsWith("/about")) {
                         newAuthor.setAnnotation(dataCommand.annotation);
+                    } else if (link.endsWith("/")) {
+                        newAuthor.setAbout(dataCommand.title);
                     }
                     if (newAuthor.getLastUpdateDate() == null) {
                         newAuthor.setLastUpdateDate(constants.firstLogDay());
