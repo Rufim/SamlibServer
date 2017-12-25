@@ -14,6 +14,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -25,10 +26,7 @@ import ru.samlib.server.util.TextUtils;
 
 import javax.transaction.NotSupportedException;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
+import java.net.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -119,7 +117,7 @@ public class CommandExecutorService {
     @Scheduled(cron = "${settings.server.update-authors-cron}")  // 10 в минуту
     public void scheduledAuthorUpdate() {
         synchronized (CommandExecutorService.class) {
-            Author author = authorDao.findFirstByMonthUpdateFiredFalseOrderByLastUpdateDateDesc();
+            Author author = authorDao.findFirstByMonthUpdateFiredFalseAndDeletedFalseOrderByLastUpdateDateDesc();
             if (author != null && parseAReaderAuthorLink(author.getLink())) {
                 if (constants.isParseStat() && parseStat(author.getLink())) {
                     author.setMonthUpdateFired(true);
@@ -154,10 +152,38 @@ public class CommandExecutorService {
                 infoDao.saveAndFlush(info);
                 return true;
             } catch (Exception ex) {
+                if(ex instanceof HttpClientErrorException) {
+                    if (((HttpClientErrorException) ex).getStatusCode() == HttpStatus.NOT_FOUND) {
+                        if (pingHost(Constants.Net.BASE_HOST, 80, 6000)) {
+                            Author author = authorDao.findOne(link);
+                            author.setDeleted(true);
+                            authorDao.save(author);
+                        }
+                    }
+                }
                 addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error", null);
             }
         }
         return false;
+    }
+
+    public static boolean pingHost(String host, int port, int timeout) {
+        Socket socket = null;
+        try {
+            socket = new Socket();
+            socket.connect(new InetSocketAddress(host, port), timeout);
+            return true;
+        } catch (IOException e) {
+            return false; // Either timeout or unreachable or failed DNS lookup.
+        } finally {
+            if (socket != null) {
+                try {
+                    socket.close();
+                } catch (Exception ex) {
+                    //ignore;
+                }
+            }
+        }
     }
 
     public boolean parseAReaderAuthorLink(final String link) {

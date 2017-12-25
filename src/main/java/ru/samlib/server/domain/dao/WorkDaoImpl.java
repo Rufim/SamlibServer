@@ -33,6 +33,7 @@ public class WorkDaoImpl implements WorkDaoCustom {
                 if (link.equals("./")) {
                     sequence.append("UPDATE author SET views = ");
                     sequence.append(stat.getValue());
+                    sequence.append(", month_update_fired = true");
                     sequence.append(" WHERE link = '");
                     sequence.append(authorLink);
                     sequence.append("'; \n");

@@ -81,28 +81,16 @@
                     <table border="0" style="margin-left: 45%;">
                         <tr valign="top">
                             <td th:if="${page > 1}">
-                                <a class="fl" th:href="'/search?query='+ ${query}
-                                   + '&amp;type=' + ${type}
-                                   + '&amp;genre=' + ${genre}
-                                   + '&amp;page=' + ${page - 1}
-                                  ">Предыдущая</a>
+                                <a class="fl" th:href="@{/search(query=${query}, type=${type}, genre=${genre} ,page=${page - 1})}">Предыдущая</a>
                             </td>
                             <td th:if="${page != null}" th:each="i: ${#numbers.sequence(minPage, page)}">
                                 <span style="padding: 0 10px 0 10px;" th:if="${page == i}" th:text="${i}"></span>
                                 <span style="padding: 0 10px 0 10px;" th:if="${page != i}">
-                                <a class="fl" th:href="'/search?query='+ ${query}
-                                   + '&amp;type=' + ${type}
-                                   + '&amp;genre=' + ${genre}
-                                   + '&amp;page=' + ${i}
-                                  " th:text="${i}"></a>
+                                <a class="fl" th:href="@{/search(query=${query}, type=${type}, genre=${genre} ,page=${i})}" th:text="${i}"></a>
                                 </span>
                             </td>
                             <td th:if="${works.size() >= pageSize}">
-                                <a class="fl" th:href="'/search?query='+ ${query}
-                                   + '&amp;type=' + ${type}
-                                   + '&amp;genre=' + ${genre}
-                                   + '&amp;page=' + ${page + 1}
-                                  ">Следующая</a>
+                                <a class="fl" th:href="@{/search(query=${query}, type=${type}, genre=${genre} ,page=${page + 1})}">Следующая</a>
                             </td>
                         </tr>
                     </table>
@@ -114,11 +102,7 @@
                     <table border="0" style="margin-left: 45%;">
                         <tr valign="top">
                             <td>
-                            <a class="fl" th:href="'/search?query='+ ${query}
-                                   + '&amp;type=' + ${type}
-                                   + '&amp;genre=' + ${genre}
-                                   + '&amp;page=' + ${page - 1}
-                                  ">&#60; Предыдущая </a>
+                                <a class="fl" th:href="@{/search(query=${query}, type=${type}, genre=${genre} ,page=${page - 1})}">&#60; Предыдущая </a>
                             </td>
                         </tr>
                     </table>

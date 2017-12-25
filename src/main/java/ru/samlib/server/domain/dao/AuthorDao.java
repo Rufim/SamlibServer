@@ -10,5 +10,5 @@ import java.util.List;
 @Transactional
 public interface AuthorDao extends JpaRepository<Author, String> {
 
-    Author findFirstByMonthUpdateFiredFalseOrderByLastUpdateDateDesc();
+    Author findFirstByMonthUpdateFiredFalseAndDeletedFalseOrderByLastUpdateDateDesc();
 }
