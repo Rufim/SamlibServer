@@ -114,14 +114,14 @@ public class ParserTests {
         try (ByteArrayOutputStream os = new ByteArrayOutputStream();
              FileInputStream fis = new FileInputStream(aReaderTestFile)) {
             SystemUtils.readStream(fis, os, new byte[4000]);
-            this.server.expect(requestTo(Constants.Net.A_READER_QUERY + link))
+            this.server.expect(requestTo(Constants.Net.A_READER_QUERY_TEST + link))
                     .andExpect(method(HttpMethod.GET))
                     .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
         }
         try (ByteArrayOutputStream os = new ByteArrayOutputStream();
              FileInputStream fis = new FileInputStream(statFile)) {
             SystemUtils.readStream(fis, os, new byte[4000]);
-            this.server.expect(requestTo(Constants.Net.getStatPage(link)))
+            this.server.expect(requestTo(Constants.Net.getStatPageTest(link)))
                     .andExpect(method(HttpMethod.GET))
                     .andRespond(withSuccess(os.toByteArray(), MediaType.TEXT_PLAIN));
         }

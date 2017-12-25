@@ -20,10 +20,15 @@ public class Constants {
         public static final String BASE_DOMAIN = BASE_SCHEME + "://" + BASE_HOST;
         public static final String USER_AGENT = "Mozilla";
         public static final String LOG_PATH = BASE_DOMAIN + "/logs";
+        public static final String A_READER_QUERY_TEST = "/cgi-bin/areader?q=razdel&object=";
         public static final String A_READER_QUERY = BASE_DOMAIN + "/cgi-bin/areader?q=razdel&object=";
 
         public static String getStatPage(final String link) {
             return BASE_DOMAIN + link + "stat.shtml";
+        }
+
+        public static String getStatPageTest(final String link) {
+            return link + "stat.shtml";
         }
     }
 
@@ -46,6 +51,7 @@ public class Constants {
     }
 
     private String firstLogDay;
+    private Integer logsPerDay;
     private boolean scheduling;
     private boolean parseStat;
 
@@ -55,6 +61,14 @@ public class Constants {
 
     public void setFirstLogDay(String firstLogDay) {
         this.firstLogDay = firstLogDay;
+    }
+
+    public Integer getLogsPerDay() {
+        return logsPerDay;
+    }
+
+    public void setLogsPerDay(Integer logsPerDay) {
+        this.logsPerDay = logsPerDay;
     }
 
 

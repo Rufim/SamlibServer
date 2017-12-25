@@ -3,13 +3,12 @@ package ru.samlib.server.parser;
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.annimon.stream.function.Function;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.client.RestTemplateCustomizer;
 import org.springframework.http.*;
-import org.springframework.http.client.ClientHttpRequestExecution;
-import org.springframework.http.client.ClientHttpRequestInterceptor;
-import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.http.client.*;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -60,6 +59,7 @@ public class CommandExecutorService {
 
     public CommandExecutorService(RestTemplateBuilder restTemplateBuilder) {
         this.restTemplate = restTemplateBuilder.rootUri(Constants.Net.BASE_DOMAIN)
+                .requestFactory(new HttpComponentsClientHttpRequestFactory(HttpClientBuilder.create().build()))
                 .interceptors(new ClientHttpRequestInterceptor() {
                     @Override
                     public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
@@ -102,9 +102,11 @@ public class CommandExecutorService {
                 Calendar dayToParse = Calendar.getInstance();
                 dayToParse.setTime(lastParsedDay);
                 dayToParse.add(Calendar.DAY_OF_YEAR, 1);
-                if((calendar.get(Calendar.YEAR) > dayToParse.get(Calendar.YEAR)
-                        || calendar.get(Calendar.DAY_OF_YEAR) > dayToParse.get(Calendar.DAY_OF_YEAR))) {
+                int daysParsed = 0;
+                while ((calendar.get(Calendar.YEAR) > dayToParse.get(Calendar.YEAR)
+                        || calendar.get(Calendar.DAY_OF_YEAR) > dayToParse.get(Calendar.DAY_OF_YEAR)) && daysParsed < constants.getLogsPerDay()) {
                     parseLogDay(dayToParse.getTime());
+                    daysParsed++;
                     dayToParse.add(Calendar.DAY_OF_YEAR, 1);
                 }
             } catch (Exception ex) {
