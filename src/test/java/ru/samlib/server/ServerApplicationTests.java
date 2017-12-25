@@ -1,5 +1,6 @@
 package ru.samlib.server;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,7 @@ public class ServerApplicationTests {
 
 
 	@Test
+	@Ignore
 	public void liveTestScheduler() {
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.DAY_OF_YEAR, -4);
