@@ -1,7 +1,6 @@
 buildscript {
 	ext {
 		springBootVersion = '1.5.9.RELEASE'
-		mainClass = 'ru.samlib.server.ServerApplication'
 	}
 	repositories {
 		mavenCentral()
@@ -21,13 +20,13 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 bootRepackage {
-	mainClass = "${mainClass}"
+	mainClass = "ru.samlib.server.ServerApplication"
 }
 
 jar {
 	manifest {
 		attributes(
-				'Main-Class': "${mainClass}"
+				'Main-Class': "ru.samlib.server.ServerApplication"
 		)
 	}
 }
