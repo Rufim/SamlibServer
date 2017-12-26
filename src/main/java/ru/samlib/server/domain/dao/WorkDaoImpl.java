@@ -50,18 +50,14 @@ public class WorkDaoImpl implements WorkDaoCustom {
             }
             sequenceAuthor.append("UPDATE author SET");
             if(about != null && title != null) {
-                sequenceAuthor.append(" full_name='");
-                sequenceAuthor.append(title);
-                sequenceAuthor.append("', about='");
-                sequenceAuthor.append(about);
-                sequenceAuthor.append("'");
+                sequenceAuthor.append(" full_name=:title");
+                sequenceAuthor.append(", about=:about");
             }
             if(views != null) {
                 if (about != null && title != null) {
                     sequenceAuthor.append(",");
                 }
-                sequenceAuthor.append(" views=");
-                sequenceAuthor.append(views);
+                sequenceAuthor.append(" views=:views");
             }
             if ((about != null && title != null) || views != null) {
                 sequenceAuthor.append(",");
@@ -70,14 +66,22 @@ public class WorkDaoImpl implements WorkDaoCustom {
             sequenceAuthor.append(" WHERE link = '");
             sequenceAuthor.append(authorLink);
             sequenceAuthor.append("'; \n");
+            Query authorQuery = em.createNativeQuery(sequenceAuthor.toString());
+            if (about != null && title != null) {
+                authorQuery.setParameter("title", title);
+                authorQuery.setParameter("about", about);
+            }
+            if (views != null) {
+                authorQuery.setParameter("views", Integer.valueOf(views));
+            }
             if (!em.isJoinedToTransaction()) {
                 em.joinTransaction();
             }                       
-            return em.createNativeQuery(sequenceWork.toString()).executeUpdate() + em.createNativeQuery(sequenceAuthor.toString()).executeUpdate();
+            return em.createNativeQuery(sequenceWork.toString()).executeUpdate() + authorQuery.executeUpdate();
         } catch (Throwable ex) {
-            Log.e("SQL_ERROR:", "error in " + sequenceWork, ex);
+            Log.e("SQL_ERROR:", "error in " + sequenceWork + "\n " +  sequenceAuthor, ex);
+            return -1;
         }
-        return 0;
     }
 
     @Transactional
@@ -120,8 +124,8 @@ public class WorkDaoImpl implements WorkDaoCustom {
             return em.createNativeQuery(sequenceGenres.toString()).executeUpdate() + em.createNativeQuery(sequenceWorks.toString()).executeUpdate();
         } catch (Throwable ex) {
             Log.e("SQL_ERROR:", "error in " + sequenceGenres + " or " + sequenceWorks, ex);
+            return -1;
         }
-        return 0;
     }
 
     @Override

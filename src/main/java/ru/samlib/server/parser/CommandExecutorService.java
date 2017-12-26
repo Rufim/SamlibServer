@@ -120,7 +120,10 @@ public class CommandExecutorService {
             Author author = authorDao.findFirstByMonthUpdateFiredFalseAndDeletedFalseOrderByLastUpdateDateDesc();
             if (author != null && parseAReaderAuthorLink(author.getLink())) {
                 if (constants.isParseStat()) {
-                    parseStat(author.getLink());
+                    if(!parseStat(author.getLink())) {
+                        author.setMonthUpdateFired(true);
+                        authorDao.save(author);
+                    }
                 }
             }
         }
@@ -140,7 +143,7 @@ public class CommandExecutorService {
                         return Parser.parseStat(response.getBody());
                     }
                 });
-                workDao.updateStat(stat, link);
+                if(workDao.updateStat(stat, link) > 0) return false;
                 long processTime = System.currentTimeMillis() - time;
                 addLog(Log.LOG_LEVEL.INFO, null, "End stat parse. Url=" + url + " stat size=" + stat.size() + " time=" + String.format("%d min, %d sec",
                         TimeUnit.MILLISECONDS.toMinutes(processTime),
