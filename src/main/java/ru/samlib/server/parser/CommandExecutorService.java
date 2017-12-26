@@ -119,9 +119,8 @@ public class CommandExecutorService {
         synchronized (CommandExecutorService.class) {
             Author author = authorDao.findFirstByMonthUpdateFiredFalseAndDeletedFalseOrderByLastUpdateDateDesc();
             if (author != null && parseAReaderAuthorLink(author.getLink())) {
-                if (constants.isParseStat() && parseStat(author.getLink())) {
-                    author.setMonthUpdateFired(true);
-                    authorDao.save(author);
+                if (constants.isParseStat()) {
+                    parseStat(author.getLink());
                 }
             }
         }
