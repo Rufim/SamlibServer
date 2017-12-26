@@ -143,7 +143,7 @@ public class CommandExecutorService {
                         return Parser.parseStat(response.getBody());
                     }
                 });
-                if(workDao.updateStat(stat, link) > 0) return false;
+                if(workDao.updateStat(stat, link) < 0) return false;
                 long processTime = System.currentTimeMillis() - time;
                 addLog(Log.LOG_LEVEL.INFO, null, "End stat parse. Url=" + url + " stat size=" + stat.size() + " time=" + String.format("%d min, %d sec",
                         TimeUnit.MILLISECONDS.toMinutes(processTime),
