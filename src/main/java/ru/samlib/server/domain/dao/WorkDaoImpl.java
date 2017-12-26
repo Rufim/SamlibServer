@@ -25,32 +25,57 @@ public class WorkDaoImpl implements WorkDaoCustom {
 
     @Transactional
     @Override
-    public int updateStat(Map<String, Integer> stats, String authorLink) {
-        StringBuilder sequence = new StringBuilder();
+    public int updateStat(Map<String, String> stats, String authorLink) {
+        StringBuilder sequenceWork = new StringBuilder();
+        StringBuilder sequenceAuthor = new StringBuilder();
         try {
-            for (Map.Entry<String, Integer> stat : stats.entrySet()) {
+            String title = null;
+            String about = null;
+            String views = null;
+            for (Map.Entry<String, String> stat : stats.entrySet()) {
                 String link = stat.getKey();
                 if (link.equals("./")) {
-                    sequence.append("UPDATE author SET views = ");
-                    sequence.append(stat.getValue());
-                    sequence.append(", month_update_fired = true");
-                    sequence.append(" WHERE link = '");
-                    sequence.append(authorLink);
-                    sequence.append("'; \n");
+                    views = stat.getValue();
                 } else if (link.endsWith(".shtml") && !link.equals("about.html")) {
-                    sequence.append("UPDATE work SET views = ");
-                    sequence.append(stat.getValue());
-                    sequence.append(" WHERE link = '");
-                    sequence.append(authorLink + link.substring(0, link.lastIndexOf(".shtml")));
-                    sequence.append("'; \n");
+                    sequenceWork.append("UPDATE work SET views = ");
+                    sequenceWork.append(stat.getValue());
+                    sequenceWork.append(" WHERE link = '");
+                    sequenceWork.append(authorLink + link.substring(0, link.lastIndexOf(".shtml")));
+                    sequenceWork.append("'; \n");
+                } else if(link.equals("title")) {
+                    title = stat.getValue();
+                } else if(link.equals("about")) {
+                    about = stat.getValue();
                 }
             }
+            sequenceAuthor.append("UPDATE author SET");
+            if(about != null && title != null) {
+                sequenceAuthor.append(" full_name='");
+                sequenceAuthor.append(title);
+                sequenceAuthor.append("', about='");
+                sequenceAuthor.append(about);
+                sequenceAuthor.append("'");
+            }
+            if(views != null) {
+                if (about != null && title != null) {
+                    sequenceAuthor.append(",");
+                }
+                sequenceAuthor.append(" views=");
+                sequenceAuthor.append(views);
+            }
+            if ((about != null && title != null) || views != null) {
+                sequenceAuthor.append(",");
+            }
+            sequenceAuthor.append(" month_update_fired = true");
+            sequenceAuthor.append(" WHERE link = '");
+            sequenceAuthor.append(authorLink);
+            sequenceAuthor.append("'; \n");
             if (!em.isJoinedToTransaction()) {
                 em.joinTransaction();
             }                       
-            return em.createNativeQuery(sequence.toString()).executeUpdate();
+            return em.createNativeQuery(sequenceWork.toString()).executeUpdate() + em.createNativeQuery(sequenceAuthor.toString()).executeUpdate();
         } catch (Throwable ex) {
-            Log.e("SQL_ERROR:", "error in " + sequence, ex);
+            Log.e("SQL_ERROR:", "error in " + sequenceWork, ex);
         }
         return 0;
     }
@@ -63,26 +88,32 @@ public class WorkDaoImpl implements WorkDaoCustom {
         try {
             sequenceGenres.append("DELETE FROM genres WHERE work_link like '");
             sequenceGenres.append(authorLink);
-            sequenceGenres.append("%' and work_link not in (");
+            sequenceGenres.append("%'");
             sequenceWorks.append("DELETE FROM work WHERE link like '");
             sequenceWorks.append(authorLink);
-            sequenceWorks.append("%' and link not in (");
-            boolean first = true;
-            for (String link : links) {
-                if (!first) {
-                    sequenceGenres.append(",");
-                    sequenceWorks.append(",");
+            sequenceWorks.append("%'");
+            if(links.size() > 0) {
+                sequenceGenres.append(" and work_link not in (");
+                sequenceWorks.append(" and link not in (");
+                boolean first = true;
+                for (String link : links) {
+                    if (!first) {
+                        sequenceGenres.append(",");
+                        sequenceWorks.append(",");
+                    }
+                    sequenceGenres.append("'");
+                    sequenceGenres.append(link);
+                    sequenceGenres.append("'");
+                    sequenceWorks.append("'");
+                    sequenceWorks.append(link);
+                    sequenceWorks.append("'");
+                    first = false;
                 }
-                sequenceGenres.append("'");
-                sequenceGenres.append(link);
-                sequenceGenres.append("'");
-                sequenceWorks.append("'");
-                sequenceWorks.append(link);
-                sequenceWorks.append("'");
-                first = false;
+                sequenceGenres.append(");");
+                sequenceWorks.append(");");
+            } else {
+                sequenceGenres.append(";");
             }
-            sequenceGenres.append(");");
-            sequenceWorks.append(");");
             if (!em.isJoinedToTransaction()) {
                 em.joinTransaction();
             }

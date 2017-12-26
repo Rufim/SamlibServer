@@ -135,9 +135,9 @@ public class CommandExecutorService {
                 ParsingInfo info = new ParsingInfo(new Date(), url);
                 infoDao.saveAndFlush(info);
                 addLog(Log.LOG_LEVEL.INFO, null, "Start stat parse. Url=" + url, info);
-                Map<String, Integer> stat = restTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<Map<String, Integer>>() {
+                Map<String, String> stat = restTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<Map<String, String>>() {
                     @Override
-                    public Map<String, Integer> extractData(ClientHttpResponse response) throws IOException {
+                    public Map<String, String> extractData(ClientHttpResponse response) throws IOException {
                         return Parser.parseStat(response.getBody());
                     }
                 });

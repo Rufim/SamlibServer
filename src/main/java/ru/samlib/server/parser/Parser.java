@@ -28,6 +28,7 @@ public class Parser {
     private final static SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.Pattern.DATA_PATTERN);
     private final static SimpleDateFormat dateFormatDiff = new SimpleDateFormat(Constants.Pattern.DATA_PATTERN_DIFF);
 
+    private final static Pattern title = Pattern.compile("\\s*<title>Журнал &quot;Самиздат&quot;: Статистика: (.+), (.+)</title>\\s*");
     private final static Pattern linkAndName = Pattern.compile("<a href=(.+)>(.+)</a></td>");
     private final static Pattern views = Pattern.compile("<td>(\\d+)</td><td>(\\d+)</td>");
 
@@ -80,9 +81,10 @@ public class Parser {
         return dataCommands;
     }
 
-    public static Map<String, Integer> parseStat(InputStream inputStream) throws IOException {
+    public static Map<String, String> parseStat(InputStream inputStream) throws IOException {
         if (inputStream == null) throw new IllegalArgumentException("Nulls not accepted");
-        Map<String , Integer> stat = new LinkedHashMap<>();
+        Map<String , String> stat = new LinkedHashMap<>();
+        boolean titleParsed = false;
         try (final InputStream is = inputStream;
              final InputStreamReader isr = new InputStreamReader(is, "CP1251");
              final BufferedReader reader = new BufferedReader(isr)){
@@ -94,9 +96,13 @@ public class Parser {
                     if((line = reader.readLine()) != null && line.isEmpty()) {
                         line = reader.readLine();
                         if(line != null && (matcher = views.matcher(line)).matches()) {
-                            stat.put(link, Integer.parseInt(matcher.group(1)));
+                            stat.put(link, Integer.parseInt(matcher.group(1)) + "");
                         }
                     }
+                } else if(!titleParsed && (matcher = title.matcher(line)).matches()) {
+                    stat.put("title", matcher.group(1));
+                    stat.put("about", matcher.group(2));
+                    titleParsed = true;
                 }
             }
         }

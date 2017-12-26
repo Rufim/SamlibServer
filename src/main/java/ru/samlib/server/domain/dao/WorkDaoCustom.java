@@ -12,7 +12,7 @@ import java.util.Map;
 public interface WorkDaoCustom {
 
     @Transactional
-    int updateStat(Map<String, Integer> stats, String authorLink);
+    int updateStat(Map<String, String> stats, String authorLink);
 
     @Transactional
     int deleteNotIn(Collection<String> links, String authorLink);
