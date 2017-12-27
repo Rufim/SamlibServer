@@ -166,7 +166,7 @@ public class CommandExecutorService {
                         }
                     }
                 }
-                addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error", null);
+                addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error by link " + link, null);
             }
         }
         return false;
@@ -240,7 +240,7 @@ public class CommandExecutorService {
                 infoDao.saveAndFlush(info);
                 return true;
             } catch (Exception ex) {
-                addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error", null);
+                addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error by utl - " + url, null);
             }
         }
         return false;
