@@ -151,7 +151,7 @@ public class Parser {
                         builder.append(lines[0]);
                         lines = lines[1].split("\\|", 2);
                         while (Type.parseType(lines[0]) == Type.OTHER) {
-                            builder.append(lines[0]);
+                            builder.append("|" + lines[0]);
                             lines = lines[1].split("\\|", 2);
                             if(lines.length < 2) {
                                 throw new Exception("invalid format exception!");
