@@ -165,8 +165,10 @@ public class CommandExecutorService {
                             authorDao.flush();
                         }
                     }
+                    addLog(Log.LOG_LEVEL.WARN, null, "Author not exist by link " + link, null);
+                } else {
+                    addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error by link " + link, null);
                 }
-                addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error by link " + link, null);
             }
         }
         return false;
