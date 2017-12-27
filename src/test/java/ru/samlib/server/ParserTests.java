@@ -36,6 +36,7 @@ import static junit.framework.TestCase.assertTrue;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
+import static ru.samlib.server.parser.CommandExecutorService.pingHost;
 
 @RunWith(SpringRunner.class)
 @RestClientTest(value =  CommandExecutorService.class)

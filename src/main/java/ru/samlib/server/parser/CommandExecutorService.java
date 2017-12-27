@@ -121,8 +121,10 @@ public class CommandExecutorService {
             if (author != null && parseAReaderAuthorLink(author.getLink())) {
                 if (constants.isParseStat()) {
                     if(!parseStat(author.getLink())) {
+                        author = authorDao.findOne(author.getLink());
                         author.setMonthUpdateFired(true);
                         authorDao.save(author);
+                        authorDao.flush();
                     }
                 }
             }
@@ -160,6 +162,7 @@ public class CommandExecutorService {
                             Author author = authorDao.findOne(link);
                             author.setDeleted(true);
                             authorDao.save(author);
+                            authorDao.flush();
                         }
                     }
                 }
