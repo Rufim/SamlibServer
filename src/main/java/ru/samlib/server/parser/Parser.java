@@ -33,9 +33,9 @@ public class Parser {
     private final static Pattern views = Pattern.compile("<td>(\\d+)</td><td>(\\d+)</td>");
 
     private final LogEventDao logEventDao;
-    
+
     public interface ParseDelegate {
-            DataCommand parseLine(String line, Parser parser);
+        DataCommand parseLine(String line, Parser parser);
     }
 
     public Parser(ParsingInfo info, LogEventDao logEventDao) {
@@ -64,7 +64,7 @@ public class Parser {
             String line = "";
             StringBuilder builder = new StringBuilder();
             while ((line = reader.readLine()) != null) {
-                if(delegate.getClass() == LogDelegate.class) {
+                if (delegate.getClass() == LogDelegate.class) {
                     if (line.charAt(0) == '/') {
                         addLine(builder.toString(), dataCommands, delegate);
                         builder = new StringBuilder();
@@ -83,23 +83,23 @@ public class Parser {
 
     public static Map<String, String> parseStat(InputStream inputStream) throws IOException {
         if (inputStream == null) throw new IllegalArgumentException("Nulls not accepted");
-        Map<String , String> stat = new LinkedHashMap<>();
+        Map<String, String> stat = new LinkedHashMap<>();
         boolean titleParsed = false;
         try (final InputStream is = inputStream;
              final InputStreamReader isr = new InputStreamReader(is, "CP1251");
-             final BufferedReader reader = new BufferedReader(isr)){
+             final BufferedReader reader = new BufferedReader(isr)) {
             String line = "";
             while ((line = reader.readLine()) != null) {
                 Matcher matcher = linkAndName.matcher(line);
-                if(matcher.matches()) {
+                if (matcher.matches()) {
                     String link = matcher.group(1);
-                    if((line = reader.readLine()) != null && line.isEmpty()) {
+                    if ((line = reader.readLine()) != null && line.isEmpty()) {
                         line = reader.readLine();
-                        if(line != null && (matcher = views.matcher(line)).matches()) {
+                        if (line != null && (matcher = views.matcher(line)).matches()) {
                             stat.put(link, Integer.parseInt(matcher.group(1)) + "");
                         }
                     }
-                } else if(!titleParsed && (matcher = title.matcher(line)).matches()) {
+                } else if (titleParsed && (matcher = title.matcher(line)).matches()) {
                     stat.put("title", matcher.group(1));
                     stat.put("about", matcher.group(2));
                     titleParsed = true;
@@ -114,7 +114,7 @@ public class Parser {
             fullLine = TextUtils.trim(fullLine.replace('\0', '0'));
             if (fullLine.endsWith("k") || fullLine.endsWith("|")) {
                 DataCommand command = delegate.parseLine(fullLine, this);
-                if(command != null) dataCommands.add(command);
+                if (command != null) dataCommands.add(command);
             } else {
                 addLog(Log.LOG_LEVEL.ERROR, new Exception("Invalid line"), fullLine);
             }
@@ -124,7 +124,10 @@ public class Parser {
 
     public static class AReaderDelegate implements ParseDelegate {
 
-        private AReaderDelegate(){};
+        private AReaderDelegate() {
+        }
+
+        ;
 
         //      0       1      2     3      4        5        6    7     8
         //    линк  | author|title|type|size kb|create date|rate|votes|annot|
@@ -132,10 +135,32 @@ public class Parser {
         public DataCommand parseLine(String line, Parser parser) {
             if (TextUtils.notEmpty(line)) {
                 try {
-                    String[] fields = line.split("\\|");
+
+                    String[] fields = line.split("\\|", 9);
                     if (fields.length != 9) {
                         parser.addLog(Log.LOG_LEVEL.ERROR, new Exception("Invalid areader line"), line);
                         return null;
+                    }
+                    if (Type.parseType(fields[3]) == Type.OTHER) {
+                        ArrayList<String> fieldsArray = new ArrayList<>();
+                        String lines[];
+                        fieldsArray.add((lines = line.split("\\|", 2))[0]);
+                        fieldsArray.add((lines = lines[1].split("\\|", 2))[0]);
+                        StringBuilder builder = new StringBuilder();
+                        lines = lines[1].split("\\|", 2);
+                        builder.append(lines[0]);
+                        lines = lines[1].split("\\|", 2);
+                        while (Type.parseType(lines[0]) == Type.OTHER) {
+                            builder.append(lines[0]);
+                            lines = lines[1].split("\\|", 2);
+                            if(lines.length < 2) {
+                                throw new Exception("invalid format exception!");
+                            }
+                        }
+                        fieldsArray.add(builder.toString());
+                        fieldsArray.add(lines[0]);
+                        fieldsArray.addAll(Arrays.asList(lines[1].split("\\|", 5)));
+                        fields = fieldsArray.toArray(new String[9]);
                     }
                     DataCommand dataCommand = new DataCommand();
                     dataCommand.setLink("/" + fields[0]);
@@ -168,7 +193,10 @@ public class Parser {
 
     private static class LogDelegate implements ParseDelegate {
 
-        private LogDelegate(){};
+        private LogDelegate() {
+        }
+
+        ;
 
         //     0         1            2             3     4      5    6    7        8         9       10             11
         //    линк  |тег oперации|таймштамп-MySQL|title|author|type|janr|annot|create date|img_cnt|update-unixtime|size kb
@@ -200,7 +228,8 @@ public class Parser {
                         parser.addLog(Log.LOG_LEVEL.WARN, new Exception("Empty command"), line);
                     }
                     dataCommand.setTitle(title);
-                    if (TextUtils.notEmpty(fields[2].trim())) dataCommand.setCommandDate(dateTimeFormat.parse(fields[2]));
+                    if (TextUtils.notEmpty(fields[2].trim()))
+                        dataCommand.setCommandDate(dateTimeFormat.parse(fields[2]));
                     dataCommand.setAuthorName(fields[4]);
                     dataCommand.setType(Type.parseType(fields[5]));
                     dataCommand.setGenre(Genre.parseGenre(fields[6]));
