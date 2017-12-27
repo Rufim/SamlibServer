@@ -163,12 +163,12 @@ public class CommandExecutorService {
                             author.setDeleted(true);
                             authorDao.save(author);
                             authorDao.flush();
-                            addLog(Log.LOG_LEVEL.WARN, null, "Author not exist by link " + link, null);
+                            addLog(Log.LOG_LEVEL.WARN, null, "Author not exist by url " + url, null);
                             return false;
                         }
                     }
                 }
-                addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error by link " + link, null);
+                addLog(Log.LOG_LEVEL.ERROR, ex, "Unexpected error by url " + url, null);
             }
         }
         return false;
