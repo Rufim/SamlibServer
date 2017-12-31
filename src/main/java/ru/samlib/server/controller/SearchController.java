@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import ru.samlib.server.domain.dao.AuthorDao;
 import ru.samlib.server.domain.dao.WorkDao;
+import ru.samlib.server.domain.entity.Author;
 import ru.samlib.server.domain.entity.Genre;
 import ru.samlib.server.domain.entity.Type;
 import ru.samlib.server.domain.entity.Work;
@@ -22,6 +24,7 @@ import ru.samlib.server.util.TextUtils;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -31,6 +34,9 @@ public class SearchController {
 
     @Autowired
     WorkDao workDao;
+
+    @Autowired
+    AuthorDao authorDao;
 
     //http://localhost:8080/search-works?page=1&query=%D0%AF%D1%81%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9
     @GetMapping("/search-works")
@@ -61,6 +67,15 @@ public class SearchController {
         modelMap.addAttribute("genres", (List<Genre>) Arrays.asList(Genre.values()));
         modelMap.addAttribute("pageSize", pageSize);
         return "search";
+    }
+
+
+    @GetMapping("/update_date")
+    @ResponseBody
+    public Long updateDate(@RequestParam("link") String link) {
+        Author author = authorDao.findOne(link);
+        if(author == null) return -1L;
+        return author.getLastUpdateDate().getTime();
     }
 
 
