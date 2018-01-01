@@ -41,7 +41,7 @@ public class SearchController {
     //http://localhost:8080/search-works?page=1&query=%D0%AF%D1%81%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9
     @GetMapping("/search-works")
     @ResponseBody
-    public Collection<Work> searchWorks(@RequestParam("query") String query, @RequestParam("genre") String genre, @RequestParam("type") String type, @RequestParam("page") Integer page) {
+    public Collection<Work> searchWorks(@RequestParam("query") String query, @RequestParam("genre") String genre, @RequestParam("type") String type, @RequestParam("sort") String sort, @RequestParam("page") Integer page) {
         Log.i(SearchController.class, "q=" + query + " g=" + genre + " t=" + type + " p=" + page);
         String queryVal = query == null ? "" : query;
         Genre genreVal = null;
@@ -56,8 +56,8 @@ public class SearchController {
     }
 
     @GetMapping("/search")
-    public String searchWorks(@RequestParam("query") String query, @RequestParam("genre") String genre, @RequestParam("type") String type, @RequestParam("page") Integer page, ModelMap modelMap) {
-        modelMap.addAttribute("works", searchWorks(query, genre, type, page));
+    public String searchWorks(@RequestParam("query") String query, @RequestParam("genre") String genre, @RequestParam("type") String type, @RequestParam("sort") String sort, @RequestParam("page") Integer page, ModelMap modelMap) {
+        modelMap.addAttribute("works", searchWorks(query, genre, type, sort, page));
         modelMap.addAttribute("query", query);
         modelMap.addAttribute("genre", genre);
         modelMap.addAttribute("type", type);

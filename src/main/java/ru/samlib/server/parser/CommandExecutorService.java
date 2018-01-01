@@ -84,7 +84,7 @@ public class CommandExecutorService {
             try {
                 Calendar calendar = Calendar.getInstance();
                 Date lastParsedDay;
-                ParsingInfo info = infoDao.findFirstByParsedTrueOrderByLogDateDesc();
+                ParsingInfo info = infoDao.findFirstByParsedTrueAndLogDateNotNullOrderByLogDateDesc();
                 if (info != null) {
                     lastParsedDay = info.getLogDate();
                 } else {
@@ -136,8 +136,8 @@ public class CommandExecutorService {
         synchronized (url.intern()) {
             try {
                 long time = System.currentTimeMillis();
-                ParsingInfo info = new ParsingInfo(new Date(), url);
-                infoDao.saveAndFlush(info);
+                ParsingInfo info = new ParsingInfo(url);
+                info = infoDao.saveAndFlush(info);
                 addLog(Log.LOG_LEVEL.INFO, null, "Start stat parse. Url=" + url, info);
                 Map<String, String> stat = restTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<Map<String, String>>() {
                     @Override
@@ -195,7 +195,7 @@ public class CommandExecutorService {
 
     public boolean parseAReaderAuthorLink(final String link) {
         String url = Constants.Net.A_READER_QUERY + link;
-        ParsingInfo info = new ParsingInfo(new Date(), url);
+        ParsingInfo info = new ParsingInfo( url);
         return parseUrl(url, info, Parser.getAReaderDelegateInstance());
     }
 
@@ -207,11 +207,11 @@ public class CommandExecutorService {
     }
 
     @Transactional
-    public boolean parseUrl(final String url, final ParsingInfo info, final Parser.ParseDelegate parseDelegate) {
+    public boolean parseUrl(final String url, ParsingInfo info, final Parser.ParseDelegate parseDelegate) {
         synchronized (url.intern()) {
             try {
                 long time = System.currentTimeMillis();
-                infoDao.saveAndFlush(info);
+                info = infoDao.saveAndFlush(info);
                 final Parser parser = new Parser(info, logEventDao);
                 addLog(Log.LOG_LEVEL.INFO, null, "Start parse. Url=" + url, info);
                 List<DataCommand> result = restTemplate.execute(url, HttpMethod.GET, null, new ResponseExtractor<List<DataCommand>>() {
@@ -248,7 +248,6 @@ public class CommandExecutorService {
         return false;
     }
 
-    //TODO: HANDLE COMMAND !!! /f/fedotow_wdadimir_semenowich/|REN(f/fedotow_wladimir_semenowich)|2017-12-13 19:51:26|Ещё горит надежды свет|Федотов Вдадимир Семёнович|Нет|||05/12/2017|||
     public void executeCommand(DataCommand dataCommand, ParsingInfo info) {
         try {
             if (dataCommand != null && TextUtils.notEmpty(dataCommand.link)) {
@@ -329,7 +328,7 @@ public class CommandExecutorService {
                         newWork.setCreateDate(dataCommand.createDate);
                     }
                     if (dataCommand.size != null) {
-                        if (oldWork != null && !dataCommand.command.equals(Command.ARD) && dataCommand.size > oldWork.getSize()) {
+                        if (oldWork != null && !dataCommand.command.equals(Command.ARD) && oldWork.getSize() != null && dataCommand.size > oldWork.getSize()) {
                             int activityWeight = (dataCommand.size - oldWork.getSize()); // 20k
                             if (oldWork.getUpdateDate() == null) {
                                 activityWeight = 1;

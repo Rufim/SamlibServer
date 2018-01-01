@@ -10,5 +10,5 @@ import javax.transaction.Transactional;
 public interface ParsingInfoDao extends JpaRepository<ParsingInfo, Long> {
 
 
-    ParsingInfo findFirstByParsedTrueOrderByLogDateDesc();
+    ParsingInfo findFirstByParsedTrueAndLogDateNotNullOrderByLogDateDesc();
 }

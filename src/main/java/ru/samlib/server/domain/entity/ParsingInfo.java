@@ -37,10 +37,14 @@ public class ParsingInfo {
     public ParsingInfo() {
     }
 
-    public ParsingInfo(Date logDate, String link) {
-        this.logDate = logDate;
+    public ParsingInfo(String link) {
         this.link = link;
         this.parseDate = new Date();
         this.logEvents = new TreeSet<>();
+    }
+
+    public ParsingInfo(Date logDate, String link) {
+        this(link);
+        this.logDate = logDate;
     }
 }
