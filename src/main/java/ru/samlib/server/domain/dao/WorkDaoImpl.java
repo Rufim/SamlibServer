@@ -138,7 +138,7 @@ public class WorkDaoImpl implements WorkDaoCustom {
         try {
             sequence.append("SELECT ");
             sequence.append("work.link, work.title,work.annotation, work.work_author_name, work.size, work.update_date, work.rate, work.votes, work.views ");
-            sequence.append(genre != null ? "g.genre, " : "");
+            sequence.append(genre != null ? ", g.genre " : "");
             switch (searchBy) {
                 case ACTIVITY:
                     sequence.append(", work.activity_index ");
