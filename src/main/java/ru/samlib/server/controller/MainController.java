@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import ru.samlib.server.domain.dao.SortWorksBy;
 import ru.samlib.server.domain.entity.Genre;
 import ru.samlib.server.domain.entity.Type;
 
@@ -26,6 +27,7 @@ public class MainController {
     public String index(ModelMap modelMap) {
         modelMap.addAttribute("types", (List<Type>) Stream.of(Type.values()).filter(t -> !Type.OTHER.equals(t)).collect(Collectors.toList()));
         modelMap.addAttribute("genres", (List<Genre>) Arrays.asList(Genre.values()));
+        modelMap.addAttribute("sorts", (List<SortWorksBy>) Arrays.asList(SortWorksBy.values()));
         return "search";
     }
 

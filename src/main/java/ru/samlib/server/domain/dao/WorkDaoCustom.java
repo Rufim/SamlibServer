@@ -17,7 +17,7 @@ public interface WorkDaoCustom {
     @Transactional
     int deleteNotIn(Collection<String> links, String authorLink);
 
-    List<Work> searchWorksByActivityNative(String query, Type type, Genre genre, Integer offset, Integer limit);
+    List<Work> searchWorksNative(String query, Type type, Genre genre, SortWorksBy searchBy, Integer offset, Integer limit);
 
     List<Work> searchWorksByActivity(String query, Type type, Genre genre, Integer offset, Integer limit);
 

@@ -13,13 +13,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.client.ExpectedCount;
 import org.springframework.test.web.client.MockRestServiceServer;
 import ru.samlib.server.domain.Constants;
-import ru.samlib.server.domain.dao.AuthorDao;
-import ru.samlib.server.domain.dao.CategoryDao;
-import ru.samlib.server.domain.dao.LogEventDao;
-import ru.samlib.server.domain.dao.WorkDao;
+import ru.samlib.server.domain.dao.*;
 import ru.samlib.server.domain.entity.*;
 import ru.samlib.server.parser.CommandExecutorService;
 import ru.samlib.server.parser.DataCommand;
@@ -29,14 +25,12 @@ import ru.samlib.server.util.SystemUtils;
 import java.io.*;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
-import static ru.samlib.server.parser.CommandExecutorService.pingHost;
 
 @RunWith(SpringRunner.class)
 @RestClientTest(value =  CommandExecutorService.class)
@@ -140,21 +134,21 @@ public class ParserTests {
         assertEquals(521703, works.get(1).getViews().intValue());
         assertEquals(458748, works.get(2).getViews().intValue());
         assertEquals(7387861, authors.get(0).getViews().intValue());
-        works = workDao.searchWorksByActivityNative("дрик", Type.ARTICLE, Genre.EMPTY, null, null);
+        works = workDao.searchWorksNative("дрик", Type.ARTICLE, Genre.EMPTY, null, null,null);
         assertEquals(33, works.size());
-        works = workDao.searchWorksByActivityNative("дрик", Type.HEAD, Genre.EMPTY, null, null);
+        works = workDao.searchWorksNative("дрик", Type.HEAD, Genre.EMPTY, null, null, null);
         assertEquals(1, works.size());
         assertEquals(0, works.get(0).getActivityIndex().intValue());
-        works = workDao.searchWorksByActivityNative("дрик", Type.STORY, Genre.EMPTY, null, null);
+        works = workDao.searchWorksNative("дрик", Type.STORY, Genre.EMPTY, null, null, null);
         assertEquals(1, works.size());
         assertEquals(0, works.get(0).getActivityIndex().intValue());
-        works = workDao.searchWorksByActivityNative("Ракот", null, null, null, null);
+        works = workDao.searchWorksNative("Ракот", null, null, null, null, null);
         assertEquals(2, works.size());
-        works = workDao.searchWorksByActivityNative("Rakot", null, null, null, null);
+        works = workDao.searchWorksNative("Rakot", null, null, null, null, null);
         assertEquals(8, works.size());
-        works = workDao.searchWorksByActivityNative("Keelminir", null, null, null, null);
+        works = workDao.searchWorksNative("Keelminir", null, null, null, null, null);
         assertEquals(2, works.size());
-        works = workDao.searchWorksByActivityNative("омак", Type.HEAD, Genre.EMPTY, null, null);
+        works = workDao.searchWorksNative("омак", Type.HEAD, Genre.EMPTY, null, null, null);
         assertEquals(3, works.size());
     }
 

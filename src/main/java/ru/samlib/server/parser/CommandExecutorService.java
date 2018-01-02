@@ -321,7 +321,9 @@ public class CommandExecutorService {
                     } else if (oldWork == null) {
                         newWork.setChangedDate(dataCommand.createDate);
                     }
-                    newWork.setAnnotation(dataCommand.annotation);
+                    if (dataCommand.command.equals(Command.ARD) || newWork.getAnnotation() == null) {
+                        newWork.setAnnotation(dataCommand.annotation);
+                    }
                     newWork.setCreateDate(dataCommand.createDate);
                     newWork.setWorkAuthorName(dataCommand.authorName);
                     if (oldWork == null) {

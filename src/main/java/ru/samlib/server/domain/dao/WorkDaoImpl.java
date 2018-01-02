@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import java.math.BigDecimal;
 import java.util.*;
 
 public class WorkDaoImpl implements WorkDaoCustom {
@@ -129,14 +130,23 @@ public class WorkDaoImpl implements WorkDaoCustom {
     }
 
     @Override
-    public List<Work> searchWorksByActivityNative(String query, Type type, Genre genre, Integer offset, Integer limit) {
+    public List<Work> searchWorksNative(String query, Type type, Genre genre, SortWorksBy searchBy, Integer offset, Integer limit) {
         StringBuilder sequence = new StringBuilder();
+        if(searchBy == null) {
+            searchBy = SortWorksBy.ACTIVITY;
+        }
         try {
             sequence.append("SELECT ");
-            sequence.append("work.link, work.title,work.annotation, work.work_author_name, ");
+            sequence.append("work.link, work.title,work.annotation, work.work_author_name, work.size, work.update_date, work.rate, work.votes, work.views ");
             sequence.append(genre != null ? "g.genre, " : "");
-            sequence.append("work.activity_index, ");
-            sequence.append("work.update_date ");
+            switch (searchBy) {
+                case ACTIVITY:
+                    sequence.append(", work.activity_index ");
+                    break;
+                case RATING:
+                    sequence.append(", (work.votes/GREATEST(10 - work.rate, 0.1)) as r_index ");
+                    break;
+            }
             sequence.append("FROM work ");
             sequence.append(genre != null ? "LEFT JOIN genres g ON public.work.link = g.work_link " : "");
             StringBuilder where = new StringBuilder();
@@ -155,7 +165,17 @@ public class WorkDaoImpl implements WorkDaoCustom {
                 sequence.append(" where ");
                 sequence.append(where);
             }
-            sequence.append(" ORDER BY work.activity_index DESC, work.update_date DESC");
+            switch (searchBy) {
+                case ACTIVITY:
+                    sequence.append(" ORDER BY work.activity_index DESC NULLS LAST, work.update_date DESC NULLS LAST");
+                    break;
+                case RATING:
+                    sequence.append(" ORDER BY r_index DESC NULLS LAST");
+                    break;
+                case VIEWS:
+                    sequence.append(" ORDER BY work.views DESC NULLS LAST");
+                    break;
+            }
             if (limit != null && limit >= 0) {
                 sequence.append(" LIMIT ");
                 sequence.append(limit);
@@ -171,7 +191,10 @@ public class WorkDaoImpl implements WorkDaoCustom {
             List res = nativeQuery.getResultList();
             ArrayList<Work> works = new ArrayList<>();
             for (Object re : res) {
-                works.add(parseRow((Object[]) re));
+                Work work = parseRow((Object[]) re);
+                if(work != null) {
+                    works.add(work);
+                }
             }
             return works;
         } catch (Throwable ex) {
@@ -181,11 +204,25 @@ public class WorkDaoImpl implements WorkDaoCustom {
     }
 
     private Work parseRow(Object[] row) {
-        Work work = new Work(row[0].toString());
-        work.setTitle(row[1].toString());
-        work.setAnnotation(row[2].toString());
-        work.setWorkAuthorName(row[3].toString());
-        return work;
+        if(row[0] != null) {
+            Work work = new Work(row[0].toString());
+            if(row[1] != null) work.setTitle(row[1].toString());
+            if(row[2] != null) {
+                String annot = row[2].toString();
+                if (annot != null && annot.endsWith("|")) {
+                    annot = annot.substring(0, annot.lastIndexOf("|"));
+                }
+                work.setAnnotation(annot);
+            }
+            if (row[3] != null) work.setWorkAuthorName(row[3].toString());
+            if (row[4] != null) work.setSize((Integer) row[4]);
+            if (row[5] != null) work.setUpdateDate((Date) row[5]);
+            if (row[6] != null) work.setRate((BigDecimal) row[6]);
+            if (row[7] != null) work.setVotes((Integer) row[7]);
+            if (row[8] != null) work.setViews((Integer) row[8]);
+            return work;
+        }
+        return null;
     }
 
     @Override

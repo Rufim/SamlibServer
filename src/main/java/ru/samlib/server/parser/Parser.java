@@ -179,7 +179,13 @@ public class Parser {
                     }
                     if (TextUtils.notEmpty(fields[6].trim())) dataCommand.setRate(new BigDecimal(fields[6]));
                     if (TextUtils.notEmpty(fields[7].trim())) dataCommand.setVotes(Integer.parseInt(fields[7]));
-                    dataCommand.setAnnotation(fields[8]);
+                    if (TextUtils.notEmpty(fields[8].trim())) {
+                        if (fields[8].endsWith("|")) {
+                            dataCommand.setAnnotation(TextUtils.trim(fields[8].substring(0, fields[8].lastIndexOf("|"))));
+                        } else {
+                            dataCommand.setAnnotation(TextUtils.trim(fields[8]));
+                        }
+                    }
                     return dataCommand;
                 } catch (Exception ex) {
                     parser.addLog(Log.LOG_LEVEL.ERROR, ex, line);
