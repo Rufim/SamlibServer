@@ -7,4 +7,7 @@ public interface AuthorDaoCustom {
 
     @Transactional
     void changeAuthorLink(Author oldAuthor, String newLink);
+
+    @Transactional
+    void restartCheckStat();
 }

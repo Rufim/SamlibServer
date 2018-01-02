@@ -118,15 +118,19 @@ public class CommandExecutorService {
     public void scheduledAuthorUpdate() {
         synchronized (CommandExecutorService.class) {
             Author author = authorDao.findFirstByMonthUpdateFiredFalseAndDeletedFalseOrderByLastUpdateDateDesc();
-            if (author != null && parseAReaderAuthorLink(author.getLink())) {
-                if (constants.isParseStat()) {
-                    if(!parseStat(author.getLink())) {
-                        author = authorDao.findOne(author.getLink());
-                        author.setMonthUpdateFired(true);
-                        authorDao.save(author);
-                        authorDao.flush();
-                    }
-                }
+            if (author != null) {
+               if(parseAReaderAuthorLink(author.getLink())) {
+                   if (constants.isParseStat()) {
+                       if (!parseStat(author.getLink())) {
+                           author = authorDao.findOne(author.getLink());
+                           author.setMonthUpdateFired(true);
+                           authorDao.save(author);
+                           authorDao.flush();
+                       }
+                   }
+               }
+            } else {
+                authorDao.restartCheckStat();
             }
         }
     }
