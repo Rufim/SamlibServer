@@ -46,7 +46,7 @@ public class AuthorDaoImpl implements AuthorDaoCustom {
     @Override
     @Transactional
     public void restartCheckStat() {
-        em.createNativeQuery("UPDATE author SET author.month_update_fired = FALSE WHERE deleted IS FALSE").executeUpdate();
+        em.createNativeQuery("UPDATE author SET month_update_fired = FALSE WHERE deleted IS FALSE").executeUpdate();
     }
-    
+
 }
