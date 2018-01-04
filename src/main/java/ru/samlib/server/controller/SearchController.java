@@ -37,7 +37,7 @@ public class SearchController {
     //http://localhost:8080/search-works?page=1&query=%D0%AF%D1%81%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9
     @GetMapping("/search-works")
     @ResponseBody
-    public Collection<Work> searchWorks(@RequestParam("query") String query, @RequestParam("genre") String genre, @RequestParam("type") String type, @RequestParam("sort") String sort, @RequestParam("page") Integer page) {
+    public Collection<Work> searchWorks(@RequestParam("query") String query, @RequestParam("genre") String genre, @RequestParam("type") String type, @RequestParam("sort") String sort, @RequestParam("page") Integer page, @RequestParam(value = "page_size", required = false) Integer pageSize) {
         Log.i(SearchController.class, "q=" + query + " g=" + genre + " t=" + type + " s=" + sort + " p=" + page);
         String queryVal = query == null ? "" : query;
         Genre genreVal = null;
@@ -49,13 +49,15 @@ public class SearchController {
         Integer pageVal = page == null ? 0 : page;
         pageVal -= 1;
         if(pageVal < 0) pageVal = 0;
+        if(pageSize == null || pageSize <= 0) pageSize = this.pageSize;
+        if(pageSize > 50) pageSize = 50;
         pageVal *= pageSize;
         return workDao.searchWorksNative(queryVal, typeVal, genreVal, sortBy, pageVal, pageSize);
     }
 
     @GetMapping("/search")
     public String searchWorks(@RequestParam("query") String query, @RequestParam("genre") String genre, @RequestParam("type") String type, @RequestParam("sort") String sort, @RequestParam("page") Integer page, ModelMap modelMap) {
-        modelMap.addAttribute("works", searchWorks(query, genre, type, sort, page));
+        modelMap.addAttribute("works", searchWorks(query, genre, type, sort, page, pageSize));
         modelMap.addAttribute("query", query);
         modelMap.addAttribute("genre", genre);
         modelMap.addAttribute("type", type);
