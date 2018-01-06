@@ -43,18 +43,18 @@ public class WorkDaoImpl implements WorkDaoCustom {
                     sequenceWork.append(" WHERE link = '");
                     sequenceWork.append(authorLink + link.substring(0, link.lastIndexOf(".shtml")));
                     sequenceWork.append("'; \n");
-                } else if(link.equals("title")) {
+                } else if (link.equals("title")) {
                     title = stat.getValue();
-                } else if(link.equals("about")) {
+                } else if (link.equals("about")) {
                     about = stat.getValue();
                 }
             }
             sequenceAuthor.append("UPDATE author SET");
-            if(about != null && title != null) {
+            if (about != null && title != null) {
                 sequenceAuthor.append(" full_name=:title");
                 sequenceAuthor.append(", about=:about");
             }
-            if(views != null) {
+            if (views != null) {
                 if (about != null && title != null) {
                     sequenceAuthor.append(",");
                 }
@@ -77,10 +77,10 @@ public class WorkDaoImpl implements WorkDaoCustom {
             }
             if (!em.isJoinedToTransaction()) {
                 em.joinTransaction();
-            }                       
+            }
             return em.createNativeQuery(sequenceWork.toString()).executeUpdate() + authorQuery.executeUpdate();
         } catch (Throwable ex) {
-            Log.e("SQL_ERROR:", "error in " + sequenceWork + "\n " +  sequenceAuthor, ex);
+            Log.e("SQL_ERROR:", "error in " + sequenceWork + "\n " + sequenceAuthor, ex);
             return -1;
         }
     }
@@ -97,7 +97,7 @@ public class WorkDaoImpl implements WorkDaoCustom {
             sequenceWorks.append("DELETE FROM work WHERE link like '");
             sequenceWorks.append(authorLink);
             sequenceWorks.append("%'");
-            if(links.size() > 0) {
+            if (links.size() > 0) {
                 sequenceGenres.append(" and work_link not in (");
                 sequenceWorks.append(" and link not in (");
                 boolean first = true;
@@ -130,15 +130,15 @@ public class WorkDaoImpl implements WorkDaoCustom {
     }
 
     @Override
-    public List<Work> searchWorksNative(String query, Type type, Genre genre, SortWorksBy searchBy, Integer offset, Integer limit) {
+    public List<Work> searchWorksNative(String query, Type type, Genre genre, SortWorksBy searchBy, Integer size, Integer offset, Integer limit) {
         StringBuilder sequence = new StringBuilder();
-        if(searchBy == null) {
+        if (searchBy == null) {
             searchBy = SortWorksBy.ACTIVITY;
         }
         try {
             sequence.append("SELECT ");
             sequence.append("work.link, work.title,work.annotation, work.work_author_name, work.size, work.update_date, work.rate, work.votes, work.views ");
-            sequence.append(genre != null ? ", g.genre " : "");
+            sequence.append(", g.genre, work.type ");
             switch (searchBy) {
                 case ACTIVITY:
                     sequence.append(", work.activity_index ");
@@ -148,7 +148,7 @@ public class WorkDaoImpl implements WorkDaoCustom {
                     break;
             }
             sequence.append("FROM work ");
-            sequence.append(genre != null ? "LEFT JOIN genres g ON public.work.link = g.work_link " : "");
+            sequence.append("LEFT JOIN genres g ON public.work.link = g.work_link ");
             StringBuilder where = new StringBuilder();
             if (TextUtils.notEmpty(query)) {
                 where.append("(lower(work.title) like lower(:query) or lower(work.work_author_name) like lower(:query))");
@@ -160,6 +160,10 @@ public class WorkDaoImpl implements WorkDaoCustom {
             if (type != null) {
                 if (where.length() > 0) where.append(" and ");
                 where.append("work.type = :type");
+            }
+            if (size != null && size > 0) {
+                if (where.length() > 0) where.append(" and ");
+                where.append("work.size >= :size");
             }
             if (where.length() > 0) {
                 sequence.append(" where ");
@@ -188,11 +192,12 @@ public class WorkDaoImpl implements WorkDaoCustom {
             if (TextUtils.notEmpty(query)) nativeQuery.setParameter("query", "%" + query + "%");
             if (type != null) nativeQuery.setParameter("type", type.name());
             if (genre != null) nativeQuery.setParameter("genre", genre.name());
+            if (size != null && size > 0) nativeQuery.setParameter("size", size);
             List res = nativeQuery.getResultList();
             ArrayList<Work> works = new ArrayList<>();
             for (Object re : res) {
                 Work work = parseRow((Object[]) re);
-                if(work != null) {
+                if (work != null) {
                     works.add(work);
                 }
             }
@@ -204,23 +209,31 @@ public class WorkDaoImpl implements WorkDaoCustom {
     }
 
     private Work parseRow(Object[] row) {
-        if(row[0] != null) {
-            Work work = new Work(row[0].toString());
-            if(row[1] != null) work.setTitle(row[1].toString());
-            if(row[2] != null) {
-                String annot = row[2].toString();
-                if (annot != null && annot.endsWith("|")) {
-                    annot = annot.substring(0, annot.lastIndexOf("|"));
+        if (row[0] != null) {
+            try {
+                Work work = new Work(row[0].toString());
+                if (row[1] != null) work.setTitle(row[1].toString());
+                if (row[2] != null) {
+                    String annot = row[2].toString();
+                    if (annot != null && annot.endsWith("|")) {
+                        annot = annot.substring(0, annot.lastIndexOf("|"));
+                    }
+                    work.setAnnotation(annot);
                 }
-                work.setAnnotation(annot);
+                if (row[3] != null) work.setWorkAuthorName(row[3].toString());
+                if (row[4] != null) work.setSize((Integer) row[4]);
+                if (row[5] != null) work.setUpdateDate((Date) row[5]);
+                if (row[6] != null) work.setRate((BigDecimal) row[6]);
+                if (row[7] != null) work.setVotes((Integer) row[7]);
+                if (row[8] != null) work.setViews((Integer) row[8]);
+                try {
+                    if (row[9] != null) work.addGenre(Genre.valueOf(row[9].toString()));
+                    if (row[10] != null) work.setType(Type.valueOf(row[10].toString()));
+                } catch (Throwable e) {
+                }
+                return work;
+            } catch (Throwable e) {
             }
-            if (row[3] != null) work.setWorkAuthorName(row[3].toString());
-            if (row[4] != null) work.setSize((Integer) row[4]);
-            if (row[5] != null) work.setUpdateDate((Date) row[5]);
-            if (row[6] != null) work.setRate((BigDecimal) row[6]);
-            if (row[7] != null) work.setVotes((Integer) row[7]);
-            if (row[8] != null) work.setViews((Integer) row[8]);
-            return work;
         }
         return null;
     }
@@ -248,37 +261,37 @@ public class WorkDaoImpl implements WorkDaoCustom {
         }
         sequence.append(" ORDER BY w.activityIndex DESC");
         TypedQuery<Work> typedQuery = em.createQuery(sequence.toString(), Work.class);
-        if(TextUtils.notEmpty(query)) typedQuery.setParameter("query", "%" + query + "%");
-        if(type != null) typedQuery.setParameter("type", type);
-        if(genre != null) typedQuery.setParameter("genre", genre);
-        if(offset != null && offset >= 0) typedQuery.setFirstResult(offset);
-        if(limit != null && limit >= 0) typedQuery.setMaxResults(limit);
+        if (TextUtils.notEmpty(query)) typedQuery.setParameter("query", "%" + query + "%");
+        if (type != null) typedQuery.setParameter("type", type);
+        if (genre != null) typedQuery.setParameter("genre", genre);
+        if (offset != null && offset >= 0) typedQuery.setFirstResult(offset);
+        if (limit != null && limit >= 0) typedQuery.setMaxResults(limit);
         return typedQuery.getResultList();
     }
 
     @Override
     @Transactional
     public Work saveWork(Work newWork, boolean update) {
-        if(!em.isJoinedToTransaction()) {
+        if (!em.isJoinedToTransaction()) {
             em.joinTransaction();
         }
-        if(!update) {
+        if (!update) {
             Category category = em.find(Category.class, new CategoryId(newWork.getAuthor().getLink(), newWork.getType().getTitle()));
             Author author = null;
-            if(category != null) {
+            if (category != null) {
                 // em.merge(newWork.getCategory()); // другой инфы о категории, кроме СategoryId, у нас нет -> мержить нечего
                 newWork.setCategory(category);
                 newWork.setAuthor(merge(category.getAuthor(), newWork.getAuthor()));
                 author = category.getAuthor();
             } else {
                 author = em.find(Author.class, newWork.getAuthor().getLink());
-                if(author != null) {
+                if (author != null) {
                     newWork.setAuthor(merge(author, newWork.getAuthor()));
                     newWork.getCategory().setAuthor(newWork.getAuthor());
                 }
             }
-            if(author == null) em.persist(newWork.getAuthor());
-            if(category == null) em.persist(newWork.getCategory());
+            if (author == null) em.persist(newWork.getAuthor());
+            if (category == null) em.persist(newWork.getCategory());
             em.persist(newWork);
             return newWork;
         } else {
@@ -293,7 +306,7 @@ public class WorkDaoImpl implements WorkDaoCustom {
 
     private Author merge(Author origin, Author newData) {
         boolean merge = false;
-        if(TextUtils.isEmpty(origin.getFullName())){
+        if (TextUtils.isEmpty(origin.getFullName())) {
             merge = true;
             origin.setFullName(newData.getFullName());
         }
@@ -301,7 +314,7 @@ public class WorkDaoImpl implements WorkDaoCustom {
             merge = true;
             origin.setLastUpdateDate(newData.getLastUpdateDate());
         }
-        if(merge) {
+        if (merge) {
             return em.merge(origin);
         }
         return origin;
