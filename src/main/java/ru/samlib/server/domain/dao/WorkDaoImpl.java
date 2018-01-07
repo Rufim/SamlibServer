@@ -165,6 +165,12 @@ public class WorkDaoImpl implements WorkDaoCustom {
                 if (where.length() > 0) where.append(" and ");
                 where.append("work.size >= :size");
             }
+            switch (searchBy) {
+                case RATING:
+                    if (where.length() > 0) where.append(" and ");
+                    where.append(" work.rate IS NOT NULL and work.votes IS NOT NULL ");
+                    break;
+            }
             if (where.length() > 0) {
                 sequence.append(" where ");
                 sequence.append(where);
